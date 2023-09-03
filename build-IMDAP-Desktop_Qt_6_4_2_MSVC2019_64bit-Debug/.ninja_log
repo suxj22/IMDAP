@@ -1,0 +1,21 @@
+# ninja log v5
+7	360	7154373477592033	IMDAP_autogen/timestamp	ed521b8608d4d2b2
+7	360	7154373477592033	IMDAP_autogen/mocs_compilation.cpp	ed521b8608d4d2b2
+7	360	7154373477592033	C:/Users/86181/Documents/GitHub/IMDAP/build-IMDAP-Desktop_Qt_6_4_2_MSVC2019_64bit-Debug/IMDAP_autogen/timestamp	ed521b8608d4d2b2
+7	360	7154373477592033	C:/Users/86181/Documents/GitHub/IMDAP/build-IMDAP-Desktop_Qt_6_4_2_MSVC2019_64bit-Debug/IMDAP_autogen/mocs_compilation.cpp	ed521b8608d4d2b2
+361	2073	7154373495872416	CMakeFiles/IMDAP.dir/IMDAP_autogen/mocs_compilation.cpp.obj	18694e8f8e33255c
+365	2106	7154373496208045	CMakeFiles/IMDAP.dir/main.cpp.obj	60d3ce69b4cb1476
+369	2111	7154373496254927	CMakeFiles/IMDAP.dir/mainwindow.cpp.obj	fe78e9a537392560
+2111	2547	7154373500493590	IMDAP.exe	fc1928419500ede4
+9	271	7154374474464272	IMDAP_autogen/timestamp	ed521b8608d4d2b2
+9	271	7154374474464272	IMDAP_autogen/mocs_compilation.cpp	ed521b8608d4d2b2
+9	271	7154374474464272	C:/Users/86181/Documents/GitHub/IMDAP/build-IMDAP-Desktop_Qt_6_4_2_MSVC2019_64bit-Debug/IMDAP_autogen/timestamp	ed521b8608d4d2b2
+9	271	7154374474464272	C:/Users/86181/Documents/GitHub/IMDAP/build-IMDAP-Desktop_Qt_6_4_2_MSVC2019_64bit-Debug/IMDAP_autogen/mocs_compilation.cpp	ed521b8608d4d2b2
+277	1616	7154374487878864	CMakeFiles/IMDAP.dir/mainwindow.cpp.obj	fe78e9a537392560
+1616	2007	7154374491450371	IMDAP.exe	fc1928419500ede4
+9	259	7154374622791276	IMDAP_autogen/timestamp	ed521b8608d4d2b2
+9	259	7154374622791276	IMDAP_autogen/mocs_compilation.cpp	ed521b8608d4d2b2
+9	259	7154374622791276	C:/Users/86181/Documents/GitHub/IMDAP/build-IMDAP-Desktop_Qt_6_4_2_MSVC2019_64bit-Debug/IMDAP_autogen/timestamp	ed521b8608d4d2b2
+9	259	7154374622791276	C:/Users/86181/Documents/GitHub/IMDAP/build-IMDAP-Desktop_Qt_6_4_2_MSVC2019_64bit-Debug/IMDAP_autogen/mocs_compilation.cpp	ed521b8608d4d2b2
+265	1604	7154374636210229	CMakeFiles/IMDAP.dir/mainwindow.cpp.obj	fe78e9a537392560
+1604	1975	7154374639593855	IMDAP.exe	fc1928419500ede4

@@ -1,0 +1,8 @@
+C:/Users/86181/Documents/GitHub/IMDAP/build-IMDAP-Desktop_Qt_6_4_2_MSVC2019_64bit-Debug/CMakeFiles/IMDAP.dir
+C:/Users/86181/Documents/GitHub/IMDAP/build-IMDAP-Desktop_Qt_6_4_2_MSVC2019_64bit-Debug/CMakeFiles/edit_cache.dir
+C:/Users/86181/Documents/GitHub/IMDAP/build-IMDAP-Desktop_Qt_6_4_2_MSVC2019_64bit-Debug/CMakeFiles/rebuild_cache.dir
+C:/Users/86181/Documents/GitHub/IMDAP/build-IMDAP-Desktop_Qt_6_4_2_MSVC2019_64bit-Debug/CMakeFiles/list_install_components.dir
+C:/Users/86181/Documents/GitHub/IMDAP/build-IMDAP-Desktop_Qt_6_4_2_MSVC2019_64bit-Debug/CMakeFiles/install.dir
+C:/Users/86181/Documents/GitHub/IMDAP/build-IMDAP-Desktop_Qt_6_4_2_MSVC2019_64bit-Debug/CMakeFiles/install/local.dir
+C:/Users/86181/Documents/GitHub/IMDAP/build-IMDAP-Desktop_Qt_6_4_2_MSVC2019_64bit-Debug/CMakeFiles/IMDAP_autogen_timestamp_deps.dir
+C:/Users/86181/Documents/GitHub/IMDAP/build-IMDAP-Desktop_Qt_6_4_2_MSVC2019_64bit-Debug/CMakeFiles/IMDAP_autogen.dir
