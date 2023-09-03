@@ -1,0 +1,15 @@
+# ninja log v5
+0	367	1693734302423665375	IMDAP_autogen/timestamp	1b66644905ba77b2
+0	367	1693734302423665375	IMDAP_autogen/mocs_compilation.cpp	1b66644905ba77b2
+0	367	1693734302423665375	/Users/suxingjian/Documents/GitHub/IMDAP/build-IMDAP-Qt_6_5_1_for_macOS-Debug/IMDAP_autogen/timestamp	1b66644905ba77b2
+0	367	1693734302423665375	/Users/suxingjian/Documents/GitHub/IMDAP/build-IMDAP-Qt_6_5_1_for_macOS-Debug/IMDAP_autogen/mocs_compilation.cpp	1b66644905ba77b2
+367	1009	1693734303068713644	CMakeFiles/IMDAP.dir/IMDAP_autogen/mocs_compilation.cpp.o	b0b45aa21f773d00
+367	1011	1693734303071306637	CMakeFiles/IMDAP.dir/main.cpp.o	eed1718f86ba4208
+367	1036	1693734303096680143	CMakeFiles/IMDAP.dir/mainwindow.cpp.o	4a5f4371bbe58e2f
+1036	1139	1693734303201155163	IMDAP.app/Contents/MacOS/IMDAP	b38decafd04ea77c
+5	41	1693734348189972176	IMDAP_autogen/timestamp	1b66644905ba77b2
+5	41	1693734348189972176	IMDAP_autogen/mocs_compilation.cpp	1b66644905ba77b2
+5	41	1693734348189972176	/Users/suxingjian/Documents/GitHub/IMDAP/build-IMDAP-Qt_6_5_1_for_macOS-Debug/IMDAP_autogen/timestamp	1b66644905ba77b2
+5	41	1693734348189972176	/Users/suxingjian/Documents/GitHub/IMDAP/build-IMDAP-Qt_6_5_1_for_macOS-Debug/IMDAP_autogen/mocs_compilation.cpp	1b66644905ba77b2
+43	705	1693734348850064870	CMakeFiles/IMDAP.dir/mainwindow.cpp.o	4a5f4371bbe58e2f
+705	796	1693734348941559991	IMDAP.app/Contents/MacOS/IMDAP	b38decafd04ea77c
