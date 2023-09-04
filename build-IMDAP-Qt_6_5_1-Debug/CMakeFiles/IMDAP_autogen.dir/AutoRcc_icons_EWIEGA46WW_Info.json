@@ -1,0 +1,19 @@
+{
+	"BUILD_DIR" : "/Users/suxingjian/Documents/GitHub/IMDAP/build-IMDAP-Qt_6_5_1-Debug/IMDAP_autogen",
+	"CMAKE_BINARY_DIR" : "/Users/suxingjian/Documents/GitHub/IMDAP/build-IMDAP-Qt_6_5_1-Debug",
+	"CMAKE_CURRENT_BINARY_DIR" : "/Users/suxingjian/Documents/GitHub/IMDAP/build-IMDAP-Qt_6_5_1-Debug",
+	"CMAKE_CURRENT_SOURCE_DIR" : "/Users/suxingjian/Documents/GitHub/IMDAP/IMDAP",
+	"CMAKE_SOURCE_DIR" : "/Users/suxingjian/Documents/GitHub/IMDAP/IMDAP",
+	"INCLUDE_DIR" : "/Users/suxingjian/Documents/GitHub/IMDAP/build-IMDAP-Qt_6_5_1-Debug/IMDAP_autogen/include",
+	"INPUTS" : [ "/Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/wenjian.png" ],
+	"LOCK_FILE" : "/Users/suxingjian/Documents/GitHub/IMDAP/build-IMDAP-Qt_6_5_1-Debug/CMakeFiles/IMDAP_autogen.dir/AutoRcc_icons_EWIEGA46WW_Lock.lock",
+	"MULTI_CONFIG" : false,
+	"OPTIONS" : [ "-name", "icons" ],
+	"OUTPUT_CHECKSUM" : "EWIEGA46WW",
+	"OUTPUT_NAME" : "qrc_icons.cpp",
+	"RCC_EXECUTABLE" : "/opt/homebrew/share/qt/libexec/rcc",
+	"RCC_LIST_OPTIONS" : [ "--list" ],
+	"SETTINGS_FILE" : "/Users/suxingjian/Documents/GitHub/IMDAP/build-IMDAP-Qt_6_5_1-Debug/CMakeFiles/IMDAP_autogen.dir/AutoRcc_icons_EWIEGA46WW_Used.txt",
+	"SOURCE" : "/Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/icons.qrc",
+	"VERBOSITY" : 0
+}

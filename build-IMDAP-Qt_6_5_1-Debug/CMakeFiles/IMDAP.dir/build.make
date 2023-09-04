@@ -69,10 +69,17 @@ include CMakeFiles/IMDAP.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/IMDAP.dir/flags.make
 
+IMDAP_autogen/EWIEGA46WW/qrc_icons.cpp: /Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/icons.qrc
+IMDAP_autogen/EWIEGA46WW/qrc_icons.cpp: CMakeFiles/IMDAP_autogen.dir/AutoRcc_icons_EWIEGA46WW_Info.json
+IMDAP_autogen/EWIEGA46WW/qrc_icons.cpp: /Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/wenjian.png
+IMDAP_autogen/EWIEGA46WW/qrc_icons.cpp: /opt/homebrew/share/qt/libexec/rcc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/suxingjian/Documents/GitHub/IMDAP/build-IMDAP-Qt_6_5_1-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Automatic RCC for icons.qrc"
+	/usr/local/Cellar/cmake/3.26.4/bin/cmake -E cmake_autorcc /Users/suxingjian/Documents/GitHub/IMDAP/build-IMDAP-Qt_6_5_1-Debug/CMakeFiles/IMDAP_autogen.dir/AutoRcc_icons_EWIEGA46WW_Info.json Debug
+
 CMakeFiles/IMDAP.dir/IMDAP_autogen/mocs_compilation.cpp.o: CMakeFiles/IMDAP.dir/flags.make
 CMakeFiles/IMDAP.dir/IMDAP_autogen/mocs_compilation.cpp.o: IMDAP_autogen/mocs_compilation.cpp
 CMakeFiles/IMDAP.dir/IMDAP_autogen/mocs_compilation.cpp.o: CMakeFiles/IMDAP.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/suxingjian/Documents/GitHub/IMDAP/build-IMDAP-Qt_6_5_1-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/IMDAP.dir/IMDAP_autogen/mocs_compilation.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/suxingjian/Documents/GitHub/IMDAP/build-IMDAP-Qt_6_5_1-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/IMDAP.dir/IMDAP_autogen/mocs_compilation.cpp.o"
 	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/IMDAP.dir/IMDAP_autogen/mocs_compilation.cpp.o -MF CMakeFiles/IMDAP.dir/IMDAP_autogen/mocs_compilation.cpp.o.d -o CMakeFiles/IMDAP.dir/IMDAP_autogen/mocs_compilation.cpp.o -c /Users/suxingjian/Documents/GitHub/IMDAP/build-IMDAP-Qt_6_5_1-Debug/IMDAP_autogen/mocs_compilation.cpp
 
 CMakeFiles/IMDAP.dir/IMDAP_autogen/mocs_compilation.cpp.i: cmake_force
@@ -86,7 +93,7 @@ CMakeFiles/IMDAP.dir/IMDAP_autogen/mocs_compilation.cpp.s: cmake_force
 CMakeFiles/IMDAP.dir/main.cpp.o: CMakeFiles/IMDAP.dir/flags.make
 CMakeFiles/IMDAP.dir/main.cpp.o: /Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/main.cpp
 CMakeFiles/IMDAP.dir/main.cpp.o: CMakeFiles/IMDAP.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/suxingjian/Documents/GitHub/IMDAP/build-IMDAP-Qt_6_5_1-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/IMDAP.dir/main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/suxingjian/Documents/GitHub/IMDAP/build-IMDAP-Qt_6_5_1-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/IMDAP.dir/main.cpp.o"
 	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/IMDAP.dir/main.cpp.o -MF CMakeFiles/IMDAP.dir/main.cpp.o.d -o CMakeFiles/IMDAP.dir/main.cpp.o -c /Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/main.cpp
 
 CMakeFiles/IMDAP.dir/main.cpp.i: cmake_force
@@ -100,7 +107,7 @@ CMakeFiles/IMDAP.dir/main.cpp.s: cmake_force
 CMakeFiles/IMDAP.dir/mainwindow.cpp.o: CMakeFiles/IMDAP.dir/flags.make
 CMakeFiles/IMDAP.dir/mainwindow.cpp.o: /Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/mainwindow.cpp
 CMakeFiles/IMDAP.dir/mainwindow.cpp.o: CMakeFiles/IMDAP.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/suxingjian/Documents/GitHub/IMDAP/build-IMDAP-Qt_6_5_1-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/IMDAP.dir/mainwindow.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/suxingjian/Documents/GitHub/IMDAP/build-IMDAP-Qt_6_5_1-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/IMDAP.dir/mainwindow.cpp.o"
 	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/IMDAP.dir/mainwindow.cpp.o -MF CMakeFiles/IMDAP.dir/mainwindow.cpp.o.d -o CMakeFiles/IMDAP.dir/mainwindow.cpp.o -c /Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/mainwindow.cpp
 
 CMakeFiles/IMDAP.dir/mainwindow.cpp.i: cmake_force
@@ -111,11 +118,26 @@ CMakeFiles/IMDAP.dir/mainwindow.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/IMDAP.dir/mainwindow.cpp.s"
 	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/mainwindow.cpp -o CMakeFiles/IMDAP.dir/mainwindow.cpp.s
 
+CMakeFiles/IMDAP.dir/IMDAP_autogen/EWIEGA46WW/qrc_icons.cpp.o: CMakeFiles/IMDAP.dir/flags.make
+CMakeFiles/IMDAP.dir/IMDAP_autogen/EWIEGA46WW/qrc_icons.cpp.o: IMDAP_autogen/EWIEGA46WW/qrc_icons.cpp
+CMakeFiles/IMDAP.dir/IMDAP_autogen/EWIEGA46WW/qrc_icons.cpp.o: CMakeFiles/IMDAP.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/suxingjian/Documents/GitHub/IMDAP/build-IMDAP-Qt_6_5_1-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/IMDAP.dir/IMDAP_autogen/EWIEGA46WW/qrc_icons.cpp.o"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/IMDAP.dir/IMDAP_autogen/EWIEGA46WW/qrc_icons.cpp.o -MF CMakeFiles/IMDAP.dir/IMDAP_autogen/EWIEGA46WW/qrc_icons.cpp.o.d -o CMakeFiles/IMDAP.dir/IMDAP_autogen/EWIEGA46WW/qrc_icons.cpp.o -c /Users/suxingjian/Documents/GitHub/IMDAP/build-IMDAP-Qt_6_5_1-Debug/IMDAP_autogen/EWIEGA46WW/qrc_icons.cpp
+
+CMakeFiles/IMDAP.dir/IMDAP_autogen/EWIEGA46WW/qrc_icons.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/IMDAP.dir/IMDAP_autogen/EWIEGA46WW/qrc_icons.cpp.i"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/suxingjian/Documents/GitHub/IMDAP/build-IMDAP-Qt_6_5_1-Debug/IMDAP_autogen/EWIEGA46WW/qrc_icons.cpp > CMakeFiles/IMDAP.dir/IMDAP_autogen/EWIEGA46WW/qrc_icons.cpp.i
+
+CMakeFiles/IMDAP.dir/IMDAP_autogen/EWIEGA46WW/qrc_icons.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/IMDAP.dir/IMDAP_autogen/EWIEGA46WW/qrc_icons.cpp.s"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/suxingjian/Documents/GitHub/IMDAP/build-IMDAP-Qt_6_5_1-Debug/IMDAP_autogen/EWIEGA46WW/qrc_icons.cpp -o CMakeFiles/IMDAP.dir/IMDAP_autogen/EWIEGA46WW/qrc_icons.cpp.s
+
 # Object files for target IMDAP
 IMDAP_OBJECTS = \
 "CMakeFiles/IMDAP.dir/IMDAP_autogen/mocs_compilation.cpp.o" \
 "CMakeFiles/IMDAP.dir/main.cpp.o" \
-"CMakeFiles/IMDAP.dir/mainwindow.cpp.o"
+"CMakeFiles/IMDAP.dir/mainwindow.cpp.o" \
+"CMakeFiles/IMDAP.dir/IMDAP_autogen/EWIEGA46WW/qrc_icons.cpp.o"
 
 # External object files for target IMDAP
 IMDAP_EXTERNAL_OBJECTS =
@@ -123,12 +145,13 @@ IMDAP_EXTERNAL_OBJECTS =
 IMDAP.app/Contents/MacOS/IMDAP: CMakeFiles/IMDAP.dir/IMDAP_autogen/mocs_compilation.cpp.o
 IMDAP.app/Contents/MacOS/IMDAP: CMakeFiles/IMDAP.dir/main.cpp.o
 IMDAP.app/Contents/MacOS/IMDAP: CMakeFiles/IMDAP.dir/mainwindow.cpp.o
+IMDAP.app/Contents/MacOS/IMDAP: CMakeFiles/IMDAP.dir/IMDAP_autogen/EWIEGA46WW/qrc_icons.cpp.o
 IMDAP.app/Contents/MacOS/IMDAP: CMakeFiles/IMDAP.dir/build.make
 IMDAP.app/Contents/MacOS/IMDAP: /opt/homebrew/lib/QtWidgets.framework/Versions/A/QtWidgets
 IMDAP.app/Contents/MacOS/IMDAP: /opt/homebrew/lib/QtGui.framework/Versions/A/QtGui
 IMDAP.app/Contents/MacOS/IMDAP: /opt/homebrew/lib/QtCore.framework/Versions/A/QtCore
 IMDAP.app/Contents/MacOS/IMDAP: CMakeFiles/IMDAP.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/suxingjian/Documents/GitHub/IMDAP/build-IMDAP-Qt_6_5_1-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable IMDAP.app/Contents/MacOS/IMDAP"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/suxingjian/Documents/GitHub/IMDAP/build-IMDAP-Qt_6_5_1-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable IMDAP.app/Contents/MacOS/IMDAP"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/IMDAP.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -139,7 +162,7 @@ CMakeFiles/IMDAP.dir/clean:
 	$(CMAKE_COMMAND) -P CMakeFiles/IMDAP.dir/cmake_clean.cmake
 .PHONY : CMakeFiles/IMDAP.dir/clean
 
-CMakeFiles/IMDAP.dir/depend:
+CMakeFiles/IMDAP.dir/depend: IMDAP_autogen/EWIEGA46WW/qrc_icons.cpp
 	cd /Users/suxingjian/Documents/GitHub/IMDAP/build-IMDAP-Qt_6_5_1-Debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/suxingjian/Documents/GitHub/IMDAP/IMDAP /Users/suxingjian/Documents/GitHub/IMDAP/IMDAP /Users/suxingjian/Documents/GitHub/IMDAP/build-IMDAP-Qt_6_5_1-Debug /Users/suxingjian/Documents/GitHub/IMDAP/build-IMDAP-Qt_6_5_1-Debug /Users/suxingjian/Documents/GitHub/IMDAP/build-IMDAP-Qt_6_5_1-Debug/CMakeFiles/IMDAP.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/IMDAP.dir/depend
 

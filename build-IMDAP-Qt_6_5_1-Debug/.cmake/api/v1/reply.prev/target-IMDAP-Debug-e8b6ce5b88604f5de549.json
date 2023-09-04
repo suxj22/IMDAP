@@ -45,7 +45,7 @@
 			{
 				"command" : 3,
 				"file" : 1,
-				"line" : 23,
+				"line" : 26,
 				"parent" : 0
 			},
 			{
@@ -69,19 +69,19 @@
 			{
 				"command" : 4,
 				"file" : 1,
-				"line" : 63,
+				"line" : 67,
 				"parent" : 0
 			},
 			{
 				"command" : 5,
 				"file" : 1,
-				"line" : 46,
+				"line" : 50,
 				"parent" : 0
 			},
 			{
 				"command" : 8,
 				"file" : 1,
-				"line" : 13,
+				"line" : 16,
 				"parent" : 0
 			},
 			{
@@ -208,7 +208,7 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "-DQT_QML_DEBUG -g -std=gnu++17 -arch x86_64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk"
+					"fragment" : "-DQT_QML_DEBUG -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk"
 				}
 			],
 			"defines" : 
@@ -287,7 +287,8 @@
 			[
 				0,
 				1,
-				2
+				2,
+				344
 			]
 		}
 	],
@@ -399,7 +400,8 @@
 			[
 				0,
 				1,
-				2
+				2,
+				344
 			]
 		},
 		{
@@ -714,7 +716,7 @@
 				309,
 				310,
 				311,
-				342
+				343
 			]
 		},
 		{
@@ -751,7 +753,15 @@
 				338,
 				339,
 				340,
-				341
+				341,
+				342
+			]
+		},
+		{
+			"name" : "CMake Rules",
+			"sourceIndexes" : 
+			[
+				345
 			]
 		}
 	],
@@ -2472,10 +2482,28 @@
 			"sourceGroupIndex" : 2
 		},
 		{
+			"backtrace" : 4,
+			"path" : "icons.qrc",
+			"sourceGroupIndex" : 2
+		},
+		{
 			"backtrace" : 0,
 			"isGenerated" : true,
 			"path" : "/Users/suxingjian/Documents/GitHub/IMDAP/build-IMDAP-Qt_6_5_1-Debug/IMDAP_autogen/include/ui_mainwindow.h",
 			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "/Users/suxingjian/Documents/GitHub/IMDAP/build-IMDAP-Qt_6_5_1-Debug/IMDAP_autogen/EWIEGA46WW/qrc_icons.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "/Users/suxingjian/Documents/GitHub/IMDAP/build-IMDAP-Qt_6_5_1-Debug/IMDAP_autogen/EWIEGA46WW/qrc_icons.cpp.rule",
+			"sourceGroupIndex" : 3
 		}
 	],
 	"type" : "EXECUTABLE"

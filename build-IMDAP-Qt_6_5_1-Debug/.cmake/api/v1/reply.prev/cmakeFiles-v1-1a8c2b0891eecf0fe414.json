@@ -1403,6 +1403,9 @@
 			"path" : "/usr/local/Cellar/cmake/3.26.4/share/cmake/Modules/GNUInstallDirs.cmake"
 		},
 		{
+			"path" : "icons.qrc"
+		},
+		{
 			"isExternal" : true,
 			"path" : "/opt/homebrew/Cellar/qt/6.5.1_3/lib/cmake/Qt6/macos/MacOSXBundleInfo.plist.in"
 		}
