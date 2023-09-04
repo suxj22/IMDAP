@@ -914,6 +914,12 @@ CMakeFiles/IMDAP.dir/mainwindow.cpp.o: \
   /opt/homebrew/include/QtGui/qinputmethod.h \
   /opt/homebrew/include/QtCore/qlocale.h \
   /opt/homebrew/include/QtGui/qguiapplication_platform.h \
+  /opt/homebrew/include/QtWidgets/QGridLayout \
+  /opt/homebrew/lib/QtWidgets.framework/Headers/qgridlayout.h \
+  /opt/homebrew/include/QtWidgets/qlayout.h \
+  /opt/homebrew/include/QtWidgets/qlayoutitem.h \
+  /opt/homebrew/include/QtWidgets/qboxlayout.h \
+  /opt/homebrew/include/QtWidgets/qgridlayout.h \
   /opt/homebrew/include/QtWidgets/QHeaderView \
   /opt/homebrew/lib/QtWidgets.framework/Headers/qheaderview.h \
   /opt/homebrew/include/QtWidgets/qabstractitemview.h \

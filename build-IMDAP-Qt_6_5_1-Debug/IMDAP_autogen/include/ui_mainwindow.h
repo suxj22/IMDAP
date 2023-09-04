@@ -12,6 +12,7 @@
 #include <QtCore/QVariant>
 #include <QtGui/QAction>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
@@ -27,6 +28,7 @@ class Ui_MainWindow
 public:
     QAction *action;
     QWidget *centralwidget;
+    QGridLayout *gridLayout;
     QTableWidget *tableWidget;
     QMenuBar *menubar;
     QStatusBar *statusbar;
@@ -44,9 +46,13 @@ public:
         action->setIcon(icon);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
+        gridLayout = new QGridLayout(centralwidget);
+        gridLayout->setObjectName("gridLayout");
         tableWidget = new QTableWidget(centralwidget);
         tableWidget->setObjectName("tableWidget");
-        tableWidget->setGeometry(QRect(12, 12, 256, 192));
+
+        gridLayout->addWidget(tableWidget, 0, 0, 1, 1);
+
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");

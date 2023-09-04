@@ -2733,12 +2733,6 @@ CMakeFiles/IMDAP.dir/mainwindow.cpp.o: /Users/suxingjian/Documents/GitHub/IMDAP/
   /opt/homebrew/include/QtGui/qinputmethod.h \
   /opt/homebrew/include/QtCore/qlocale.h \
   /opt/homebrew/include/QtGui/qguiapplication_platform.h \
-  /opt/homebrew/include/QtWidgets/QGridLayout \
-  /opt/homebrew/lib/QtWidgets.framework/Headers/qgridlayout.h \
-  /opt/homebrew/include/QtWidgets/qlayout.h \
-  /opt/homebrew/include/QtWidgets/qlayoutitem.h \
-  /opt/homebrew/include/QtWidgets/qboxlayout.h \
-  /opt/homebrew/include/QtWidgets/qgridlayout.h \
   /opt/homebrew/include/QtWidgets/QHeaderView \
   /opt/homebrew/lib/QtWidgets.framework/Headers/qheaderview.h \
   /opt/homebrew/include/QtWidgets/qabstractitemview.h \
@@ -3393,14 +3387,6 @@ CMakeFiles/IMDAP.dir/mainwindow.cpp.o: /Users/suxingjian/Documents/GitHub/IMDAP/
 
 /opt/homebrew/include/QtWidgets/qabstractitemview.h:
 
-/opt/homebrew/include/QtWidgets/qgridlayout.h:
-
-/opt/homebrew/include/QtWidgets/qboxlayout.h:
-
-/opt/homebrew/include/QtWidgets/qlayoutitem.h:
-
-/opt/homebrew/include/QtWidgets/qlayout.h:
-
 /opt/homebrew/include/QtWidgets/QApplication:
 
 /opt/homebrew/include/QtGui/QAction:
@@ -3794,8 +3780,6 @@ CMakeFiles/IMDAP.dir/mainwindow.cpp.o: /Users/suxingjian/Documents/GitHub/IMDAP/
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/c++/v1/__algorithm/ranges_move.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/c++/v1/__algorithm/ranges_merge.h:
-
-/opt/homebrew/lib/QtWidgets.framework/Headers/qgridlayout.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/c++/v1/__compare/compare_partial_order_fallback.h:
 
@@ -5354,8 +5338,6 @@ IMDAP_autogen/EWIEGA46WW/moc_mainwindow.cpp:
 /opt/homebrew/include/QtWidgets/qtabwidget.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/c++/v1/__bit/bit_cast.h:
-
-/opt/homebrew/include/QtWidgets/QGridLayout:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/c++/v1/__iterator/concepts.h:
 
