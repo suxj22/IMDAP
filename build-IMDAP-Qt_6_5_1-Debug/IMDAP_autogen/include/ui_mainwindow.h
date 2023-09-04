@@ -36,7 +36,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName("MainWindow");
-        MainWindow->resize(1920, 1080);
+        MainWindow->resize(1280, 720);
         action = new QAction(MainWindow);
         action->setObjectName("action");
         QIcon icon;
@@ -46,11 +46,11 @@ public:
         centralwidget->setObjectName("centralwidget");
         tableWidget = new QTableWidget(centralwidget);
         tableWidget->setObjectName("tableWidget");
-        tableWidget->setGeometry(QRect(0, 0, 1551, 931));
+        tableWidget->setGeometry(QRect(12, 12, 256, 192));
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 1920, 22));
+        menubar->setGeometry(QRect(0, 0, 1280, 22));
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName("statusbar");
