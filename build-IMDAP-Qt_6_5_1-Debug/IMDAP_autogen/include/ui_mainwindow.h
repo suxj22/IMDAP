@@ -12,9 +12,11 @@
 #include <QtCore/QVariant>
 #include <QtGui/QAction>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QHeaderView>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QStatusBar>
+#include <QtWidgets/QTableWidget>
 #include <QtWidgets/QToolBar>
 #include <QtWidgets/QWidget>
 
@@ -25,6 +27,7 @@ class Ui_MainWindow
 public:
     QAction *action;
     QWidget *centralwidget;
+    QTableWidget *tableWidget;
     QMenuBar *menubar;
     QStatusBar *statusbar;
     QToolBar *toolBar;
@@ -41,6 +44,9 @@ public:
         action->setIcon(icon);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
+        tableWidget = new QTableWidget(centralwidget);
+        tableWidget->setObjectName("tableWidget");
+        tableWidget->setGeometry(QRect(0, 0, 1551, 931));
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
@@ -52,6 +58,7 @@ public:
         toolBar = new QToolBar(MainWindow);
         toolBar->setObjectName("toolBar");
         toolBar->setMinimumSize(QSize(0, 0));
+        toolBar->setMovable(false);
         toolBar->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);
         MainWindow->addToolBar(Qt::TopToolBarArea, toolBar);
 

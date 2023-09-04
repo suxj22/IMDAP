@@ -335,7 +335,8 @@
 		"/opt/homebrew/lib/cmake/Qt6Widgets/Qt6QMacStylePluginTargets-release.cmake",
 		"/opt/homebrew/lib/cmake/Qt6Widgets/Qt6QMacStylePluginAdditionalTargetInfo.cmake",
 		"/usr/local/Cellar/cmake/3.26.4/share/cmake/Modules/GNUInstallDirs.cmake",
-		"/Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/icons.qrc"
+		"/Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/icons.qrc",
+		"/Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/data.qrc"
 	],
 	"CMAKE_SOURCE_DIR" : "/Users/suxingjian/Documents/GitHub/IMDAP/IMDAP",
 	"DEP_FILE" : "",

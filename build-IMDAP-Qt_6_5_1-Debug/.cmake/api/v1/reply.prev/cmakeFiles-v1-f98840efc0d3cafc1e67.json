@@ -1406,6 +1406,9 @@
 			"path" : "icons.qrc"
 		},
 		{
+			"path" : "data.qrc"
+		},
+		{
 			"isExternal" : true,
 			"path" : "/opt/homebrew/Cellar/qt/6.5.1_3/lib/cmake/Qt6/macos/MacOSXBundleInfo.plist.in"
 		}

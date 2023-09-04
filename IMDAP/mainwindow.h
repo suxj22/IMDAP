@@ -15,7 +15,11 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+public slots:
+    void loadCSVFileToTableWidget();
+
 private:
     Ui::MainWindow *ui;
+    QString lastImportedFilePath; // 避免重复导入相同文件
 };
 #endif // MAINWINDOW_H

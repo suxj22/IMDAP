@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_GENERATOR "Unix Makefiles")
 set(CMAKE_MAKEFILE_DEPENDS
   "CMakeCache.txt"
   "/Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/CMakeLists.txt"
+  "/Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/data.qrc"
   "/Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/icons.qrc"
   ".qtc/package-manager/auto-setup.cmake"
   "CMakeFiles/3.26.4/CMakeCXXCompiler.cmake"
@@ -263,6 +264,7 @@ set(CMAKE_MAKEFILE_OUTPUTS
 set(CMAKE_MAKEFILE_PRODUCTS
   "CMakeFiles/IMDAP_autogen.dir/AutogenInfo.json"
   "CMakeFiles/IMDAP_autogen.dir/AutoRcc_icons_EWIEGA46WW_Info.json"
+  "CMakeFiles/IMDAP_autogen.dir/AutoRcc_data_EWIEGA46WW_Info.json"
   ".qt/QtDeploySupport.cmake"
   "IMDAP.app/Contents/MacOS"
   "IMDAP.app/Contents/Info.plist"

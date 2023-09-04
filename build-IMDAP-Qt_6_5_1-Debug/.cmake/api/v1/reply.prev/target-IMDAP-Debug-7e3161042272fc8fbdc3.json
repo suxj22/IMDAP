@@ -69,13 +69,13 @@
 			{
 				"command" : 4,
 				"file" : 1,
-				"line" : 67,
+				"line" : 68,
 				"parent" : 0
 			},
 			{
 				"command" : 5,
 				"file" : 1,
-				"line" : 50,
+				"line" : 51,
 				"parent" : 0
 			},
 			{
@@ -288,7 +288,8 @@
 				0,
 				1,
 				2,
-				344
+				345,
+				346
 			]
 		}
 	],
@@ -401,7 +402,8 @@
 				0,
 				1,
 				2,
-				344
+				345,
+				346
 			]
 		},
 		{
@@ -716,7 +718,7 @@
 				309,
 				310,
 				311,
-				343
+				344
 			]
 		},
 		{
@@ -754,14 +756,16 @@
 				339,
 				340,
 				341,
-				342
+				342,
+				343
 			]
 		},
 		{
 			"name" : "CMake Rules",
 			"sourceIndexes" : 
 			[
-				345
+				347,
+				348
 			]
 		}
 	],
@@ -2487,6 +2491,11 @@
 			"sourceGroupIndex" : 2
 		},
 		{
+			"backtrace" : 4,
+			"path" : "data.qrc",
+			"sourceGroupIndex" : 2
+		},
+		{
 			"backtrace" : 0,
 			"isGenerated" : true,
 			"path" : "/Users/suxingjian/Documents/GitHub/IMDAP/build-IMDAP-Qt_6_5_1-Debug/IMDAP_autogen/include/ui_mainwindow.h",
@@ -2501,8 +2510,21 @@
 		},
 		{
 			"backtrace" : 0,
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "/Users/suxingjian/Documents/GitHub/IMDAP/build-IMDAP-Qt_6_5_1-Debug/IMDAP_autogen/EWIEGA46WW/qrc_data.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 0,
 			"isGenerated" : true,
 			"path" : "/Users/suxingjian/Documents/GitHub/IMDAP/build-IMDAP-Qt_6_5_1-Debug/IMDAP_autogen/EWIEGA46WW/qrc_icons.cpp.rule",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "/Users/suxingjian/Documents/GitHub/IMDAP/build-IMDAP-Qt_6_5_1-Debug/IMDAP_autogen/EWIEGA46WW/qrc_data.cpp.rule",
 			"sourceGroupIndex" : 3
 		}
 	],
