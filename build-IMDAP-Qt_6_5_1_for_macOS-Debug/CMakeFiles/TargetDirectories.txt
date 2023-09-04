@@ -1,9 +1,0 @@
-/Users/suxingjian/Documents/GitHub/IMDAP/build-IMDAP-Qt_6_5_1_for_macOS-Debug/CMakeFiles/IMDAP.dir
-/Users/suxingjian/Documents/GitHub/IMDAP/build-IMDAP-Qt_6_5_1_for_macOS-Debug/CMakeFiles/edit_cache.dir
-/Users/suxingjian/Documents/GitHub/IMDAP/build-IMDAP-Qt_6_5_1_for_macOS-Debug/CMakeFiles/rebuild_cache.dir
-/Users/suxingjian/Documents/GitHub/IMDAP/build-IMDAP-Qt_6_5_1_for_macOS-Debug/CMakeFiles/list_install_components.dir
-/Users/suxingjian/Documents/GitHub/IMDAP/build-IMDAP-Qt_6_5_1_for_macOS-Debug/CMakeFiles/install.dir
-/Users/suxingjian/Documents/GitHub/IMDAP/build-IMDAP-Qt_6_5_1_for_macOS-Debug/CMakeFiles/install/local.dir
-/Users/suxingjian/Documents/GitHub/IMDAP/build-IMDAP-Qt_6_5_1_for_macOS-Debug/CMakeFiles/install/strip.dir
-/Users/suxingjian/Documents/GitHub/IMDAP/build-IMDAP-Qt_6_5_1_for_macOS-Debug/CMakeFiles/IMDAP_autogen_timestamp_deps.dir
-/Users/suxingjian/Documents/GitHub/IMDAP/build-IMDAP-Qt_6_5_1_for_macOS-Debug/CMakeFiles/IMDAP_autogen.dir
