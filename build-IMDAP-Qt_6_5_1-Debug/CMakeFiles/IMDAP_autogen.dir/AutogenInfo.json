@@ -2186,9 +2186,57 @@
 			null
 		],
 		[
+			"/Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/averageandmeandialog.h",
+			"MU",
+			"EWIEGA46WW/moc_averageandmeandialog.cpp",
+			null
+		],
+		[
+			"/Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/common.h",
+			"MU",
+			"EWIEGA46WW/moc_common.cpp",
+			null
+		],
+		[
+			"/Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/covariance.hpp",
+			"MU",
+			"EWIEGA46WW/moc_covariance.cpp",
+			null
+		],
+		[
+			"/Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/kmeans.hpp",
+			"MU",
+			"EWIEGA46WW/moc_kmeans.cpp",
+			null
+		],
+		[
+			"/Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/leastsquare.hpp",
+			"MU",
+			"EWIEGA46WW/moc_leastsquare.cpp",
+			null
+		],
+		[
 			"/Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/mainwindow.h",
 			"MU",
 			"EWIEGA46WW/moc_mainwindow.cpp",
+			null
+		],
+		[
+			"/Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/pca.hpp",
+			"MU",
+			"EWIEGA46WW/moc_pca.cpp",
+			null
+		],
+		[
+			"/Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/rowfeature.hpp",
+			"MU",
+			"EWIEGA46WW/moc_rowfeature.cpp",
+			null
+		],
+		[
+			"/Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/xgboost_example.h",
+			"MU",
+			"EWIEGA46WW/moc_xgboost_example.cpp",
 			null
 		]
 	],
@@ -2249,6 +2297,11 @@
 	"SETTINGS_FILE" : "/Users/suxingjian/Documents/GitHub/IMDAP/build-IMDAP-Qt_6_5_1-Debug/CMakeFiles/IMDAP_autogen.dir/AutogenUsed.txt",
 	"SOURCES" : 
 	[
+		[
+			"/Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/averageandmeandialog.cpp",
+			"MU",
+			null
+		],
 		[ "/Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/main.cpp", "MU", null ],
 		[
 			"/Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/mainwindow.cpp",

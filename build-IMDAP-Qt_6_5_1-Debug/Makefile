@@ -259,6 +259,30 @@ IMDAP_autogen/mocs_compilation.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/IMDAP.dir/build.make CMakeFiles/IMDAP.dir/IMDAP_autogen/mocs_compilation.cpp.s
 .PHONY : IMDAP_autogen/mocs_compilation.cpp.s
 
+averageandmeandialog.o: averageandmeandialog.cpp.o
+.PHONY : averageandmeandialog.o
+
+# target to build an object file
+averageandmeandialog.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/IMDAP.dir/build.make CMakeFiles/IMDAP.dir/averageandmeandialog.cpp.o
+.PHONY : averageandmeandialog.cpp.o
+
+averageandmeandialog.i: averageandmeandialog.cpp.i
+.PHONY : averageandmeandialog.i
+
+# target to preprocess a source file
+averageandmeandialog.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/IMDAP.dir/build.make CMakeFiles/IMDAP.dir/averageandmeandialog.cpp.i
+.PHONY : averageandmeandialog.cpp.i
+
+averageandmeandialog.s: averageandmeandialog.cpp.s
+.PHONY : averageandmeandialog.s
+
+# target to generate assembly for a file
+averageandmeandialog.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/IMDAP.dir/build.make CMakeFiles/IMDAP.dir/averageandmeandialog.cpp.s
+.PHONY : averageandmeandialog.cpp.s
+
 main.o: main.cpp.o
 .PHONY : main.o
 
@@ -330,6 +354,9 @@ help:
 	@echo "... IMDAP_autogen/mocs_compilation.o"
 	@echo "... IMDAP_autogen/mocs_compilation.i"
 	@echo "... IMDAP_autogen/mocs_compilation.s"
+	@echo "... averageandmeandialog.o"
+	@echo "... averageandmeandialog.i"
+	@echo "... averageandmeandialog.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

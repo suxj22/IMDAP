@@ -898,6 +898,8 @@ CMakeFiles/IMDAP.dir/mainwindow.cpp.o: \
   /opt/homebrew/include/QtGui/qcursor.h \
   /opt/homebrew/include/QtGui/qbitmap.h \
   /opt/homebrew/include/QtWidgets/qtabwidget.h \
+  /opt/homebrew/lib/QtCore.framework/Headers/QHash \
+  /opt/homebrew/lib/QtCore.framework/Headers/qhash.h \
   /Users/suxingjian/Documents/GitHub/IMDAP/build-IMDAP-Qt_6_5_1-Debug/IMDAP_autogen/include/./ui_mainwindow.h \
   /opt/homebrew/include/QtCore/QVariant \
   /opt/homebrew/lib/QtCore.framework/Headers/qvariant.h \
@@ -914,12 +916,20 @@ CMakeFiles/IMDAP.dir/mainwindow.cpp.o: \
   /opt/homebrew/include/QtGui/qinputmethod.h \
   /opt/homebrew/include/QtCore/qlocale.h \
   /opt/homebrew/include/QtGui/qguiapplication_platform.h \
-  /opt/homebrew/include/QtWidgets/QGridLayout \
-  /opt/homebrew/lib/QtWidgets.framework/Headers/qgridlayout.h \
-  /opt/homebrew/include/QtWidgets/qlayout.h \
+  /opt/homebrew/include/QtWidgets/QDockWidget \
+  /opt/homebrew/lib/QtWidgets.framework/Headers/qdockwidget.h \
+  /opt/homebrew/include/QtWidgets/QFormLayout \
+  /opt/homebrew/lib/QtWidgets.framework/Headers/qformlayout.h \
+  /opt/homebrew/include/QtWidgets/QLayout \
+  /opt/homebrew/lib/QtWidgets.framework/Headers/qlayout.h \
   /opt/homebrew/include/QtWidgets/qlayoutitem.h \
   /opt/homebrew/include/QtWidgets/qboxlayout.h \
+  /opt/homebrew/include/QtWidgets/qlayout.h \
   /opt/homebrew/include/QtWidgets/qgridlayout.h \
+  /opt/homebrew/include/QtWidgets/QGridLayout \
+  /opt/homebrew/lib/QtWidgets.framework/Headers/qgridlayout.h \
+  /opt/homebrew/include/QtWidgets/QHBoxLayout \
+  /opt/homebrew/lib/QtWidgets.framework/Headers/qboxlayout.h \
   /opt/homebrew/include/QtWidgets/QHeaderView \
   /opt/homebrew/lib/QtWidgets.framework/Headers/qheaderview.h \
   /opt/homebrew/include/QtWidgets/qabstractitemview.h \
@@ -937,17 +947,36 @@ CMakeFiles/IMDAP.dir/mainwindow.cpp.o: \
   /opt/homebrew/include/QtWidgets/qstyle.h \
   /opt/homebrew/include/QtWidgets/qtabbar.h \
   /opt/homebrew/include/QtWidgets/qrubberband.h \
+  /opt/homebrew/include/QtWidgets/QLabel \
+  /opt/homebrew/lib/QtWidgets.framework/Headers/qlabel.h \
+  /opt/homebrew/include/QtGui/qpicture.h \
+  /opt/homebrew/include/QtCore/qiodevice.h \
+  /opt/homebrew/include/QtGui/qtextdocument.h \
+  /opt/homebrew/include/QtCore/qurl.h \
   /opt/homebrew/include/QtWidgets/QMainWindow \
   /opt/homebrew/include/QtWidgets/QMenuBar \
   /opt/homebrew/lib/QtWidgets.framework/Headers/qmenubar.h \
   /opt/homebrew/include/QtWidgets/qmenu.h \
+  /opt/homebrew/include/QtWidgets/QPushButton \
+  /opt/homebrew/lib/QtWidgets.framework/Headers/qpushbutton.h \
+  /opt/homebrew/include/QtWidgets/qabstractbutton.h \
+  /opt/homebrew/include/QtWidgets/QSpacerItem \
+  /opt/homebrew/lib/QtWidgets.framework/Headers/qlayoutitem.h \
   /opt/homebrew/include/QtWidgets/QStatusBar \
   /opt/homebrew/lib/QtWidgets.framework/Headers/qstatusbar.h \
   /opt/homebrew/include/QtWidgets/QTableWidget \
   /opt/homebrew/lib/QtWidgets.framework/Headers/qtablewidget.h \
   /opt/homebrew/include/QtWidgets/qtableview.h \
+  /opt/homebrew/include/QtWidgets/QTextBrowser \
+  /opt/homebrew/lib/QtWidgets.framework/Headers/qtextbrowser.h \
+  /opt/homebrew/include/QtWidgets/qtextedit.h \
+  /opt/homebrew/include/QtGui/qtextoption.h \
+  /opt/homebrew/include/QtGui/qtextcursor.h \
+  /opt/homebrew/include/QtGui/qtextformat.h \
+  /opt/homebrew/include/QtGui/qpen.h \
   /opt/homebrew/include/QtWidgets/QToolBar \
   /opt/homebrew/lib/QtWidgets.framework/Headers/qtoolbar.h \
+  /opt/homebrew/include/QtWidgets/QVBoxLayout \
   /opt/homebrew/include/QtWidgets/QWidget \
   /opt/homebrew/lib/QtWidgets.framework/Headers/qwidget.h \
   /Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/Eigen/Dense \
@@ -1199,10 +1228,15 @@ CMakeFiles/IMDAP.dir/mainwindow.cpp.o: \
   /Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/Eigen/src/Eigenvalues/GeneralizedEigenSolver.h \
   /Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/Eigen/src/Eigenvalues/./RealQZ.h \
   /Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/Eigen/src/Eigenvalues/MatrixBaseEigenvalues.h \
+  /Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/rowfeature.hpp \
+  /Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/common.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/c++/v1/iostream \
+  /Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/averageandmeandialog.h \
+  /opt/homebrew/lib/QtWidgets.framework/Headers/QDialog \
+  /opt/homebrew/lib/QtWidgets.framework/Headers/qdialog.h \
   /opt/homebrew/lib/QtCore.framework/Headers/QFile \
   /opt/homebrew/lib/QtCore.framework/Headers/qfile.h \
   /opt/homebrew/include/QtCore/qfiledevice.h \
-  /opt/homebrew/include/QtCore/qiodevice.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/c++/v1/filesystem \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/c++/v1/__filesystem/copy_options.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/c++/v1/__filesystem/directory_entry.h \

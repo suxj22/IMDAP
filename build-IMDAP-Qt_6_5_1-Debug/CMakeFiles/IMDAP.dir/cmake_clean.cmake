@@ -8,6 +8,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/IMDAP.dir/IMDAP_autogen/EWIEGA46WW/qrc_icons.cpp.o.d"
   "CMakeFiles/IMDAP.dir/IMDAP_autogen/mocs_compilation.cpp.o"
   "CMakeFiles/IMDAP.dir/IMDAP_autogen/mocs_compilation.cpp.o.d"
+  "CMakeFiles/IMDAP.dir/averageandmeandialog.cpp.o"
+  "CMakeFiles/IMDAP.dir/averageandmeandialog.cpp.o.d"
   "CMakeFiles/IMDAP.dir/main.cpp.o"
   "CMakeFiles/IMDAP.dir/main.cpp.o.d"
   "CMakeFiles/IMDAP.dir/mainwindow.cpp.o"

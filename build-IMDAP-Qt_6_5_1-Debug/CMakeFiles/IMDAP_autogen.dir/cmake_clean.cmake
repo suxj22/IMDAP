@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/IMDAP_autogen"
+  "IMDAP_autogen/include/ui_averageandmeandialog.h"
   "IMDAP_autogen/include/ui_mainwindow.h"
   "IMDAP_autogen/mocs_compilation.cpp"
 )

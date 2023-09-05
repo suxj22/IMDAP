@@ -1,5 +1,6 @@
 <RCC>
     <qresource prefix="/icons">
-        <file>wenjian.png</file>
+        <file>icons/pingjunzhi.png</file>
+        <file>icons/wenjian.png</file>
     </qresource>
 </RCC>
