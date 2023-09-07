@@ -283,6 +283,30 @@ averageandmeandialog.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/IMDAP.dir/build.make CMakeFiles/IMDAP.dir/averageandmeandialog.cpp.s
 .PHONY : averageandmeandialog.cpp.s
 
+chartviewdialog.o: chartviewdialog.cpp.o
+.PHONY : chartviewdialog.o
+
+# target to build an object file
+chartviewdialog.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/IMDAP.dir/build.make CMakeFiles/IMDAP.dir/chartviewdialog.cpp.o
+.PHONY : chartviewdialog.cpp.o
+
+chartviewdialog.i: chartviewdialog.cpp.i
+.PHONY : chartviewdialog.i
+
+# target to preprocess a source file
+chartviewdialog.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/IMDAP.dir/build.make CMakeFiles/IMDAP.dir/chartviewdialog.cpp.i
+.PHONY : chartviewdialog.cpp.i
+
+chartviewdialog.s: chartviewdialog.cpp.s
+.PHONY : chartviewdialog.s
+
+# target to generate assembly for a file
+chartviewdialog.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/IMDAP.dir/build.make CMakeFiles/IMDAP.dir/chartviewdialog.cpp.s
+.PHONY : chartviewdialog.cpp.s
+
 main.o: main.cpp.o
 .PHONY : main.o
 
@@ -331,6 +355,30 @@ mainwindow.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/IMDAP.dir/build.make CMakeFiles/IMDAP.dir/mainwindow.cpp.s
 .PHONY : mainwindow.cpp.s
 
+selecttwocolumnsdialog.o: selecttwocolumnsdialog.cpp.o
+.PHONY : selecttwocolumnsdialog.o
+
+# target to build an object file
+selecttwocolumnsdialog.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/IMDAP.dir/build.make CMakeFiles/IMDAP.dir/selecttwocolumnsdialog.cpp.o
+.PHONY : selecttwocolumnsdialog.cpp.o
+
+selecttwocolumnsdialog.i: selecttwocolumnsdialog.cpp.i
+.PHONY : selecttwocolumnsdialog.i
+
+# target to preprocess a source file
+selecttwocolumnsdialog.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/IMDAP.dir/build.make CMakeFiles/IMDAP.dir/selecttwocolumnsdialog.cpp.i
+.PHONY : selecttwocolumnsdialog.cpp.i
+
+selecttwocolumnsdialog.s: selecttwocolumnsdialog.cpp.s
+.PHONY : selecttwocolumnsdialog.s
+
+# target to generate assembly for a file
+selecttwocolumnsdialog.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/IMDAP.dir/build.make CMakeFiles/IMDAP.dir/selecttwocolumnsdialog.cpp.s
+.PHONY : selecttwocolumnsdialog.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -357,12 +405,18 @@ help:
 	@echo "... averageandmeandialog.o"
 	@echo "... averageandmeandialog.i"
 	@echo "... averageandmeandialog.s"
+	@echo "... chartviewdialog.o"
+	@echo "... chartviewdialog.i"
+	@echo "... chartviewdialog.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
 	@echo "... mainwindow.o"
 	@echo "... mainwindow.i"
 	@echo "... mainwindow.s"
+	@echo "... selecttwocolumnsdialog.o"
+	@echo "... selecttwocolumnsdialog.i"
+	@echo "... selecttwocolumnsdialog.s"
 .PHONY : help
 
 

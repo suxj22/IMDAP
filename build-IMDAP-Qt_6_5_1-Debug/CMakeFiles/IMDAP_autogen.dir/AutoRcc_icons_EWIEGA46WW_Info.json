@@ -8,7 +8,9 @@
 	"INPUTS" : 
 	[
 		"/Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/icons/pingjunzhi.png",
-		"/Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/icons/wenjian.png"
+		"/Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/icons/zhifangtu.png",
+		"/Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/icons/wenjian.png",
+		"/Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/icons/sandiantu.png"
 	],
 	"LOCK_FILE" : "/Users/suxingjian/Documents/GitHub/IMDAP/build-IMDAP-Qt_6_5_1-Debug/CMakeFiles/IMDAP_autogen.dir/AutoRcc_icons_EWIEGA46WW_Lock.lock",
 	"MULTI_CONFIG" : false,

@@ -17,7 +17,6 @@
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
-#include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
@@ -36,6 +35,8 @@ class Ui_MainWindow
 public:
     QAction *action;
     QAction *AverageAndMeanAction;
+    QAction *HistogramAction;
+    QAction *ScatterAction;
     QWidget *centralwidget;
     QGridLayout *gridLayout;
     QVBoxLayout *verticalLayout;
@@ -48,16 +49,16 @@ public:
     QFormLayout *formLayout;
     QVBoxLayout *verticalLayout_2;
     QTextBrowser *textBrowser;
+    QHBoxLayout *horizontalLayout;
+    QSpacerItem *horizontalSpacer;
+    QPushButton *pushButton_2;
+    QPushButton *pushButton;
+    QVBoxLayout *verticalLayout_3;
     QHBoxLayout *horizontalLayout_2;
     QSpacerItem *horizontalSpacer_2;
     QPushButton *pushButton_4;
     QPushButton *pushButton_3;
     QSpacerItem *verticalSpacer;
-    QLabel *label;
-    QHBoxLayout *horizontalLayout;
-    QSpacerItem *horizontalSpacer;
-    QPushButton *pushButton_2;
-    QPushButton *pushButton;
 
     void setupUi(QMainWindow *MainWindow)
     {
@@ -74,6 +75,16 @@ public:
         QIcon icon1;
         icon1.addFile(QString::fromUtf8(":/icons/icons/pingjunzhi.png"), QSize(), QIcon::Normal, QIcon::Off);
         AverageAndMeanAction->setIcon(icon1);
+        HistogramAction = new QAction(MainWindow);
+        HistogramAction->setObjectName("HistogramAction");
+        QIcon icon2;
+        icon2.addFile(QString::fromUtf8(":/icons/icons/zhifangtu.png"), QSize(), QIcon::Normal, QIcon::Off);
+        HistogramAction->setIcon(icon2);
+        ScatterAction = new QAction(MainWindow);
+        ScatterAction->setObjectName("ScatterAction");
+        QIcon icon3;
+        icon3.addFile(QString::fromUtf8(":/icons/icons/sandiantu.png"), QSize(), QIcon::Normal, QIcon::Off);
+        ScatterAction->setIcon(icon3);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
         gridLayout = new QGridLayout(centralwidget);
@@ -95,7 +106,7 @@ public:
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 1280, 24));
+        menubar->setGeometry(QRect(0, 0, 1280, 22));
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName("statusbar");
@@ -119,35 +130,6 @@ public:
 
         verticalLayout_2->addWidget(textBrowser);
 
-        horizontalLayout_2 = new QHBoxLayout();
-        horizontalLayout_2->setObjectName("horizontalLayout_2");
-        horizontalSpacer_2 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        horizontalLayout_2->addItem(horizontalSpacer_2);
-
-        pushButton_4 = new QPushButton(dockWidgetContents);
-        pushButton_4->setObjectName("pushButton_4");
-
-        horizontalLayout_2->addWidget(pushButton_4);
-
-        pushButton_3 = new QPushButton(dockWidgetContents);
-        pushButton_3->setObjectName("pushButton_3");
-
-        horizontalLayout_2->addWidget(pushButton_3);
-
-
-        verticalLayout_2->addLayout(horizontalLayout_2);
-
-        verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
-
-        verticalLayout_2->addItem(verticalSpacer);
-
-        label = new QLabel(dockWidgetContents);
-        label->setObjectName("label");
-        label->setMinimumSize(QSize(300, 350));
-
-        verticalLayout_2->addWidget(label);
-
         horizontalLayout = new QHBoxLayout();
         horizontalLayout->setObjectName("horizontalLayout");
         horizontalSpacer = new QSpacerItem(20, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
@@ -168,7 +150,35 @@ public:
         verticalLayout_2->addLayout(horizontalLayout);
 
 
-        formLayout->setLayout(0, QFormLayout::LabelRole, verticalLayout_2);
+        formLayout->setLayout(2, QFormLayout::LabelRole, verticalLayout_2);
+
+        verticalLayout_3 = new QVBoxLayout();
+        verticalLayout_3->setObjectName("verticalLayout_3");
+        horizontalLayout_2 = new QHBoxLayout();
+        horizontalLayout_2->setObjectName("horizontalLayout_2");
+        horizontalSpacer_2 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_2->addItem(horizontalSpacer_2);
+
+        pushButton_4 = new QPushButton(dockWidgetContents);
+        pushButton_4->setObjectName("pushButton_4");
+
+        horizontalLayout_2->addWidget(pushButton_4);
+
+        pushButton_3 = new QPushButton(dockWidgetContents);
+        pushButton_3->setObjectName("pushButton_3");
+
+        horizontalLayout_2->addWidget(pushButton_3);
+
+
+        verticalLayout_3->addLayout(horizontalLayout_2);
+
+
+        formLayout->setLayout(0, QFormLayout::LabelRole, verticalLayout_3);
+
+        verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        formLayout->setItem(1, QFormLayout::LabelRole, verticalSpacer);
 
         dockWidget->setWidget(dockWidgetContents);
         MainWindow->addDockWidget(Qt::RightDockWidgetArea, dockWidget);
@@ -176,6 +186,8 @@ public:
         toolBar->addAction(action);
         toolBar->addSeparator();
         toolBar->addAction(AverageAndMeanAction);
+        toolBar->addAction(HistogramAction);
+        toolBar->addAction(ScatterAction);
 
         retranslateUi(MainWindow);
 
@@ -190,12 +202,19 @@ public:
 #if QT_CONFIG(tooltip)
         AverageAndMeanAction->setToolTip(QCoreApplication::translate("MainWindow", "\345\235\207\345\200\274\345\222\214\346\226\271\345\267\256", nullptr));
 #endif // QT_CONFIG(tooltip)
+        HistogramAction->setText(QCoreApplication::translate("MainWindow", "\347\273\230\345\210\266\347\233\264\346\226\271\345\233\276", nullptr));
+#if QT_CONFIG(tooltip)
+        HistogramAction->setToolTip(QCoreApplication::translate("MainWindow", "\347\273\230\345\210\266\347\233\264\346\226\271\345\233\276", nullptr));
+#endif // QT_CONFIG(tooltip)
+        ScatterAction->setText(QCoreApplication::translate("MainWindow", "\347\273\230\345\210\266\346\225\243\347\202\271\345\233\276", nullptr));
+#if QT_CONFIG(tooltip)
+        ScatterAction->setToolTip(QCoreApplication::translate("MainWindow", "\347\273\230\345\210\266\346\225\243\347\202\271\345\233\276", nullptr));
+#endif // QT_CONFIG(tooltip)
         toolBar->setWindowTitle(QCoreApplication::translate("MainWindow", "toolBar", nullptr));
-        pushButton_4->setText(QCoreApplication::translate("MainWindow", "PushButton", nullptr));
-        pushButton_3->setText(QCoreApplication::translate("MainWindow", "PushButton", nullptr));
-        label->setText(QCoreApplication::translate("MainWindow", "TextLabel", nullptr));
         pushButton_2->setText(QCoreApplication::translate("MainWindow", "PushButton", nullptr));
         pushButton->setText(QCoreApplication::translate("MainWindow", "PushButton", nullptr));
+        pushButton_4->setText(QCoreApplication::translate("MainWindow", "PushButton", nullptr));
+        pushButton_3->setText(QCoreApplication::translate("MainWindow", "PushButton", nullptr));
     } // retranslateUi
 
 };

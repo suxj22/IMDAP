@@ -334,6 +334,61 @@
 		"/opt/homebrew/lib/cmake/Qt6Widgets/Qt6QMacStylePluginTargets.cmake",
 		"/opt/homebrew/lib/cmake/Qt6Widgets/Qt6QMacStylePluginTargets-release.cmake",
 		"/opt/homebrew/lib/cmake/Qt6Widgets/Qt6QMacStylePluginAdditionalTargetInfo.cmake",
+		"/opt/homebrew/lib/cmake/Qt6/Qt6ConfigVersion.cmake",
+		"/opt/homebrew/lib/cmake/Qt6/Qt6ConfigVersionImpl.cmake",
+		"/opt/homebrew/lib/cmake/Qt6/Qt6Config.cmake",
+		"/opt/homebrew/lib/cmake/Qt6/Qt6ConfigExtras.cmake",
+		"/opt/homebrew/lib/cmake/Qt6/QtPublicCMakeVersionHelpers.cmake",
+		"/opt/homebrew/lib/cmake/Qt6/Qt6Targets.cmake",
+		"/opt/homebrew/lib/cmake/Qt6/Qt6VersionlessTargets.cmake",
+		"/opt/homebrew/lib/cmake/Qt6/QtFeature.cmake",
+		"/opt/homebrew/Cellar/qt/6.5.1_3/lib/cmake/Qt6/QtFeatureCommon.cmake",
+		"/usr/local/Cellar/cmake/3.26.4/share/cmake/Modules/CheckCXXCompilerFlag.cmake",
+		"/opt/homebrew/lib/cmake/Qt6/QtPublicAppleHelpers.cmake",
+		"/opt/homebrew/lib/cmake/Qt6/QtPublicFinalizerHelpers.cmake",
+		"/opt/homebrew/lib/cmake/Qt6/QtPublicPluginHelpers.cmake",
+		"/opt/homebrew/lib/cmake/Qt6/QtPublicTargetHelpers.cmake",
+		"/opt/homebrew/lib/cmake/Qt6/QtPublicWalkLibsHelpers.cmake",
+		"/opt/homebrew/lib/cmake/Qt6/QtPublicFindPackageHelpers.cmake",
+		"/opt/homebrew/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake",
+		"/opt/homebrew/lib/cmake/Qt6/QtPublicTestHelpers.cmake",
+		"/opt/homebrew/lib/cmake/Qt6/QtPublicToolHelpers.cmake",
+		"/opt/homebrew/lib/cmake/Qt6/QtPublicCMakeHelpers.cmake",
+		"/usr/local/Cellar/cmake/3.26.4/share/cmake/Modules/CMakeFindDependencyMacro.cmake",
+		"/opt/homebrew/lib/cmake/Qt6/Qt6Dependencies.cmake",
+		"/opt/homebrew/lib/cmake/Qt6Charts/Qt6ChartsConfigVersion.cmake",
+		"/opt/homebrew/lib/cmake/Qt6Charts/Qt6ChartsConfigVersionImpl.cmake",
+		"/opt/homebrew/lib/cmake/Qt6Charts/Qt6ChartsConfig.cmake",
+		"/usr/local/Cellar/cmake/3.26.4/share/cmake/Modules/CMakeFindDependencyMacro.cmake",
+		"/opt/homebrew/lib/cmake/Qt6Charts/Qt6ChartsDependencies.cmake",
+		"/opt/homebrew/lib/cmake/Qt6OpenGL/Qt6OpenGLConfigVersion.cmake",
+		"/opt/homebrew/lib/cmake/Qt6OpenGL/Qt6OpenGLConfigVersionImpl.cmake",
+		"/opt/homebrew/lib/cmake/Qt6OpenGL/Qt6OpenGLConfig.cmake",
+		"/usr/local/Cellar/cmake/3.26.4/share/cmake/Modules/CMakeFindDependencyMacro.cmake",
+		"/opt/homebrew/lib/cmake/Qt6OpenGL/Qt6OpenGLDependencies.cmake",
+		"/opt/homebrew/Cellar/qt/6.5.1_3/lib/cmake/Qt6/FindWrapVulkanHeaders.cmake",
+		"/usr/local/Cellar/cmake/3.26.4/share/cmake/Modules/FindVulkan.cmake",
+		"/usr/local/Cellar/cmake/3.26.4/share/cmake/Modules/FindPackageHandleStandardArgs.cmake",
+		"/usr/local/Cellar/cmake/3.26.4/share/cmake/Modules/FindPackageMessage.cmake",
+		"/usr/local/Cellar/cmake/3.26.4/share/cmake/Modules/FindPackageHandleStandardArgs.cmake",
+		"/usr/local/Cellar/cmake/3.26.4/share/cmake/Modules/FindPackageMessage.cmake",
+		"/opt/homebrew/lib/cmake/Qt6OpenGL/Qt6OpenGLTargets.cmake",
+		"/opt/homebrew/lib/cmake/Qt6OpenGL/Qt6OpenGLTargets-release.cmake",
+		"/opt/homebrew/lib/cmake/Qt6OpenGL/Qt6OpenGLAdditionalTargetInfo.cmake",
+		"/opt/homebrew/lib/cmake/Qt6OpenGL/Qt6OpenGLVersionlessTargets.cmake",
+		"/opt/homebrew/lib/cmake/Qt6OpenGLWidgets/Qt6OpenGLWidgetsConfigVersion.cmake",
+		"/opt/homebrew/lib/cmake/Qt6OpenGLWidgets/Qt6OpenGLWidgetsConfigVersionImpl.cmake",
+		"/opt/homebrew/lib/cmake/Qt6OpenGLWidgets/Qt6OpenGLWidgetsConfig.cmake",
+		"/usr/local/Cellar/cmake/3.26.4/share/cmake/Modules/CMakeFindDependencyMacro.cmake",
+		"/opt/homebrew/lib/cmake/Qt6OpenGLWidgets/Qt6OpenGLWidgetsDependencies.cmake",
+		"/opt/homebrew/lib/cmake/Qt6OpenGLWidgets/Qt6OpenGLWidgetsTargets.cmake",
+		"/opt/homebrew/lib/cmake/Qt6OpenGLWidgets/Qt6OpenGLWidgetsTargets-release.cmake",
+		"/opt/homebrew/lib/cmake/Qt6OpenGLWidgets/Qt6OpenGLWidgetsAdditionalTargetInfo.cmake",
+		"/opt/homebrew/lib/cmake/Qt6OpenGLWidgets/Qt6OpenGLWidgetsVersionlessTargets.cmake",
+		"/opt/homebrew/lib/cmake/Qt6Charts/Qt6ChartsTargets.cmake",
+		"/opt/homebrew/lib/cmake/Qt6Charts/Qt6ChartsTargets-release.cmake",
+		"/opt/homebrew/lib/cmake/Qt6Charts/Qt6ChartsAdditionalTargetInfo.cmake",
+		"/opt/homebrew/lib/cmake/Qt6Charts/Qt6ChartsVersionlessTargets.cmake",
 		"/usr/local/Cellar/cmake/3.26.4/share/cmake/Modules/GNUInstallDirs.cmake",
 		"/Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/icons.qrc",
 		"/Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/data.qrc"
@@ -2192,6 +2247,12 @@
 			null
 		],
 		[
+			"/Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/chartviewdialog.h",
+			"MU",
+			"EWIEGA46WW/moc_chartviewdialog.cpp",
+			null
+		],
+		[
 			"/Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/common.h",
 			"MU",
 			"EWIEGA46WW/moc_common.cpp",
@@ -2234,6 +2295,12 @@
 			null
 		],
 		[
+			"/Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/selecttwocolumnsdialog.h",
+			"MU",
+			"EWIEGA46WW/moc_selecttwocolumnsdialog.cpp",
+			null
+		],
+		[
 			"/Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/xgboost_example.h",
 			"MU",
 			"EWIEGA46WW/moc_xgboost_example.cpp",
@@ -2243,7 +2310,15 @@
 	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
 	"INCLUDE_DIR" : "/Users/suxingjian/Documents/GitHub/IMDAP/build-IMDAP-Qt_6_5_1-Debug/IMDAP_autogen/include",
 	"MOC_COMPILATION_FILE" : "/Users/suxingjian/Documents/GitHub/IMDAP/build-IMDAP-Qt_6_5_1-Debug/IMDAP_autogen/mocs_compilation.cpp",
-	"MOC_DEFINITIONS" : [ "QT_CORE_LIB", "QT_GUI_LIB", "QT_WIDGETS_LIB" ],
+	"MOC_DEFINITIONS" : 
+	[
+		"QT_CHARTS_LIB",
+		"QT_CORE_LIB",
+		"QT_GUI_LIB",
+		"QT_OPENGLWIDGETS_LIB",
+		"QT_OPENGL_LIB",
+		"QT_WIDGETS_LIB"
+	],
 	"MOC_DEPEND_FILTERS" : 
 	[
 		[
@@ -2257,10 +2332,16 @@
 		"/opt/homebrew/lib/QtCore.framework",
 		"/opt/homebrew/share/qt/mkspecs/macx-clang",
 		"/opt/homebrew/include",
-		"/opt/homebrew/lib/QtWidgets.framework/Headers",
-		"/opt/homebrew/lib/QtWidgets.framework",
+		"/opt/homebrew/lib/QtCharts.framework/Headers",
+		"/opt/homebrew/lib/QtCharts.framework",
 		"/opt/homebrew/lib/QtGui.framework/Headers",
 		"/opt/homebrew/lib/QtGui.framework",
+		"/opt/homebrew/lib/QtWidgets.framework/Headers",
+		"/opt/homebrew/lib/QtWidgets.framework",
+		"/opt/homebrew/lib/QtOpenGL.framework/Headers",
+		"/opt/homebrew/lib/QtOpenGL.framework",
+		"/opt/homebrew/lib/QtOpenGLWidgets.framework/Headers",
+		"/opt/homebrew/lib/QtOpenGLWidgets.framework",
 		"/Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/c++/v1",
 		"/Library/Developer/CommandLineTools/usr/lib/clang/15.0.0/include",
 		"/Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include",
@@ -2302,9 +2383,19 @@
 			"MU",
 			null
 		],
+		[
+			"/Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/chartviewdialog.cpp",
+			"MU",
+			null
+		],
 		[ "/Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/main.cpp", "MU", null ],
 		[
 			"/Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/mainwindow.cpp",
+			"MU",
+			null
+		],
+		[
+			"/Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/selecttwocolumnsdialog.cpp",
 			"MU",
 			null
 		]

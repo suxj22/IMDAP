@@ -2,5 +2,7 @@
     <qresource prefix="/icons">
         <file>icons/pingjunzhi.png</file>
         <file>icons/wenjian.png</file>
+        <file>icons/zhifangtu.png</file>
+        <file>icons/sandiantu.png</file>
     </qresource>
 </RCC>
