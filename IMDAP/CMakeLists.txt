@@ -40,6 +40,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         multiplecolumnsdialog.h multiplecolumnsdialog.cpp multiplecolumnsdialog.ui
         drawheatmapwidget.h drawheatmapwidget.cpp
         heatmapdialog.h heatmapdialog.cpp heatmapdialog.ui
+        pcadialog.h pcadialog.cpp pcadialog.ui
 
     )
 target_link_libraries(IMDAP PRIVATE Qt6::Charts)

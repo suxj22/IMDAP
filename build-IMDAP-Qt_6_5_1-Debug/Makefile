@@ -451,6 +451,30 @@ multiplecolumnsdialog.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/IMDAP.dir/build.make CMakeFiles/IMDAP.dir/multiplecolumnsdialog.cpp.s
 .PHONY : multiplecolumnsdialog.cpp.s
 
+pcadialog.o: pcadialog.cpp.o
+.PHONY : pcadialog.o
+
+# target to build an object file
+pcadialog.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/IMDAP.dir/build.make CMakeFiles/IMDAP.dir/pcadialog.cpp.o
+.PHONY : pcadialog.cpp.o
+
+pcadialog.i: pcadialog.cpp.i
+.PHONY : pcadialog.i
+
+# target to preprocess a source file
+pcadialog.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/IMDAP.dir/build.make CMakeFiles/IMDAP.dir/pcadialog.cpp.i
+.PHONY : pcadialog.cpp.i
+
+pcadialog.s: pcadialog.cpp.s
+.PHONY : pcadialog.s
+
+# target to generate assembly for a file
+pcadialog.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/IMDAP.dir/build.make CMakeFiles/IMDAP.dir/pcadialog.cpp.s
+.PHONY : pcadialog.cpp.s
+
 selecttwocolumnsdialog.o: selecttwocolumnsdialog.cpp.o
 .PHONY : selecttwocolumnsdialog.o
 
@@ -522,6 +546,9 @@ help:
 	@echo "... multiplecolumnsdialog.o"
 	@echo "... multiplecolumnsdialog.i"
 	@echo "... multiplecolumnsdialog.s"
+	@echo "... pcadialog.o"
+	@echo "... pcadialog.i"
+	@echo "... pcadialog.s"
 	@echo "... selecttwocolumnsdialog.o"
 	@echo "... selecttwocolumnsdialog.i"
 	@echo "... selecttwocolumnsdialog.s"

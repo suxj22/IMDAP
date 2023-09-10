@@ -24,6 +24,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/IMDAP.dir/mainwindow.cpp.o.d"
   "CMakeFiles/IMDAP.dir/multiplecolumnsdialog.cpp.o"
   "CMakeFiles/IMDAP.dir/multiplecolumnsdialog.cpp.o.d"
+  "CMakeFiles/IMDAP.dir/pcadialog.cpp.o"
+  "CMakeFiles/IMDAP.dir/pcadialog.cpp.o.d"
   "CMakeFiles/IMDAP.dir/selecttwocolumnsdialog.cpp.o"
   "CMakeFiles/IMDAP.dir/selecttwocolumnsdialog.cpp.o.d"
   "IMDAP.app/Contents/MacOS/IMDAP"

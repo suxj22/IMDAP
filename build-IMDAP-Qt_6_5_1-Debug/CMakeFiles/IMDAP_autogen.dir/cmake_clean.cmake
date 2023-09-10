@@ -6,6 +6,7 @@ file(REMOVE_RECURSE
   "IMDAP_autogen/include/ui_histogramdialog.h"
   "IMDAP_autogen/include/ui_mainwindow.h"
   "IMDAP_autogen/include/ui_multiplecolumnsdialog.h"
+  "IMDAP_autogen/include/ui_pcadialog.h"
   "IMDAP_autogen/include/ui_selecttwocolumnsdialog.h"
   "IMDAP_autogen/mocs_compilation.cpp"
 )

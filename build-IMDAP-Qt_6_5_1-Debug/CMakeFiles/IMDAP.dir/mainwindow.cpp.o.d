@@ -1989,6 +1989,8 @@ CMakeFiles/IMDAP.dir/mainwindow.cpp.o: \
   /Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/leastsquare.hpp \
   /Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/multiplecolumnsdialog.h \
   /opt/homebrew/include/QtWidgets/qlistwidget.h \
+  /Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/pca.hpp \
+  /Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/pcadialog.h \
   /Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/averageandmeandialog.h \
   /Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/selecttwocolumnsdialog.h \
   /opt/homebrew/lib/QtCore.framework/Headers/QFile \

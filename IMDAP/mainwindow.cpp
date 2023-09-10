@@ -7,6 +7,8 @@
 #include "chartviewdialog.h"
 #include "leastsquare.hpp"
 #include "multiplecolumnsdialog.h"
+#include "pca.hpp"
+#include "pcadialog.h"
 #include "rowfeature.hpp"
 #include "averageandmeandialog.h"
 #include "selecttwocolumnsdialog.h"
@@ -18,7 +20,6 @@
 #include <QStringList>
 #include <QMessageBox>
 #include <cmath>
-
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -465,6 +466,7 @@ void MainWindow::on_Matrixaction_triggered()
                 dataPer[i][j] = pearsonCorrMatrix(i,j);
             }
         }
+
         HeatmapDialog viewDialog(this);
 
         viewDialog.setDataCov(dataCov);
@@ -477,23 +479,107 @@ void MainWindow::on_Matrixaction_triggered()
 
 void MainWindow::on_PCAAction_triggered()
 {
-    QDialog dialog;
-    QVBoxLayout layout(&dialog);
+    if (tableWidgetIsEmpty()) {
+        tableEmptyWarning();
+        return;
+    }
+    QStringList names;
+    for (int i = 1; i < ui->tableWidget->columnCount(); i++) {
+        QTableWidgetItem *item = ui->tableWidget->item(0, i);
+        if(item != nullptr && item->text().isEmpty() == false) {
+            names << item->text();
+        }
+    } // 有待打包
+    MultipleColumnsDialog dialog(this, names);
+    if (dialog.exec() == QDialog::Accepted) {
+        // 获取选择的列
+        auto items = dialog.getItems();
+        if (items.empty()) {
+            QMessageBox::warning(&dialog,"警告", "未选择数据！");
+            return;
+        }
+        // 获取总行数
+        int count = ui->tableWidget->rowCount();
+        std::vector<std::vector<float>> inputVector;
+        QStringList Selectednames;
+        // 导入数据至inputVector
+        for (auto column : items) {
+            std::vector<float> x(count -1);
+            Selectednames.append(ui->tableWidget->item(0, column)->text());
+            for (int j = 1; j < count; j++) {
+                QString text = ui->tableWidget->item(j, column)->text();
+                if (column != 1) {
+                    x[j - 1] = text.toFloat();
+                }
+                else {
+                    x[j - 1] = discreteValueMap[text];
+                }
+            }
+            inputVector.push_back(x);
+        }
+        // 创建选择次数的对话框
+        QDialog powerDialog;
+        QVBoxLayout layout(&powerDialog);
 
-    // 创建标签
-    QLabel label("请选择降维次数:");
-    layout.addWidget(&label);
+        // 创建标签
+        QLabel label("请选择降维次数:");
+        layout.addWidget(&label);
 
-    // 创建combobox
-    QComboBox comboBox;
-    comboBox.addItem("2");
-    comboBox.addItem("3");
-    layout.addWidget(&comboBox);
-    QDialogButtonBox buttonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel);
-    QObject::connect(&buttonBox, &QDialogButtonBox::accepted, &dialog, &QDialog::accept);
-    QObject::connect(&buttonBox, &QDialogButtonBox::rejected, &dialog, &QDialog::reject);
-    layout.addWidget(&buttonBox);
+        // 创建combobox
+        QComboBox comboBox;
+        comboBox.addItem("2");
+        comboBox.addItem("3");
+        layout.addWidget(&comboBox);
 
-    dialog.exec();
+        QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel);
+        layout.addWidget(buttonBox);
+        QObject::connect(buttonBox, &QDialogButtonBox::accepted, &powerDialog, &QDialog::accept);
+        QObject::connect(buttonBox, &QDialogButtonBox::rejected, &powerDialog, &QDialog::reject);
+
+        if (powerDialog.exec() == QDialog::Accepted) {
+            int power = comboBox.currentText().toInt();
+            auto result = pca(inputVector, power);
+            switch (power) {
+            case 2:{
+                QList<QScatterSeries*> seriesList(indexOfText.size(), new QScatterSeries);
+                // 定义一个颜色列表，给不同类别的点赋不同颜色
+                int resultSize = result.rows();
+                for (int i = 0; i < resultSize; i++) {
+                    QString text = ui->tableWidget->item(i + 1, 1)->text();
+                    int kind = discreteValueMap[text];
+                    seriesList[kind]->setName(text);
+                    auto newPoint = QPointF(result(i, 0), result(i, 1));
+                    seriesList[kind]->append(newPoint);
+                }
+                QList<QColor> colors = {Qt::red, Qt::blue, Qt::green, Qt::yellow, Qt::cyan, Qt::magenta, Qt::gray};
+                for (int i = 0; i < seriesList.size(); i++) {
+                    QScatterSeries *series = seriesList.at(i);
+                    series->setColor(colors.at(i % colors.size()));// 使用颜色列表的颜色，如果series数量大于颜色列表的长度则会循环使用颜色
+                    series->setMarkerShape(QScatterSeries::MarkerShapeCircle);
+                    series->setMarkerSize(15.0);
+                }
+                auto chart = new QChart;
+                for (auto series : seriesList) {
+                    chart->addSeries(series);
+                }
+                chart->setTitle("二维降维图");
+                chart->createDefaultAxes();
+                chart->setAnimationOptions(QChart::SeriesAnimations);
+                chart->setDropShadowEnabled(false);
+                auto chartView = new QChartView(chart);
+                PCADialog viewDialog(this, chartView);
+                viewDialog.exec();
+                break;
+
+            }
+            case 3:{
+
+                break;
+            }
+            default:
+                break;
+            }
+        }
+    }
 }
 

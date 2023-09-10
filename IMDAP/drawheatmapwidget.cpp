@@ -42,7 +42,7 @@ void DrawHeatmapWidget::paintEvent(QPaintEvent* event) {
     QPainter painter(this);
 
     // Define colorbar dimensions and spacing
-    int margin = 100; // 预留30像素的空间来绘制标签
+    int margin = 30; // 预留30像素的空间来绘制标签
     int colorBarWidth = width() * 0.05;
     int colorBarTextWidth = width() * 0.10;
     int colorBarSpacing = width() * 0.05;
@@ -167,7 +167,7 @@ void DrawHeatmapWidget::paintEvent(QPaintEvent* event) {
 
         // 绘制y轴的标签
         for (int i = 0; i < yLabels.size(); i++) {
-            int temp = yLabels.size() - i - 1;
+            int temp = i;
             int textHeight = fm.height();
             int x = margin - textHeight;  // Adjusted to left of heatmap
             int textWidth = fm.horizontalAdvance(yLabels[temp]);
@@ -179,7 +179,6 @@ void DrawHeatmapWidget::paintEvent(QPaintEvent* event) {
             painter.drawText(0, 0, yLabels[temp]);  // Draw text at the rotated position
             painter.restore();  // Restore the painter's state to what it was before translation and rotation
         }
-
 }
 
 QColor DrawHeatmapWidget::getColorForValue(float value) const {

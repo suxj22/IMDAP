@@ -19,6 +19,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/main.cpp" "CMakeFiles/IMDAP.dir/main.cpp.o" "gcc" "CMakeFiles/IMDAP.dir/main.cpp.o.d"
   "/Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/mainwindow.cpp" "CMakeFiles/IMDAP.dir/mainwindow.cpp.o" "gcc" "CMakeFiles/IMDAP.dir/mainwindow.cpp.o.d"
   "/Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/multiplecolumnsdialog.cpp" "CMakeFiles/IMDAP.dir/multiplecolumnsdialog.cpp.o" "gcc" "CMakeFiles/IMDAP.dir/multiplecolumnsdialog.cpp.o.d"
+  "/Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/pcadialog.cpp" "CMakeFiles/IMDAP.dir/pcadialog.cpp.o" "gcc" "CMakeFiles/IMDAP.dir/pcadialog.cpp.o.d"
   "/Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/selecttwocolumnsdialog.cpp" "CMakeFiles/IMDAP.dir/selecttwocolumnsdialog.cpp.o" "gcc" "CMakeFiles/IMDAP.dir/selecttwocolumnsdialog.cpp.o.d"
   )
 

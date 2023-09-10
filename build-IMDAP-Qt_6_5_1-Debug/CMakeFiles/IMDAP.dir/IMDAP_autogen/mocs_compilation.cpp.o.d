@@ -1791,5 +1791,7 @@ CMakeFiles/IMDAP.dir/IMDAP_autogen/mocs_compilation.cpp.o: \
   /Users/suxingjian/Documents/GitHub/IMDAP/build-IMDAP-Qt_6_5_1-Debug/IMDAP_autogen/EWIEGA46WW/moc_multiplecolumnsdialog.cpp \
   /Users/suxingjian/Documents/GitHub/IMDAP/build-IMDAP-Qt_6_5_1-Debug/IMDAP_autogen/EWIEGA46WW/../../../IMDAP/multiplecolumnsdialog.h \
   /opt/homebrew/include/QtWidgets/qlistwidget.h \
+  /Users/suxingjian/Documents/GitHub/IMDAP/build-IMDAP-Qt_6_5_1-Debug/IMDAP_autogen/EWIEGA46WW/moc_pcadialog.cpp \
+  /Users/suxingjian/Documents/GitHub/IMDAP/build-IMDAP-Qt_6_5_1-Debug/IMDAP_autogen/EWIEGA46WW/../../../IMDAP/pcadialog.h \
   /Users/suxingjian/Documents/GitHub/IMDAP/build-IMDAP-Qt_6_5_1-Debug/IMDAP_autogen/EWIEGA46WW/moc_selecttwocolumnsdialog.cpp \
   /Users/suxingjian/Documents/GitHub/IMDAP/build-IMDAP-Qt_6_5_1-Debug/IMDAP_autogen/EWIEGA46WW/../../../IMDAP/selecttwocolumnsdialog.h

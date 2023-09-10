@@ -6,4 +6,5 @@
 #include "EWIEGA46WW/moc_histogramdialog.cpp"
 #include "EWIEGA46WW/moc_mainwindow.cpp"
 #include "EWIEGA46WW/moc_multiplecolumnsdialog.cpp"
+#include "EWIEGA46WW/moc_pcadialog.cpp"
 #include "EWIEGA46WW/moc_selecttwocolumnsdialog.cpp"
