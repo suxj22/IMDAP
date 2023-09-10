@@ -1775,9 +1775,21 @@ CMakeFiles/IMDAP.dir/IMDAP_autogen/mocs_compilation.cpp.o: \
   /opt/homebrew/include/QtCharts/qboxplotseries.h \
   /opt/homebrew/include/QtCharts/qcandlestickseries.h \
   /opt/homebrew/include/QtCharts/qpieseries.h \
+  /Users/suxingjian/Documents/GitHub/IMDAP/build-IMDAP-Qt_6_5_1-Debug/IMDAP_autogen/EWIEGA46WW/moc_drawheatmapwidget.cpp \
+  /Users/suxingjian/Documents/GitHub/IMDAP/build-IMDAP-Qt_6_5_1-Debug/IMDAP_autogen/EWIEGA46WW/../../../IMDAP/drawheatmapwidget.h \
+  /opt/homebrew/lib/QtWidgets.framework/Headers/QWidget \
+  /opt/homebrew/lib/QtCore.framework/Headers/QVector \
+  /Users/suxingjian/Documents/GitHub/IMDAP/build-IMDAP-Qt_6_5_1-Debug/IMDAP_autogen/EWIEGA46WW/moc_heatmapdialog.cpp \
+  /Users/suxingjian/Documents/GitHub/IMDAP/build-IMDAP-Qt_6_5_1-Debug/IMDAP_autogen/EWIEGA46WW/../../../IMDAP/heatmapdialog.h \
+  /Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/drawheatmapwidget.h \
+  /Users/suxingjian/Documents/GitHub/IMDAP/build-IMDAP-Qt_6_5_1-Debug/IMDAP_autogen/EWIEGA46WW/moc_histogramdialog.cpp \
+  /Users/suxingjian/Documents/GitHub/IMDAP/build-IMDAP-Qt_6_5_1-Debug/IMDAP_autogen/EWIEGA46WW/../../../IMDAP/histogramdialog.h \
   /Users/suxingjian/Documents/GitHub/IMDAP/build-IMDAP-Qt_6_5_1-Debug/IMDAP_autogen/EWIEGA46WW/moc_mainwindow.cpp \
   /Users/suxingjian/Documents/GitHub/IMDAP/build-IMDAP-Qt_6_5_1-Debug/IMDAP_autogen/EWIEGA46WW/../../../IMDAP/mainwindow.h \
   /opt/homebrew/lib/QtWidgets.framework/Headers/QMainWindow \
   /opt/homebrew/lib/QtCore.framework/Headers/QHash \
+  /Users/suxingjian/Documents/GitHub/IMDAP/build-IMDAP-Qt_6_5_1-Debug/IMDAP_autogen/EWIEGA46WW/moc_multiplecolumnsdialog.cpp \
+  /Users/suxingjian/Documents/GitHub/IMDAP/build-IMDAP-Qt_6_5_1-Debug/IMDAP_autogen/EWIEGA46WW/../../../IMDAP/multiplecolumnsdialog.h \
+  /opt/homebrew/include/QtWidgets/qlistwidget.h \
   /Users/suxingjian/Documents/GitHub/IMDAP/build-IMDAP-Qt_6_5_1-Debug/IMDAP_autogen/EWIEGA46WW/moc_selecttwocolumnsdialog.cpp \
   /Users/suxingjian/Documents/GitHub/IMDAP/build-IMDAP-Qt_6_5_1-Debug/IMDAP_autogen/EWIEGA46WW/../../../IMDAP/selecttwocolumnsdialog.h

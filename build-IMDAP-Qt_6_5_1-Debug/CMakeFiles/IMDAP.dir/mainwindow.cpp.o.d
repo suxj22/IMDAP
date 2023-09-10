@@ -1975,17 +1975,22 @@ CMakeFiles/IMDAP.dir/mainwindow.cpp.o: \
   /Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/Eigen/src/Eigenvalues/GeneralizedEigenSolver.h \
   /Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/Eigen/src/Eigenvalues/./RealQZ.h \
   /Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/Eigen/src/Eigenvalues/MatrixBaseEigenvalues.h \
-  /Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/chartviewdialog.h \
-  /opt/homebrew/lib/QtWidgets.framework/Headers/QDialog \
-  /Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/rowfeature.hpp \
+  /Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/covariance.hpp \
   /Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/common.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/c++/v1/iostream \
+  /Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/rowfeature.hpp \
+  /Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/heatmapdialog.h \
+  /opt/homebrew/lib/QtWidgets.framework/Headers/QDialog \
+  /Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/drawheatmapwidget.h \
+  /opt/homebrew/lib/QtWidgets.framework/Headers/QWidget \
+  /opt/homebrew/lib/QtCore.framework/Headers/QVector \
+  /Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/histogramdialog.h \
+  /Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/chartviewdialog.h \
+  /Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/leastsquare.hpp \
+  /Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/multiplecolumnsdialog.h \
+  /opt/homebrew/include/QtWidgets/qlistwidget.h \
   /Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/averageandmeandialog.h \
   /Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/selecttwocolumnsdialog.h \
-  /Users/suxingjian/Documents/GitHub/IMDAP/build-IMDAP-Qt_6_5_1-Debug/IMDAP_autogen/include/ui_chartviewdialog.h \
-  /opt/homebrew/include/QtWidgets/QCheckBox \
-  /opt/homebrew/include/QtWidgets/QDialog \
-  /opt/homebrew/include/QtWidgets/QLabel \
   /opt/homebrew/lib/QtCore.framework/Headers/QFile \
   /opt/homebrew/lib/QtCore.framework/Headers/QTextStream \
   /opt/homebrew/lib/QtCore.framework/Headers/QStringList \

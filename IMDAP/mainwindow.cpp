@@ -1,17 +1,23 @@
 #include "mainwindow.h"
 #include "./ui_mainwindow.h"
 #include "Eigen/Dense"
+#include "covariance.hpp"
+#include "heatmapdialog.h"
+#include "histogramdialog.h"
 #include "chartviewdialog.h"
+#include "leastsquare.hpp"
+#include "multiplecolumnsdialog.h"
 #include "rowfeature.hpp"
 #include "averageandmeandialog.h"
 #include "selecttwocolumnsdialog.h"
-#include "ui_chartviewdialog.h"
 #include <vector>
 #include <iostream>
+#include <QtCharts>
 #include <QFile>
 #include <QTextStream>
 #include <QStringList>
 #include <QMessageBox>
+#include <cmath>
 
 
 MainWindow::MainWindow(QWidget *parent)
@@ -258,27 +264,41 @@ void MainWindow::on_HistogramAction_triggered()
 
         // 设置横轴和纵轴
         auto axisX = new QBarCategoryAxis;
-        QFont axisFont;
-        axisFont.setPointSize(9); // 设置横轴字体大小，尽量显示完整的数字区间
+        QFont axisLabelFont;
+        axisLabelFont.setPointSize(9); // 设置横轴数据区间大小，尽量显示完整的数字区间
         axisX->append(categories);
-        axisX->setLabelsFont(axisFont);
+        axisX->setLabelsFont(axisLabelFont);
+        QFont axisTitleFont;
+        axisTitleFont.setPointSize(12);
+        axisX->setTitleFont(axisTitleFont);
+        axisX->setTitleText("数据区间");
         chart->addAxis(axisX, Qt::AlignBottom);
         series->attachAxis(axisX);
+        splineSeries->attachAxis(axisX);
 
         int countMax = intervals[0].count;
+        int countMin = intervals[0].count;
         for (auto interval : intervals) {
             if (interval.count > countMax) {
                 countMax = interval.count;
             }
+            if (interval.count < countMin) {
+                countMin = interval.count;
+            }
         }
 
-        countMax *= 1.2;
-        chart->axes(Qt::Vertical).first()->setRange(0, countMax);
+        countMax *= 1.2; // 为了让曲线良好地显示，不超上界
+        auto axisY = new QValueAxis;
+        axisY->setRange(0, countMax);
+        axisY->setTitleText("频数");
+        chart->addAxis(axisY, Qt::AlignLeft);
+        series->attachAxis(axisY);
+        splineSeries->attachAxis(axisY);
 
         chartView = new QChartView(chart);
         chartView->setRenderHint(QPainter::Antialiasing); // 抗锯齿渲染
 
-        ChartViewDialog viewDialog(this);
+        HistogramDialog viewDialog(this);
         viewDialog.setViewChart(chartView);
         viewDialog.exec();
     }
@@ -324,7 +344,7 @@ void MainWindow::on_ScatterAction_triggered()
         series->setMarkerShape(QScatterSeries::MarkerShapeCircle);
         series->setMarkerSize(15.0);
         int numOfDuplicatePoints = 0;
-        for (int i = 0; i < count; i++) {
+        for (int i = 0; i < count - 1; i++) {
             auto newPoint = QPointF(x[i], y[i]);
             for (auto point : points) {
                 if (point == newPoint) {
@@ -339,20 +359,141 @@ void MainWindow::on_ScatterAction_triggered()
         chart->addSeries(series);
         chart->setTitle("散点图");
         chart->createDefaultAxes();
+        chart->setAnimationOptions(QChart::SeriesAnimations);
         QString TextOfX = ui->tableWidget->item(0, columnX)->text();
         QString TextOfY = ui->tableWidget->item(0, columnY)->text();
         chart->axisX()->setTitleText(TextOfX);
         chart->axisY()->setTitleText(TextOfY);
         chart->setDropShadowEnabled(false);
 
+        // 添加曲线拟合
+        auto splineSeries = new QSplineSeries;
+        splineSeries->setName("曲线拟合");
+        int inputDegree = dialog.getInputDegree();
+        int totalPoint = 30; // 设置拟合曲线总点数
+        float min = *std::min_element(x.begin(), x.end()); // 计算最小值
+        float max = *std::max_element(x.begin(), x.end()); // 计算最大值
+        float intervalWidth = (max - min) / totalPoint; // 区间宽度
+        auto result = fitLeastSquareAndPR(x, y, inputDegree);
+        auto coefficients = std::get<0>(result);
+
+        float xPoint = min;
+        for (int j = 0; j <= totalPoint; j++, xPoint += intervalWidth) {
+            float yPoint = 0.0;
+            for (int i = 0; i < coefficients.size(); i++) {
+                yPoint += coefficients[i] * std::pow(xPoint, i);
+            }
+
+            splineSeries->append(xPoint, yPoint);
+        }
+        chart->addSeries(splineSeries);
+        splineSeries->attachAxis(chart->axisX());
+        splineSeries->attachAxis(chart->axisY());
         // 显示图像
         chartView = new QChartView(chart);
         chartView->setRenderHint(QPainter::Antialiasing); // 抗锯齿渲染
-
-        ChartViewDialog viewDialog(this);
-        viewDialog.setViewChart(chartView);
-        viewDialog.showNumOfDuplicatePoints(numOfDuplicatePoints);
+        ChartViewDialog viewDialog(this, chartView);
+//        viewDialog.setViewChart(chartView);
+        // 显示值
+        float pValue = std::get<1>(result);
+        float r2Value = std::get<2>(result);
+        viewDialog.setValueLabel(numOfDuplicatePoints, pValue, r2Value);
         viewDialog.exec();
     }
+}
+
+
+
+void MainWindow::on_Matrixaction_triggered()
+{
+    if (tableWidgetIsEmpty()) {
+        tableEmptyWarning();
+        return;
+    }
+    QStringList names;
+    for (int i = 1; i < ui->tableWidget->columnCount(); i++) {
+        QTableWidgetItem *item = ui->tableWidget->item(0, i);
+        if(item != nullptr && item->text().isEmpty() == false) {
+            names << item->text();
+        }
+    } // 有待打包
+    MultipleColumnsDialog dialog(this, names);
+    if (dialog.exec() == QDialog::Accepted) {
+        // 获取选择的列
+        auto items = dialog.getItems();
+        if (items.empty()) {
+            QMessageBox::warning(&dialog,"警告", "未选择数据！");
+            return;
+        }
+        // 获取总行数
+        int count = ui->tableWidget->rowCount();
+        std::vector<std::vector<float>> inputVector;
+        QStringList Selectednames;
+        // 导入数据至inputVector
+        for (auto column : items) {
+            std::vector<float> x(count -1);
+            Selectednames.append(ui->tableWidget->item(0, column)->text());
+            for (int j = 1; j < count; j++) {
+                QString text = ui->tableWidget->item(j, column)->text();
+                if (column != 1) {
+                    x[j - 1] = text.toFloat();
+                }
+                else {
+                    x[j - 1] = discreteValueMap[text];
+                }
+            }
+            inputVector.push_back(x);
+        }
+        auto covarianceMatrix = getCovariance(inputVector);
+        std::vector<float> vars;
+        for (auto vec : inputVector) {
+            auto avgVar = getAvgVar(vec);
+            vars.push_back(std::get<1>(avgVar));
+        }
+        auto pearsonCorrMatrix = getPearsonCorr(covarianceMatrix, vars);
+
+        int matrixSize = pearsonCorrMatrix.rows();
+        QVector<QVector<float>> dataCov(matrixSize,(QVector<float>(matrixSize,0)));
+        for (int i = 0; i < matrixSize; i++) {
+            for (int j = 0; j < matrixSize; j++) {
+                dataCov[i][j] = covarianceMatrix(i,j);
+            }
+        }
+        QVector<QVector<float>> dataPer(matrixSize,(QVector<float>(matrixSize,0)));
+        for (int i = 0; i < matrixSize; i++) {
+            for (int j = 0; j < matrixSize; j++) {
+                dataPer[i][j] = pearsonCorrMatrix(i,j);
+            }
+        }
+        HeatmapDialog viewDialog(this);
+
+        viewDialog.setDataCov(dataCov);
+        viewDialog.setDataPer(dataPer);
+        viewDialog.setLabels(Selectednames);
+        viewDialog.exec();
+    }
+}
+
+
+void MainWindow::on_PCAAction_triggered()
+{
+    QDialog dialog;
+    QVBoxLayout layout(&dialog);
+
+    // 创建标签
+    QLabel label("请选择降维次数:");
+    layout.addWidget(&label);
+
+    // 创建combobox
+    QComboBox comboBox;
+    comboBox.addItem("2");
+    comboBox.addItem("3");
+    layout.addWidget(&comboBox);
+    QDialogButtonBox buttonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel);
+    QObject::connect(&buttonBox, &QDialogButtonBox::accepted, &dialog, &QDialog::accept);
+    QObject::connect(&buttonBox, &QDialogButtonBox::rejected, &dialog, &QDialog::reject);
+    layout.addWidget(&buttonBox);
+
+    dialog.exec();
 }
 

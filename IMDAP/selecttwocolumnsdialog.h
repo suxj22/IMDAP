@@ -17,6 +17,7 @@ public:
     void setColumnNames(const QStringList &name); // 设置comboBox内容
     int getSelectedColumnX() const; // 返回选择的横轴
     int getSelectedColumnY() const; // 返回选择的纵轴
+    int getInputDegree() const; // 返回拟合次数
 
 private:
     Ui::SelectTwoColumnsDialog *ui;

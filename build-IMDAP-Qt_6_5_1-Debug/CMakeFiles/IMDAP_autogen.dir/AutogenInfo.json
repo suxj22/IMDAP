@@ -2265,6 +2265,24 @@
 			null
 		],
 		[
+			"/Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/drawheatmapwidget.h",
+			"MU",
+			"EWIEGA46WW/moc_drawheatmapwidget.cpp",
+			null
+		],
+		[
+			"/Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/heatmapdialog.h",
+			"MU",
+			"EWIEGA46WW/moc_heatmapdialog.cpp",
+			null
+		],
+		[
+			"/Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/histogramdialog.h",
+			"MU",
+			"EWIEGA46WW/moc_histogramdialog.cpp",
+			null
+		],
+		[
 			"/Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/kmeans.hpp",
 			"MU",
 			"EWIEGA46WW/moc_kmeans.cpp",
@@ -2280,6 +2298,12 @@
 			"/Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/mainwindow.h",
 			"MU",
 			"EWIEGA46WW/moc_mainwindow.cpp",
+			null
+		],
+		[
+			"/Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/multiplecolumnsdialog.h",
+			"MU",
+			"EWIEGA46WW/moc_multiplecolumnsdialog.cpp",
 			null
 		],
 		[
@@ -2328,6 +2352,7 @@
 	],
 	"MOC_INCLUDES" : 
 	[
+		"/Users/suxingjian/Documents/GitHub/IMDAP/IMDAP",
 		"/opt/homebrew/lib/QtCore.framework/Headers",
 		"/opt/homebrew/lib/QtCore.framework",
 		"/opt/homebrew/share/qt/mkspecs/macx-clang",
@@ -2388,9 +2413,29 @@
 			"MU",
 			null
 		],
+		[
+			"/Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/drawheatmapwidget.cpp",
+			"MU",
+			null
+		],
+		[
+			"/Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/heatmapdialog.cpp",
+			"MU",
+			null
+		],
+		[
+			"/Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/histogramdialog.cpp",
+			"MU",
+			null
+		],
 		[ "/Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/main.cpp", "MU", null ],
 		[
 			"/Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/mainwindow.cpp",
+			"MU",
+			null
+		],
+		[
+			"/Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/multiplecolumnsdialog.cpp",
 			"MU",
 			null
 		],

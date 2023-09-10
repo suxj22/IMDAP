@@ -306,6 +306,12 @@ QT_DIR:PATH=/opt/homebrew/lib/cmake/Qt6
 //No help, variable specified on the command line.
 QT_QMAKE_EXECUTABLE:FILEPATH=/opt/homebrew/opt/qt/bin/qmake
 
+//Path to a file.
+QWT_INCLUDE_DIR:PATH=QWT_INCLUDE_DIR-NOTFOUND
+
+//Path to a library.
+QWT_LIBRARY:FILEPATH=/opt/homebrew/lib/qwt.framework
+
 //The directory containing a CMake configuration file for Qt6Charts.
 Qt6Charts_DIR:PATH=/opt/homebrew/lib/cmake/Qt6Charts
 

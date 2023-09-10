@@ -6,6 +6,7 @@ AverageAndMeanDialog::AverageAndMeanDialog(QWidget *parent) :
     ui(new Ui::AverageAndMeanDialog)
 {
     ui->setupUi(this);
+
 }
 
 AverageAndMeanDialog::~AverageAndMeanDialog()

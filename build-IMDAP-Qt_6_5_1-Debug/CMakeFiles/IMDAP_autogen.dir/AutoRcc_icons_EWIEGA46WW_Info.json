@@ -7,7 +7,9 @@
 	"INCLUDE_DIR" : "/Users/suxingjian/Documents/GitHub/IMDAP/build-IMDAP-Qt_6_5_1-Debug/IMDAP_autogen/include",
 	"INPUTS" : 
 	[
+		"/Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/icons/pca.png",
 		"/Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/icons/pingjunzhi.png",
+		"/Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/icons/xiangguanxingjuzhentu.png",
 		"/Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/icons/zhifangtu.png",
 		"/Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/icons/wenjian.png",
 		"/Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/icons/sandiantu.png"

@@ -307,6 +307,78 @@ chartviewdialog.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/IMDAP.dir/build.make CMakeFiles/IMDAP.dir/chartviewdialog.cpp.s
 .PHONY : chartviewdialog.cpp.s
 
+drawheatmapwidget.o: drawheatmapwidget.cpp.o
+.PHONY : drawheatmapwidget.o
+
+# target to build an object file
+drawheatmapwidget.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/IMDAP.dir/build.make CMakeFiles/IMDAP.dir/drawheatmapwidget.cpp.o
+.PHONY : drawheatmapwidget.cpp.o
+
+drawheatmapwidget.i: drawheatmapwidget.cpp.i
+.PHONY : drawheatmapwidget.i
+
+# target to preprocess a source file
+drawheatmapwidget.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/IMDAP.dir/build.make CMakeFiles/IMDAP.dir/drawheatmapwidget.cpp.i
+.PHONY : drawheatmapwidget.cpp.i
+
+drawheatmapwidget.s: drawheatmapwidget.cpp.s
+.PHONY : drawheatmapwidget.s
+
+# target to generate assembly for a file
+drawheatmapwidget.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/IMDAP.dir/build.make CMakeFiles/IMDAP.dir/drawheatmapwidget.cpp.s
+.PHONY : drawheatmapwidget.cpp.s
+
+heatmapdialog.o: heatmapdialog.cpp.o
+.PHONY : heatmapdialog.o
+
+# target to build an object file
+heatmapdialog.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/IMDAP.dir/build.make CMakeFiles/IMDAP.dir/heatmapdialog.cpp.o
+.PHONY : heatmapdialog.cpp.o
+
+heatmapdialog.i: heatmapdialog.cpp.i
+.PHONY : heatmapdialog.i
+
+# target to preprocess a source file
+heatmapdialog.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/IMDAP.dir/build.make CMakeFiles/IMDAP.dir/heatmapdialog.cpp.i
+.PHONY : heatmapdialog.cpp.i
+
+heatmapdialog.s: heatmapdialog.cpp.s
+.PHONY : heatmapdialog.s
+
+# target to generate assembly for a file
+heatmapdialog.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/IMDAP.dir/build.make CMakeFiles/IMDAP.dir/heatmapdialog.cpp.s
+.PHONY : heatmapdialog.cpp.s
+
+histogramdialog.o: histogramdialog.cpp.o
+.PHONY : histogramdialog.o
+
+# target to build an object file
+histogramdialog.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/IMDAP.dir/build.make CMakeFiles/IMDAP.dir/histogramdialog.cpp.o
+.PHONY : histogramdialog.cpp.o
+
+histogramdialog.i: histogramdialog.cpp.i
+.PHONY : histogramdialog.i
+
+# target to preprocess a source file
+histogramdialog.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/IMDAP.dir/build.make CMakeFiles/IMDAP.dir/histogramdialog.cpp.i
+.PHONY : histogramdialog.cpp.i
+
+histogramdialog.s: histogramdialog.cpp.s
+.PHONY : histogramdialog.s
+
+# target to generate assembly for a file
+histogramdialog.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/IMDAP.dir/build.make CMakeFiles/IMDAP.dir/histogramdialog.cpp.s
+.PHONY : histogramdialog.cpp.s
+
 main.o: main.cpp.o
 .PHONY : main.o
 
@@ -354,6 +426,30 @@ mainwindow.s: mainwindow.cpp.s
 mainwindow.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/IMDAP.dir/build.make CMakeFiles/IMDAP.dir/mainwindow.cpp.s
 .PHONY : mainwindow.cpp.s
+
+multiplecolumnsdialog.o: multiplecolumnsdialog.cpp.o
+.PHONY : multiplecolumnsdialog.o
+
+# target to build an object file
+multiplecolumnsdialog.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/IMDAP.dir/build.make CMakeFiles/IMDAP.dir/multiplecolumnsdialog.cpp.o
+.PHONY : multiplecolumnsdialog.cpp.o
+
+multiplecolumnsdialog.i: multiplecolumnsdialog.cpp.i
+.PHONY : multiplecolumnsdialog.i
+
+# target to preprocess a source file
+multiplecolumnsdialog.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/IMDAP.dir/build.make CMakeFiles/IMDAP.dir/multiplecolumnsdialog.cpp.i
+.PHONY : multiplecolumnsdialog.cpp.i
+
+multiplecolumnsdialog.s: multiplecolumnsdialog.cpp.s
+.PHONY : multiplecolumnsdialog.s
+
+# target to generate assembly for a file
+multiplecolumnsdialog.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/IMDAP.dir/build.make CMakeFiles/IMDAP.dir/multiplecolumnsdialog.cpp.s
+.PHONY : multiplecolumnsdialog.cpp.s
 
 selecttwocolumnsdialog.o: selecttwocolumnsdialog.cpp.o
 .PHONY : selecttwocolumnsdialog.o
@@ -408,12 +504,24 @@ help:
 	@echo "... chartviewdialog.o"
 	@echo "... chartviewdialog.i"
 	@echo "... chartviewdialog.s"
+	@echo "... drawheatmapwidget.o"
+	@echo "... drawheatmapwidget.i"
+	@echo "... drawheatmapwidget.s"
+	@echo "... heatmapdialog.o"
+	@echo "... heatmapdialog.i"
+	@echo "... heatmapdialog.s"
+	@echo "... histogramdialog.o"
+	@echo "... histogramdialog.i"
+	@echo "... histogramdialog.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
 	@echo "... mainwindow.o"
 	@echo "... mainwindow.i"
 	@echo "... mainwindow.s"
+	@echo "... multiplecolumnsdialog.o"
+	@echo "... multiplecolumnsdialog.i"
+	@echo "... multiplecolumnsdialog.s"
 	@echo "... selecttwocolumnsdialog.o"
 	@echo "... selecttwocolumnsdialog.i"
 	@echo "... selecttwocolumnsdialog.s"

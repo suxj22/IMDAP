@@ -37,6 +37,8 @@ public:
     QAction *AverageAndMeanAction;
     QAction *HistogramAction;
     QAction *ScatterAction;
+    QAction *Matrixaction;
+    QAction *PCAAction;
     QWidget *centralwidget;
     QGridLayout *gridLayout;
     QVBoxLayout *verticalLayout;
@@ -70,6 +72,8 @@ public:
         QIcon icon;
         icon.addFile(QString::fromUtf8(":/icons/icons/wenjian.png"), QSize(), QIcon::Normal, QIcon::Off);
         action->setIcon(icon);
+        action->setMenuRole(QAction::TextHeuristicRole);
+        action->setIconVisibleInMenu(false);
         AverageAndMeanAction = new QAction(MainWindow);
         AverageAndMeanAction->setObjectName("AverageAndMeanAction");
         QIcon icon1;
@@ -85,6 +89,16 @@ public:
         QIcon icon3;
         icon3.addFile(QString::fromUtf8(":/icons/icons/sandiantu.png"), QSize(), QIcon::Normal, QIcon::Off);
         ScatterAction->setIcon(icon3);
+        Matrixaction = new QAction(MainWindow);
+        Matrixaction->setObjectName("Matrixaction");
+        QIcon icon4;
+        icon4.addFile(QString::fromUtf8(":/icons/icons/xiangguanxingjuzhentu.png"), QSize(), QIcon::Normal, QIcon::Off);
+        Matrixaction->setIcon(icon4);
+        PCAAction = new QAction(MainWindow);
+        PCAAction->setObjectName("PCAAction");
+        QIcon icon5;
+        icon5.addFile(QString::fromUtf8(":/icons/icons/pca.png"), QSize(), QIcon::Normal, QIcon::Off);
+        PCAAction->setIcon(icon5);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
         gridLayout = new QGridLayout(centralwidget);
@@ -106,7 +120,7 @@ public:
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 1280, 22));
+        menubar->setGeometry(QRect(0, 0, 1280, 24));
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName("statusbar");
@@ -188,6 +202,8 @@ public:
         toolBar->addAction(AverageAndMeanAction);
         toolBar->addAction(HistogramAction);
         toolBar->addAction(ScatterAction);
+        toolBar->addAction(Matrixaction);
+        toolBar->addAction(PCAAction);
 
         retranslateUi(MainWindow);
 
@@ -202,13 +218,21 @@ public:
 #if QT_CONFIG(tooltip)
         AverageAndMeanAction->setToolTip(QCoreApplication::translate("MainWindow", "\345\235\207\345\200\274\345\222\214\346\226\271\345\267\256", nullptr));
 #endif // QT_CONFIG(tooltip)
-        HistogramAction->setText(QCoreApplication::translate("MainWindow", "\347\273\230\345\210\266\347\233\264\346\226\271\345\233\276", nullptr));
+        HistogramAction->setText(QCoreApplication::translate("MainWindow", "\347\233\264\346\226\271\345\233\276\345\222\214\346\255\243\346\200\201\345\210\206\345\270\203\346\233\262\347\272\277", nullptr));
 #if QT_CONFIG(tooltip)
-        HistogramAction->setToolTip(QCoreApplication::translate("MainWindow", "\347\273\230\345\210\266\347\233\264\346\226\271\345\233\276", nullptr));
+        HistogramAction->setToolTip(QCoreApplication::translate("MainWindow", "\347\233\264\346\226\271\345\233\276\345\222\214\346\255\243\346\200\201\345\210\206\345\270\203\346\233\262\347\272\277", nullptr));
 #endif // QT_CONFIG(tooltip)
-        ScatterAction->setText(QCoreApplication::translate("MainWindow", "\347\273\230\345\210\266\346\225\243\347\202\271\345\233\276", nullptr));
+        ScatterAction->setText(QCoreApplication::translate("MainWindow", "\346\225\243\347\202\271\345\233\276\345\222\214\346\233\262\347\272\277\346\213\237\345\220\210", nullptr));
 #if QT_CONFIG(tooltip)
-        ScatterAction->setToolTip(QCoreApplication::translate("MainWindow", "\347\273\230\345\210\266\346\225\243\347\202\271\345\233\276", nullptr));
+        ScatterAction->setToolTip(QCoreApplication::translate("MainWindow", "\346\225\243\347\202\271\345\233\276\345\222\214\346\233\262\347\272\277\346\213\237\345\220\210", nullptr));
+#endif // QT_CONFIG(tooltip)
+        Matrixaction->setText(QCoreApplication::translate("MainWindow", "\347\233\270\345\205\263\346\200\247\345\222\214\345\215\217\346\226\271\345\267\256\347\237\251\351\230\265", nullptr));
+#if QT_CONFIG(tooltip)
+        Matrixaction->setToolTip(QCoreApplication::translate("MainWindow", "\347\233\270\345\205\263\346\200\247\345\222\214\345\215\217\346\226\271\345\267\256\347\237\251\351\230\265", nullptr));
+#endif // QT_CONFIG(tooltip)
+        PCAAction->setText(QCoreApplication::translate("MainWindow", "PCA\351\231\215\347\273\264", nullptr));
+#if QT_CONFIG(tooltip)
+        PCAAction->setToolTip(QCoreApplication::translate("MainWindow", "PCA\351\231\215\347\273\264", nullptr));
 #endif // QT_CONFIG(tooltip)
         toolBar->setWindowTitle(QCoreApplication::translate("MainWindow", "toolBar", nullptr));
         pushButton_2->setText(QCoreApplication::translate("MainWindow", "PushButton", nullptr));

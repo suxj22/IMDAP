@@ -1,4 +1,6 @@
 #include "selecttwocolumnsdialog.h"
+#include "QtGui/qstandarditemmodel.h"
+#include "QtWidgets/qlistview.h"
 #include "ui_selecttwocolumnsdialog.h"
 #include <QRegularExpressionValidator>
 
@@ -28,4 +30,8 @@ int SelectTwoColumnsDialog::getSelectedColumnX() const {
 
 int SelectTwoColumnsDialog::getSelectedColumnY() const {
     return ui->comboBox_2->currentIndex();
+}
+
+int SelectTwoColumnsDialog::getInputDegree() const {
+    return ui->lineEdit->text().toInt();
 }

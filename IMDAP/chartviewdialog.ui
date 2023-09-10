@@ -31,14 +31,17 @@
       </widget>
      </item>
      <item>
-      <widget class="QCheckBox" name="checkBox_2">
+      <widget class="QCheckBox" name="ScatterCheckBox">
        <property name="text">
         <string>散点图</string>
+       </property>
+       <property name="tristate">
+        <bool>false</bool>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QCheckBox" name="checkBox">
+      <widget class="QCheckBox" name="SplineCheckBox">
        <property name="text">
         <string>曲线拟合</string>
        </property>
@@ -47,7 +50,21 @@
      <item>
       <widget class="QLabel" name="numOfDuplicatePointsLabel">
        <property name="text">
-        <string>重复点个数：123个</string>
+        <string>重复点个数：0个</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="pValueLabel">
+       <property name="text">
+        <string>p值：</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="r2ValueLabel">
+       <property name="text">
+        <string>r^2值：</string>
        </property>
       </widget>
      </item>

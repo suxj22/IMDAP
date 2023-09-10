@@ -4,5 +4,7 @@
         <file>icons/wenjian.png</file>
         <file>icons/zhifangtu.png</file>
         <file>icons/sandiantu.png</file>
+        <file>icons/xiangguanxingjuzhentu.png</file>
+        <file>icons/pca.png</file>
     </qresource>
 </RCC>

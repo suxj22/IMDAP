@@ -27,9 +27,11 @@ public:
     QHBoxLayout *horizontalLayout;
     QPushButton *exportImageButton;
     QPushButton *copyToClipboardButton;
-    QCheckBox *checkBox_2;
-    QCheckBox *checkBox;
+    QCheckBox *ScatterCheckBox;
+    QCheckBox *SplineCheckBox;
     QLabel *numOfDuplicatePointsLabel;
+    QLabel *pValueLabel;
+    QLabel *r2ValueLabel;
     QLabel *DataLabel;
 
     void setupUi(QDialog *ChartViewDialog)
@@ -51,20 +53,31 @@ public:
 
         horizontalLayout->addWidget(copyToClipboardButton);
 
-        checkBox_2 = new QCheckBox(ChartViewDialog);
-        checkBox_2->setObjectName("checkBox_2");
+        ScatterCheckBox = new QCheckBox(ChartViewDialog);
+        ScatterCheckBox->setObjectName("ScatterCheckBox");
+        ScatterCheckBox->setTristate(false);
 
-        horizontalLayout->addWidget(checkBox_2);
+        horizontalLayout->addWidget(ScatterCheckBox);
 
-        checkBox = new QCheckBox(ChartViewDialog);
-        checkBox->setObjectName("checkBox");
+        SplineCheckBox = new QCheckBox(ChartViewDialog);
+        SplineCheckBox->setObjectName("SplineCheckBox");
 
-        horizontalLayout->addWidget(checkBox);
+        horizontalLayout->addWidget(SplineCheckBox);
 
         numOfDuplicatePointsLabel = new QLabel(ChartViewDialog);
         numOfDuplicatePointsLabel->setObjectName("numOfDuplicatePointsLabel");
 
         horizontalLayout->addWidget(numOfDuplicatePointsLabel);
+
+        pValueLabel = new QLabel(ChartViewDialog);
+        pValueLabel->setObjectName("pValueLabel");
+
+        horizontalLayout->addWidget(pValueLabel);
+
+        r2ValueLabel = new QLabel(ChartViewDialog);
+        r2ValueLabel->setObjectName("r2ValueLabel");
+
+        horizontalLayout->addWidget(r2ValueLabel);
 
         DataLabel = new QLabel(ChartViewDialog);
         DataLabel->setObjectName("DataLabel");
@@ -85,9 +98,11 @@ public:
         ChartViewDialog->setWindowTitle(QCoreApplication::translate("ChartViewDialog", "Dialog", nullptr));
         exportImageButton->setText(QCoreApplication::translate("ChartViewDialog", "\345\257\274\345\207\272", nullptr));
         copyToClipboardButton->setText(QCoreApplication::translate("ChartViewDialog", "\345\244\215\345\210\266", nullptr));
-        checkBox_2->setText(QCoreApplication::translate("ChartViewDialog", "\346\225\243\347\202\271\345\233\276", nullptr));
-        checkBox->setText(QCoreApplication::translate("ChartViewDialog", "\346\233\262\347\272\277\346\213\237\345\220\210", nullptr));
-        numOfDuplicatePointsLabel->setText(QCoreApplication::translate("ChartViewDialog", "\351\207\215\345\244\215\347\202\271\344\270\252\346\225\260\357\274\232123\344\270\252", nullptr));
+        ScatterCheckBox->setText(QCoreApplication::translate("ChartViewDialog", "\346\225\243\347\202\271\345\233\276", nullptr));
+        SplineCheckBox->setText(QCoreApplication::translate("ChartViewDialog", "\346\233\262\347\272\277\346\213\237\345\220\210", nullptr));
+        numOfDuplicatePointsLabel->setText(QCoreApplication::translate("ChartViewDialog", "\351\207\215\345\244\215\347\202\271\344\270\252\346\225\260\357\274\2320\344\270\252", nullptr));
+        pValueLabel->setText(QCoreApplication::translate("ChartViewDialog", "p\345\200\274\357\274\232", nullptr));
+        r2ValueLabel->setText(QCoreApplication::translate("ChartViewDialog", "r^2\345\200\274\357\274\232", nullptr));
         DataLabel->setText(QString());
     } // retranslateUi
 

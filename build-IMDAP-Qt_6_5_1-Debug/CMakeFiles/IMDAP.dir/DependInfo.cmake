@@ -13,8 +13,12 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/Users/suxingjian/Documents/GitHub/IMDAP/build-IMDAP-Qt_6_5_1-Debug/IMDAP_autogen/mocs_compilation.cpp" "CMakeFiles/IMDAP.dir/IMDAP_autogen/mocs_compilation.cpp.o" "gcc" "CMakeFiles/IMDAP.dir/IMDAP_autogen/mocs_compilation.cpp.o.d"
   "/Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/averageandmeandialog.cpp" "CMakeFiles/IMDAP.dir/averageandmeandialog.cpp.o" "gcc" "CMakeFiles/IMDAP.dir/averageandmeandialog.cpp.o.d"
   "/Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/chartviewdialog.cpp" "CMakeFiles/IMDAP.dir/chartviewdialog.cpp.o" "gcc" "CMakeFiles/IMDAP.dir/chartviewdialog.cpp.o.d"
+  "/Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/drawheatmapwidget.cpp" "CMakeFiles/IMDAP.dir/drawheatmapwidget.cpp.o" "gcc" "CMakeFiles/IMDAP.dir/drawheatmapwidget.cpp.o.d"
+  "/Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/heatmapdialog.cpp" "CMakeFiles/IMDAP.dir/heatmapdialog.cpp.o" "gcc" "CMakeFiles/IMDAP.dir/heatmapdialog.cpp.o.d"
+  "/Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/histogramdialog.cpp" "CMakeFiles/IMDAP.dir/histogramdialog.cpp.o" "gcc" "CMakeFiles/IMDAP.dir/histogramdialog.cpp.o.d"
   "/Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/main.cpp" "CMakeFiles/IMDAP.dir/main.cpp.o" "gcc" "CMakeFiles/IMDAP.dir/main.cpp.o.d"
   "/Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/mainwindow.cpp" "CMakeFiles/IMDAP.dir/mainwindow.cpp.o" "gcc" "CMakeFiles/IMDAP.dir/mainwindow.cpp.o.d"
+  "/Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/multiplecolumnsdialog.cpp" "CMakeFiles/IMDAP.dir/multiplecolumnsdialog.cpp.o" "gcc" "CMakeFiles/IMDAP.dir/multiplecolumnsdialog.cpp.o.d"
   "/Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/selecttwocolumnsdialog.cpp" "CMakeFiles/IMDAP.dir/selecttwocolumnsdialog.cpp.o" "gcc" "CMakeFiles/IMDAP.dir/selecttwocolumnsdialog.cpp.o.d"
   )
 

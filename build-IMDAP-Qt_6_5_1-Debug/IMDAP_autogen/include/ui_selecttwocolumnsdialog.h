@@ -95,6 +95,7 @@ public:
         label->setText(QCoreApplication::translate("SelectTwoColumnsDialog", "\351\200\211\346\213\251\346\250\252\350\275\264\357\274\210id\345\210\227\344\270\215\345\217\257\351\200\211\357\274\211", nullptr));
         label_2->setText(QCoreApplication::translate("SelectTwoColumnsDialog", "\351\200\211\346\213\251\347\272\265\350\275\264\357\274\210id\345\210\227\344\270\215\345\217\257\351\200\211\357\274\211", nullptr));
         label_3->setText(QCoreApplication::translate("SelectTwoColumnsDialog", "\351\200\211\346\213\251\346\233\262\347\272\277\346\213\237\345\220\210\347\232\204\346\254\241\346\225\260", nullptr));
+        lineEdit->setText(QCoreApplication::translate("SelectTwoColumnsDialog", "1", nullptr));
     } // retranslateUi
 
 };

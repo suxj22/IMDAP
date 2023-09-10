@@ -42,7 +42,7 @@
      <x>0</x>
      <y>0</y>
      <width>1280</width>
-     <height>22</height>
+     <height>24</height>
     </rect>
    </property>
   </widget>
@@ -74,6 +74,8 @@
    <addaction name="AverageAndMeanAction"/>
    <addaction name="HistogramAction"/>
    <addaction name="ScatterAction"/>
+   <addaction name="Matrixaction"/>
+   <addaction name="PCAAction"/>
   </widget>
   <widget class="QDockWidget" name="dockWidget">
    <attribute name="dockWidgetArea">
@@ -178,6 +180,12 @@
    <property name="text">
     <string>导入文件</string>
    </property>
+   <property name="menuRole">
+    <enum>QAction::TextHeuristicRole</enum>
+   </property>
+   <property name="iconVisibleInMenu">
+    <bool>false</bool>
+   </property>
   </action>
   <action name="AverageAndMeanAction">
    <property name="icon">
@@ -197,10 +205,10 @@
      <normaloff>:/icons/icons/zhifangtu.png</normaloff>:/icons/icons/zhifangtu.png</iconset>
    </property>
    <property name="text">
-    <string>绘制直方图</string>
+    <string>直方图和正态分布曲线</string>
    </property>
    <property name="toolTip">
-    <string>绘制直方图</string>
+    <string>直方图和正态分布曲线</string>
    </property>
   </action>
   <action name="ScatterAction">
@@ -209,10 +217,34 @@
      <normaloff>:/icons/icons/sandiantu.png</normaloff>:/icons/icons/sandiantu.png</iconset>
    </property>
    <property name="text">
-    <string>绘制散点图</string>
+    <string>散点图和曲线拟合</string>
    </property>
    <property name="toolTip">
-    <string>绘制散点图</string>
+    <string>散点图和曲线拟合</string>
+   </property>
+  </action>
+  <action name="Matrixaction">
+   <property name="icon">
+    <iconset resource="icons.qrc">
+     <normaloff>:/icons/icons/xiangguanxingjuzhentu.png</normaloff>:/icons/icons/xiangguanxingjuzhentu.png</iconset>
+   </property>
+   <property name="text">
+    <string>相关性和协方差矩阵</string>
+   </property>
+   <property name="toolTip">
+    <string>相关性和协方差矩阵</string>
+   </property>
+  </action>
+  <action name="PCAAction">
+   <property name="icon">
+    <iconset resource="icons.qrc">
+     <normaloff>:/icons/icons/pca.png</normaloff>:/icons/icons/pca.png</iconset>
+   </property>
+   <property name="text">
+    <string>PCA降维</string>
+   </property>
+   <property name="toolTip">
+    <string>PCA降维</string>
    </property>
   </action>
  </widget>

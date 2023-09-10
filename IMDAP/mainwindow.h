@@ -30,6 +30,10 @@ private slots:
 
     void on_ScatterAction_triggered();
 
+    void on_Matrixaction_triggered();
+
+    void on_PCAAction_triggered();
+
 private:
     Ui::MainWindow *ui;
     QString lastImportedFilePath; // 避免重复导入相同文件
