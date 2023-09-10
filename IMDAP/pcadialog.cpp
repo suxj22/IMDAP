@@ -6,7 +6,7 @@ PCADialog::PCADialog(QWidget *parent, QWidget *contentWidget) :
     ui(new Ui::PCADialog)
 {
     ui->setupUi(this);
-    ui->horizontalLayout->addWidget(contentWidget);
+    ui->formLayout->addWidget(contentWidget);
 }
 
 PCADialog::~PCADialog()
