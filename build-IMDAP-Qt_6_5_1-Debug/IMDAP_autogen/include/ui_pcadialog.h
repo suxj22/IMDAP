@@ -31,6 +31,11 @@ public:
         if (PCADialog->objectName().isEmpty())
             PCADialog->setObjectName("PCADialog");
         PCADialog->resize(1280, 720);
+        QSizePolicy sizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(PCADialog->sizePolicy().hasHeightForWidth());
+        PCADialog->setSizePolicy(sizePolicy);
         formLayout = new QFormLayout(PCADialog);
         formLayout->setObjectName("formLayout");
         horizontalLayout = new QHBoxLayout();

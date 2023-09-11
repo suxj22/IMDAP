@@ -501,18 +501,18 @@ void MainWindow::on_PCAAction_triggered()
         // 获取总行数
         int count = ui->tableWidget->rowCount();
         std::vector<std::vector<float>> inputVector;
-        QStringList Selectednames;
         // 导入数据至inputVector
-        for (auto column : items) {
-            std::vector<float> x(count -1);
-            Selectednames.append(ui->tableWidget->item(0, column)->text());
-            for (int j = 1; j < count; j++) {
+        for (int j = 0; j < count - 1; j++) {
+
+            std::vector<float> x(items.size());
+            for (auto column : items) {
                 QString text = ui->tableWidget->item(j, column)->text();
+                int index = column - items[0];
                 if (column != 1) {
-                    x[j - 1] = text.toFloat();
+                    x[index] = text.toFloat();
                 }
                 else {
-                    x[j - 1] = discreteValueMap[text];
+                    x[index] = discreteValueMap[text];
                 }
             }
             inputVector.push_back(x);
@@ -544,11 +544,30 @@ void MainWindow::on_PCAAction_triggered()
                 QList<QScatterSeries*> seriesList(indexOfText.size(), new QScatterSeries);
                 // 定义一个颜色列表，给不同类别的点赋不同颜色
                 int resultSize = result.rows();
-                for (int i = 0; i < resultSize; i++) {
+                float minValueX = result(0, 0);
+                float maxValueX = result(0, 0);
+                float minValueY = result(0, 0);
+                float maxValueY = result(0, 0);
+                for (int i = 0; i < count - 1; i++) {
                     QString text = ui->tableWidget->item(i + 1, 1)->text();
                     int kind = discreteValueMap[text];
                     seriesList[kind]->setName(text);
-                    auto newPoint = QPointF(result(i, 0), result(i, 1));
+
+                    float x = result(i, 0);
+                    float y = result(i, 1);
+                    if (x > maxValueX) {
+                       maxValueX = x;
+                    }
+                    if (x < minValueX) {
+                       minValueX = x;
+                    }
+                    if (y > maxValueY) {
+                       maxValueY = y;
+                    }
+                    if (y < minValueY) {
+                       minValueY = y;
+                    }
+                    auto newPoint = QPointF(x, y);
                     seriesList[kind]->append(newPoint);
                 }
                 QList<QColor> colors = {Qt::red, Qt::blue, Qt::green, Qt::yellow, Qt::cyan, Qt::magenta, Qt::gray};
@@ -560,17 +579,56 @@ void MainWindow::on_PCAAction_triggered()
                 }
                 auto chart = new QChart;
                 for (auto series : seriesList) {
+                    qDebug() << "Series Name:" << series->name();
+                    for (int i = 0; i < series->count(); i++) {
+                       QPointF point = series->at(i);
+                       qDebug() << "Point:" << point.x() << "," << point.y();
+                    }
                     chart->addSeries(series);
                 }
                 chart->setTitle("二维降维图");
-                chart->createDefaultAxes();
+                auto axisX = new QValueAxis;
+                auto axisY = new QValueAxis;
+                float factor = 1.1;
+                if (minValueX > 0) {
+                    minValueX /= factor;
+                }
+                else {
+                    minValueX *= factor;
+                }
+                if (maxValueX > 0) {
+                    maxValueX *= factor;
+                }
+                else {
+                    maxValueX /= factor;
+                }
+                if (minValueY > 0) {
+                    minValueY /= factor;
+                }
+                else {
+                    minValueY *= factor;
+                }
+                if (maxValueY > 0) {
+                    maxValueY *= factor;
+                }
+                else {
+                    maxValueY /= factor;
+                }
+                axisX->setRange(minValueX, maxValueX);
+                axisY->setRange(minValueY, maxValueY);
+                chart->addAxis(axisX, Qt::AlignBottom);
+                chart->addAxis(axisY, Qt::AlignLeft);
+                for (auto series : seriesList) {
+                    series->attachAxis(axisX);
+                    series->attachAxis(axisY);
+                }
+
                 chart->setAnimationOptions(QChart::SeriesAnimations);
                 chart->setDropShadowEnabled(false);
                 auto chartView = new QChartView(chart);
                 PCADialog viewDialog(this, chartView);
                 viewDialog.exec();
                 break;
-
             }
             case 3:{
 
