@@ -1984,8 +1984,91 @@ CMakeFiles/IMDAP.dir/mainwindow.cpp.o: \
   /Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/drawheatmapwidget.h \
   /opt/homebrew/lib/QtWidgets.framework/Headers/QWidget \
   /opt/homebrew/lib/QtCore.framework/Headers/QVector \
+  /Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/helpdialog.h \
   /Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/histogramdialog.h \
   /Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/chartviewdialog.h \
+  /Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/kmeans.hpp \
+  /Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/kmeansdialog.h \
+  /opt/homebrew/include/QtDataVisualization/q3dscatter.h \
+  /opt/homebrew/include/QtDataVisualization/qabstract3dgraph.h \
+  /opt/homebrew/include/QtDataVisualization/qdatavisualizationglobal.h \
+  /opt/homebrew/include/QtDataVisualization/qtdatavisualizationexports.h \
+  /opt/homebrew/include/QtDataVisualization/q3dtheme.h \
+  /opt/homebrew/include/QtGui/QLinearGradient \
+  /opt/homebrew/include/QtGui/QColor \
+  /opt/homebrew/include/QtDataVisualization/q3dscene.h \
+  /opt/homebrew/include/QtDataVisualization/q3dcamera.h \
+  /opt/homebrew/include/QtDataVisualization/q3dobject.h \
+  /opt/homebrew/include/QtDataVisualization/q3dlight.h \
+  /opt/homebrew/include/QtDataVisualization/qabstract3dinputhandler.h \
+  /opt/homebrew/include/QtCore/QPoint \
+  /opt/homebrew/include/QtGui/QWheelEvent \
+  /opt/homebrew/include/QtGui/QMouseEvent \
+  /opt/homebrew/include/QtGui/QTouchEvent \
+  /opt/homebrew/include/QtGui/QOpenGLFunctions \
+  /opt/homebrew/include/QtCore/QLocale \
+  /opt/homebrew/include/QtDataVisualization/qvalue3daxis.h \
+  /opt/homebrew/include/QtDataVisualization/qabstract3daxis.h \
+  /opt/homebrew/include/QtDataVisualization/qvalue3daxisformatter.h \
+  /opt/homebrew/include/QtDataVisualization/qscatter3dseries.h \
+  /opt/homebrew/include/QtDataVisualization/qabstract3dseries.h \
+  /opt/homebrew/include/QtGui/QQuaternion \
+  /opt/homebrew/include/QtDataVisualization/qscatterdataproxy.h \
+  /opt/homebrew/include/QtDataVisualization/qabstractdataproxy.h \
+  /opt/homebrew/include/QtDataVisualization/qscatterdataitem.h \
+  /opt/homebrew/lib/QtDataVisualization.framework/Headers/QtDataVisualization \
+  /opt/homebrew/include/QtDataVisualization/QtDataVisualizationDepends \
+  /opt/homebrew/lib/QtDataVisualization.framework/Headers/qdatavisualizationglobal.h \
+  /opt/homebrew/lib/QtDataVisualization.framework/Headers/q3dbars.h \
+  /opt/homebrew/include/QtDataVisualization/qcategory3daxis.h \
+  /opt/homebrew/include/QtDataVisualization/qbar3dseries.h \
+  /opt/homebrew/include/QtDataVisualization/qbardataproxy.h \
+  /opt/homebrew/include/QtDataVisualization/qbardataitem.h \
+  /opt/homebrew/lib/QtDataVisualization.framework/Headers/q3dcamera.h \
+  /opt/homebrew/lib/QtDataVisualization.framework/Headers/q3dinputhandler.h \
+  /opt/homebrew/lib/QtDataVisualization.framework/Headers/q3dlight.h \
+  /opt/homebrew/lib/QtDataVisualization.framework/Headers/q3dobject.h \
+  /opt/homebrew/lib/QtDataVisualization.framework/Headers/q3dscatter.h \
+  /opt/homebrew/lib/QtDataVisualization.framework/Headers/q3dscene.h \
+  /opt/homebrew/lib/QtDataVisualization.framework/Headers/q3dsurface.h \
+  /opt/homebrew/include/QtDataVisualization/qsurface3dseries.h \
+  /opt/homebrew/include/QtDataVisualization/qsurfacedataproxy.h \
+  /opt/homebrew/include/QtDataVisualization/qsurfacedataitem.h \
+  /opt/homebrew/lib/QtDataVisualization.framework/Headers/q3dtheme.h \
+  /opt/homebrew/lib/QtDataVisualization.framework/Headers/qabstract3daxis.h \
+  /opt/homebrew/lib/QtDataVisualization.framework/Headers/qabstract3dgraph.h \
+  /opt/homebrew/lib/QtDataVisualization.framework/Headers/qabstract3dinputhandler.h \
+  /opt/homebrew/lib/QtDataVisualization.framework/Headers/qabstract3dseries.h \
+  /opt/homebrew/lib/QtDataVisualization.framework/Headers/qabstractdataproxy.h \
+  /opt/homebrew/lib/QtDataVisualization.framework/Headers/qbar3dseries.h \
+  /opt/homebrew/lib/QtDataVisualization.framework/Headers/qbardataitem.h \
+  /opt/homebrew/lib/QtDataVisualization.framework/Headers/qbardataproxy.h \
+  /opt/homebrew/lib/QtDataVisualization.framework/Headers/qcategory3daxis.h \
+  /opt/homebrew/lib/QtDataVisualization.framework/Headers/qcustom3ditem.h \
+  /opt/homebrew/lib/QtDataVisualization.framework/Headers/qcustom3dlabel.h \
+  /opt/homebrew/include/QtDataVisualization/QCustom3DItem \
+  /opt/homebrew/lib/QtDataVisualization.framework/Headers/qcustom3dvolume.h \
+  /opt/homebrew/lib/QtDataVisualization.framework/Headers/qheightmapsurfacedataproxy.h \
+  /opt/homebrew/lib/QtDataVisualization.framework/Headers/qitemmodelbardataproxy.h \
+  /opt/homebrew/include/QtCore/QAbstractItemModel \
+  /opt/homebrew/include/QtCore/QRegularExpression \
+  /opt/homebrew/lib/QtDataVisualization.framework/Headers/qitemmodelscatterdataproxy.h \
+  /opt/homebrew/lib/QtDataVisualization.framework/Headers/qitemmodelsurfacedataproxy.h \
+  /opt/homebrew/lib/QtDataVisualization.framework/Headers/qlogvalue3daxisformatter.h \
+  /opt/homebrew/lib/QtDataVisualization.framework/Headers/qscatter3dseries.h \
+  /opt/homebrew/lib/QtDataVisualization.framework/Headers/qscatterdataitem.h \
+  /opt/homebrew/lib/QtDataVisualization.framework/Headers/qscatterdataproxy.h \
+  /opt/homebrew/lib/QtDataVisualization.framework/Headers/qsurface3dseries.h \
+  /opt/homebrew/lib/QtDataVisualization.framework/Headers/qsurfacedataitem.h \
+  /opt/homebrew/lib/QtDataVisualization.framework/Headers/qsurfacedataproxy.h \
+  /opt/homebrew/lib/QtDataVisualization.framework/Headers/qtdatavisualizationversion.h \
+  /opt/homebrew/lib/QtDataVisualization.framework/Headers/qtouch3dinputhandler.h \
+  /opt/homebrew/include/QtDataVisualization/q3dinputhandler.h \
+  /opt/homebrew/lib/QtDataVisualization.framework/Headers/qutils.h \
+  /opt/homebrew/include/QtGui/QOffscreenSurface \
+  /opt/homebrew/include/QtCore/QCoreApplication \
+  /opt/homebrew/lib/QtDataVisualization.framework/Headers/qvalue3daxis.h \
+  /opt/homebrew/lib/QtDataVisualization.framework/Headers/qvalue3daxisformatter.h \
   /Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/leastsquare.hpp \
   /Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/multiplecolumnsdialog.h \
   /opt/homebrew/include/QtWidgets/qlistwidget.h \
@@ -1996,4 +2079,9 @@ CMakeFiles/IMDAP.dir/mainwindow.cpp.o: \
   /opt/homebrew/lib/QtCore.framework/Headers/QFile \
   /opt/homebrew/lib/QtCore.framework/Headers/QTextStream \
   /opt/homebrew/lib/QtCore.framework/Headers/QStringList \
-  /opt/homebrew/lib/QtWidgets.framework/Headers/QMessageBox
+  /opt/homebrew/lib/QtWidgets.framework/Headers/QMessageBox \
+  /opt/homebrew/include/QtDataVisualization/Q3DScatter \
+  /opt/homebrew/include/QtDataVisualization/QScatter3DSeries \
+  /opt/homebrew/include/QtDataVisualization/QScatterDataProxy \
+  /Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/Legend3D.h \
+  /opt/homebrew/lib/QtWidgets.framework/Headers/QGraphicsTextItem

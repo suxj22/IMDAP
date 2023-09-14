@@ -327,6 +327,9 @@ Qt6DBusTools_DIR:PATH=/opt/homebrew/lib/cmake/Qt6DBusTools
 //The directory containing a CMake configuration file for Qt6DBus.
 Qt6DBus_DIR:PATH=/opt/homebrew/lib/cmake/Qt6DBus
 
+//The directory containing a CMake configuration file for Qt6DataVisualization.
+Qt6DataVisualization_DIR:PATH=/opt/homebrew/lib/cmake/Qt6DataVisualization
+
 //The directory containing a CMake configuration file for Qt6GuiTools.
 Qt6GuiTools_DIR:PATH=/opt/homebrew/lib/cmake/Qt6GuiTools
 

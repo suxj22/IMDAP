@@ -16,6 +16,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
 find_package(Qt6 REQUIRED COMPONENTS Charts)
+find_package(Qt6 REQUIRED COMPONENTS DataVisualization)
 include_directories (${PROJECT_SOURCE_DIR})
 
 set(PROJECT_SOURCES
@@ -41,9 +42,13 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         drawheatmapwidget.h drawheatmapwidget.cpp
         heatmapdialog.h heatmapdialog.cpp heatmapdialog.ui
         pcadialog.h pcadialog.cpp pcadialog.ui
+        Legend3D.h Legend3D.cpp
+        kmeansdialog.h kmeansdialog.cpp kmeansdialog.ui
+        helpdialog.h helpdialog.cpp helpdialog.ui
+
 
     )
-target_link_libraries(IMDAP PRIVATE Qt6::Charts)
+target_link_libraries(IMDAP PRIVATE Qt6::Charts PRIVATE Qt6::DataVisualization)
 
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET IMDAP APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR

@@ -389,6 +389,37 @@
 		"/opt/homebrew/lib/cmake/Qt6Charts/Qt6ChartsTargets-release.cmake",
 		"/opt/homebrew/lib/cmake/Qt6Charts/Qt6ChartsAdditionalTargetInfo.cmake",
 		"/opt/homebrew/lib/cmake/Qt6Charts/Qt6ChartsVersionlessTargets.cmake",
+		"/opt/homebrew/lib/cmake/Qt6/Qt6ConfigVersion.cmake",
+		"/opt/homebrew/lib/cmake/Qt6/Qt6ConfigVersionImpl.cmake",
+		"/opt/homebrew/lib/cmake/Qt6/Qt6Config.cmake",
+		"/opt/homebrew/lib/cmake/Qt6/Qt6ConfigExtras.cmake",
+		"/opt/homebrew/lib/cmake/Qt6/QtPublicCMakeVersionHelpers.cmake",
+		"/opt/homebrew/lib/cmake/Qt6/Qt6Targets.cmake",
+		"/opt/homebrew/lib/cmake/Qt6/Qt6VersionlessTargets.cmake",
+		"/opt/homebrew/lib/cmake/Qt6/QtFeature.cmake",
+		"/opt/homebrew/Cellar/qt/6.5.1_3/lib/cmake/Qt6/QtFeatureCommon.cmake",
+		"/usr/local/Cellar/cmake/3.26.4/share/cmake/Modules/CheckCXXCompilerFlag.cmake",
+		"/opt/homebrew/lib/cmake/Qt6/QtPublicAppleHelpers.cmake",
+		"/opt/homebrew/lib/cmake/Qt6/QtPublicFinalizerHelpers.cmake",
+		"/opt/homebrew/lib/cmake/Qt6/QtPublicPluginHelpers.cmake",
+		"/opt/homebrew/lib/cmake/Qt6/QtPublicTargetHelpers.cmake",
+		"/opt/homebrew/lib/cmake/Qt6/QtPublicWalkLibsHelpers.cmake",
+		"/opt/homebrew/lib/cmake/Qt6/QtPublicFindPackageHelpers.cmake",
+		"/opt/homebrew/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake",
+		"/opt/homebrew/lib/cmake/Qt6/QtPublicTestHelpers.cmake",
+		"/opt/homebrew/lib/cmake/Qt6/QtPublicToolHelpers.cmake",
+		"/opt/homebrew/lib/cmake/Qt6/QtPublicCMakeHelpers.cmake",
+		"/usr/local/Cellar/cmake/3.26.4/share/cmake/Modules/CMakeFindDependencyMacro.cmake",
+		"/opt/homebrew/lib/cmake/Qt6/Qt6Dependencies.cmake",
+		"/opt/homebrew/lib/cmake/Qt6DataVisualization/Qt6DataVisualizationConfigVersion.cmake",
+		"/opt/homebrew/lib/cmake/Qt6DataVisualization/Qt6DataVisualizationConfigVersionImpl.cmake",
+		"/opt/homebrew/lib/cmake/Qt6DataVisualization/Qt6DataVisualizationConfig.cmake",
+		"/usr/local/Cellar/cmake/3.26.4/share/cmake/Modules/CMakeFindDependencyMacro.cmake",
+		"/opt/homebrew/lib/cmake/Qt6DataVisualization/Qt6DataVisualizationDependencies.cmake",
+		"/opt/homebrew/lib/cmake/Qt6DataVisualization/Qt6DataVisualizationTargets.cmake",
+		"/opt/homebrew/lib/cmake/Qt6DataVisualization/Qt6DataVisualizationTargets-release.cmake",
+		"/opt/homebrew/lib/cmake/Qt6DataVisualization/Qt6DataVisualizationAdditionalTargetInfo.cmake",
+		"/opt/homebrew/lib/cmake/Qt6DataVisualization/Qt6DataVisualizationVersionlessTargets.cmake",
 		"/usr/local/Cellar/cmake/3.26.4/share/cmake/Modules/GNUInstallDirs.cmake",
 		"/Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/icons.qrc",
 		"/Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/data.qrc"
@@ -2241,6 +2272,12 @@
 			null
 		],
 		[
+			"/Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/Legend3D.h",
+			"MU",
+			"EWIEGA46WW/moc_Legend3D.cpp",
+			null
+		],
+		[
 			"/Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/averageandmeandialog.h",
 			"MU",
 			"EWIEGA46WW/moc_averageandmeandialog.cpp",
@@ -2277,6 +2314,12 @@
 			null
 		],
 		[
+			"/Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/helpdialog.h",
+			"MU",
+			"EWIEGA46WW/moc_helpdialog.cpp",
+			null
+		],
+		[
 			"/Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/histogramdialog.h",
 			"MU",
 			"EWIEGA46WW/moc_histogramdialog.cpp",
@@ -2286,6 +2329,12 @@
 			"/Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/kmeans.hpp",
 			"MU",
 			"EWIEGA46WW/moc_kmeans.cpp",
+			null
+		],
+		[
+			"/Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/kmeansdialog.h",
+			"MU",
+			"EWIEGA46WW/moc_kmeansdialog.cpp",
 			null
 		],
 		[
@@ -2344,6 +2393,7 @@
 	[
 		"QT_CHARTS_LIB",
 		"QT_CORE_LIB",
+		"QT_DATAVISUALIZATION_LIB",
 		"QT_GUI_LIB",
 		"QT_OPENGLWIDGETS_LIB",
 		"QT_OPENGL_LIB",
@@ -2373,6 +2423,8 @@
 		"/opt/homebrew/lib/QtOpenGL.framework",
 		"/opt/homebrew/lib/QtOpenGLWidgets.framework/Headers",
 		"/opt/homebrew/lib/QtOpenGLWidgets.framework",
+		"/opt/homebrew/lib/QtDataVisualization.framework/Headers",
+		"/opt/homebrew/lib/QtDataVisualization.framework",
 		"/Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/c++/v1",
 		"/Library/Developer/CommandLineTools/usr/lib/clang/15.0.0/include",
 		"/Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include",
@@ -2410,6 +2462,11 @@
 	"SOURCES" : 
 	[
 		[
+			"/Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/Legend3D.cpp",
+			"MU",
+			null
+		],
+		[
 			"/Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/averageandmeandialog.cpp",
 			"MU",
 			null
@@ -2430,7 +2487,17 @@
 			null
 		],
 		[
+			"/Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/helpdialog.cpp",
+			"MU",
+			null
+		],
+		[
 			"/Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/histogramdialog.cpp",
+			"MU",
+			null
+		],
+		[
+			"/Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/kmeansdialog.cpp",
 			"MU",
 			null
 		],

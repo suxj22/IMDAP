@@ -52,7 +52,7 @@ void DrawHeatmapWidget::paintEvent(QPaintEvent* event) {
     int colorBarHeight = dataCov.size() * cellHeight;
 
     QFont font = painter.font();
-    font.setPointSize(10); // Adjust the font size as needed
+    font.setPointSize(15); // Adjust the font size as needed
     painter.setFont(font);
     painter.setPen(Qt::black);
 

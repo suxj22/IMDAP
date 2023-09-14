@@ -1769,6 +1769,6 @@ CMakeFiles/IMDAP.dir/histogramdialog.cpp.o: \
   /opt/homebrew/include/QtWidgets/QApplication \
   /opt/homebrew/include/QtWidgets/QCheckBox \
   /opt/homebrew/include/QtWidgets/QDialog \
-  /opt/homebrew/include/QtWidgets/QFormLayout \
+  /opt/homebrew/include/QtWidgets/QGridLayout \
   /opt/homebrew/include/QtWidgets/QHBoxLayout \
   /opt/homebrew/include/QtWidgets/QPushButton

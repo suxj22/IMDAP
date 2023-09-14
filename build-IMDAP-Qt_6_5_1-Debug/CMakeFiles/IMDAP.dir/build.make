@@ -72,6 +72,9 @@ include CMakeFiles/IMDAP.dir/flags.make
 IMDAP_autogen/EWIEGA46WW/qrc_icons.cpp: /Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/icons.qrc
 IMDAP_autogen/EWIEGA46WW/qrc_icons.cpp: CMakeFiles/IMDAP_autogen.dir/AutoRcc_icons_EWIEGA46WW_Info.json
 IMDAP_autogen/EWIEGA46WW/qrc_icons.cpp: /Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/icons/pca.png
+IMDAP_autogen/EWIEGA46WW/qrc_icons.cpp: /Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/icons/setiaozuoyou.png
+IMDAP_autogen/EWIEGA46WW/qrc_icons.cpp: /Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/icons/bangzhu.png
+IMDAP_autogen/EWIEGA46WW/qrc_icons.cpp: /Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/icons/KMeans.png
 IMDAP_autogen/EWIEGA46WW/qrc_icons.cpp: /Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/icons/pingjunzhi.png
 IMDAP_autogen/EWIEGA46WW/qrc_icons.cpp: /Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/icons/xiangguanxingjuzhentu.png
 IMDAP_autogen/EWIEGA46WW/qrc_icons.cpp: /Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/icons/zhifangtu.png
@@ -84,6 +87,7 @@ IMDAP_autogen/EWIEGA46WW/qrc_icons.cpp: /opt/homebrew/share/qt/libexec/rcc
 IMDAP_autogen/EWIEGA46WW/qrc_data.cpp: /Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/data.qrc
 IMDAP_autogen/EWIEGA46WW/qrc_data.cpp: CMakeFiles/IMDAP_autogen.dir/AutoRcc_data_EWIEGA46WW_Info.json
 IMDAP_autogen/EWIEGA46WW/qrc_data.cpp: /Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/data/breast-cancer.csv
+IMDAP_autogen/EWIEGA46WW/qrc_data.cpp: /Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/data/help.html
 IMDAP_autogen/EWIEGA46WW/qrc_data.cpp: /opt/homebrew/share/qt/libexec/rcc
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/suxingjian/Documents/GitHub/IMDAP/build-IMDAP-Qt_6_5_1-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Automatic RCC for data.qrc"
 	/usr/local/Cellar/cmake/3.26.4/bin/cmake -E cmake_autorcc /Users/suxingjian/Documents/GitHub/IMDAP/build-IMDAP-Qt_6_5_1-Debug/CMakeFiles/IMDAP_autogen.dir/AutoRcc_data_EWIEGA46WW_Info.json Debug
@@ -242,10 +246,52 @@ CMakeFiles/IMDAP.dir/pcadialog.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/IMDAP.dir/pcadialog.cpp.s"
 	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/pcadialog.cpp -o CMakeFiles/IMDAP.dir/pcadialog.cpp.s
 
+CMakeFiles/IMDAP.dir/Legend3D.cpp.o: CMakeFiles/IMDAP.dir/flags.make
+CMakeFiles/IMDAP.dir/Legend3D.cpp.o: /Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/Legend3D.cpp
+CMakeFiles/IMDAP.dir/Legend3D.cpp.o: CMakeFiles/IMDAP.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/suxingjian/Documents/GitHub/IMDAP/build-IMDAP-Qt_6_5_1-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/IMDAP.dir/Legend3D.cpp.o"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/IMDAP.dir/Legend3D.cpp.o -MF CMakeFiles/IMDAP.dir/Legend3D.cpp.o.d -o CMakeFiles/IMDAP.dir/Legend3D.cpp.o -c /Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/Legend3D.cpp
+
+CMakeFiles/IMDAP.dir/Legend3D.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/IMDAP.dir/Legend3D.cpp.i"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/Legend3D.cpp > CMakeFiles/IMDAP.dir/Legend3D.cpp.i
+
+CMakeFiles/IMDAP.dir/Legend3D.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/IMDAP.dir/Legend3D.cpp.s"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/Legend3D.cpp -o CMakeFiles/IMDAP.dir/Legend3D.cpp.s
+
+CMakeFiles/IMDAP.dir/kmeansdialog.cpp.o: CMakeFiles/IMDAP.dir/flags.make
+CMakeFiles/IMDAP.dir/kmeansdialog.cpp.o: /Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/kmeansdialog.cpp
+CMakeFiles/IMDAP.dir/kmeansdialog.cpp.o: CMakeFiles/IMDAP.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/suxingjian/Documents/GitHub/IMDAP/build-IMDAP-Qt_6_5_1-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/IMDAP.dir/kmeansdialog.cpp.o"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/IMDAP.dir/kmeansdialog.cpp.o -MF CMakeFiles/IMDAP.dir/kmeansdialog.cpp.o.d -o CMakeFiles/IMDAP.dir/kmeansdialog.cpp.o -c /Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/kmeansdialog.cpp
+
+CMakeFiles/IMDAP.dir/kmeansdialog.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/IMDAP.dir/kmeansdialog.cpp.i"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/kmeansdialog.cpp > CMakeFiles/IMDAP.dir/kmeansdialog.cpp.i
+
+CMakeFiles/IMDAP.dir/kmeansdialog.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/IMDAP.dir/kmeansdialog.cpp.s"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/kmeansdialog.cpp -o CMakeFiles/IMDAP.dir/kmeansdialog.cpp.s
+
+CMakeFiles/IMDAP.dir/helpdialog.cpp.o: CMakeFiles/IMDAP.dir/flags.make
+CMakeFiles/IMDAP.dir/helpdialog.cpp.o: /Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/helpdialog.cpp
+CMakeFiles/IMDAP.dir/helpdialog.cpp.o: CMakeFiles/IMDAP.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/suxingjian/Documents/GitHub/IMDAP/build-IMDAP-Qt_6_5_1-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/IMDAP.dir/helpdialog.cpp.o"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/IMDAP.dir/helpdialog.cpp.o -MF CMakeFiles/IMDAP.dir/helpdialog.cpp.o.d -o CMakeFiles/IMDAP.dir/helpdialog.cpp.o -c /Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/helpdialog.cpp
+
+CMakeFiles/IMDAP.dir/helpdialog.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/IMDAP.dir/helpdialog.cpp.i"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/helpdialog.cpp > CMakeFiles/IMDAP.dir/helpdialog.cpp.i
+
+CMakeFiles/IMDAP.dir/helpdialog.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/IMDAP.dir/helpdialog.cpp.s"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/helpdialog.cpp -o CMakeFiles/IMDAP.dir/helpdialog.cpp.s
+
 CMakeFiles/IMDAP.dir/IMDAP_autogen/EWIEGA46WW/qrc_icons.cpp.o: CMakeFiles/IMDAP.dir/flags.make
 CMakeFiles/IMDAP.dir/IMDAP_autogen/EWIEGA46WW/qrc_icons.cpp.o: IMDAP_autogen/EWIEGA46WW/qrc_icons.cpp
 CMakeFiles/IMDAP.dir/IMDAP_autogen/EWIEGA46WW/qrc_icons.cpp.o: CMakeFiles/IMDAP.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/suxingjian/Documents/GitHub/IMDAP/build-IMDAP-Qt_6_5_1-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/IMDAP.dir/IMDAP_autogen/EWIEGA46WW/qrc_icons.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/suxingjian/Documents/GitHub/IMDAP/build-IMDAP-Qt_6_5_1-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/IMDAP.dir/IMDAP_autogen/EWIEGA46WW/qrc_icons.cpp.o"
 	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/IMDAP.dir/IMDAP_autogen/EWIEGA46WW/qrc_icons.cpp.o -MF CMakeFiles/IMDAP.dir/IMDAP_autogen/EWIEGA46WW/qrc_icons.cpp.o.d -o CMakeFiles/IMDAP.dir/IMDAP_autogen/EWIEGA46WW/qrc_icons.cpp.o -c /Users/suxingjian/Documents/GitHub/IMDAP/build-IMDAP-Qt_6_5_1-Debug/IMDAP_autogen/EWIEGA46WW/qrc_icons.cpp
 
 CMakeFiles/IMDAP.dir/IMDAP_autogen/EWIEGA46WW/qrc_icons.cpp.i: cmake_force
@@ -259,7 +305,7 @@ CMakeFiles/IMDAP.dir/IMDAP_autogen/EWIEGA46WW/qrc_icons.cpp.s: cmake_force
 CMakeFiles/IMDAP.dir/IMDAP_autogen/EWIEGA46WW/qrc_data.cpp.o: CMakeFiles/IMDAP.dir/flags.make
 CMakeFiles/IMDAP.dir/IMDAP_autogen/EWIEGA46WW/qrc_data.cpp.o: IMDAP_autogen/EWIEGA46WW/qrc_data.cpp
 CMakeFiles/IMDAP.dir/IMDAP_autogen/EWIEGA46WW/qrc_data.cpp.o: CMakeFiles/IMDAP.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/suxingjian/Documents/GitHub/IMDAP/build-IMDAP-Qt_6_5_1-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/IMDAP.dir/IMDAP_autogen/EWIEGA46WW/qrc_data.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/suxingjian/Documents/GitHub/IMDAP/build-IMDAP-Qt_6_5_1-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/IMDAP.dir/IMDAP_autogen/EWIEGA46WW/qrc_data.cpp.o"
 	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/IMDAP.dir/IMDAP_autogen/EWIEGA46WW/qrc_data.cpp.o -MF CMakeFiles/IMDAP.dir/IMDAP_autogen/EWIEGA46WW/qrc_data.cpp.o.d -o CMakeFiles/IMDAP.dir/IMDAP_autogen/EWIEGA46WW/qrc_data.cpp.o -c /Users/suxingjian/Documents/GitHub/IMDAP/build-IMDAP-Qt_6_5_1-Debug/IMDAP_autogen/EWIEGA46WW/qrc_data.cpp
 
 CMakeFiles/IMDAP.dir/IMDAP_autogen/EWIEGA46WW/qrc_data.cpp.i: cmake_force
@@ -283,6 +329,9 @@ IMDAP_OBJECTS = \
 "CMakeFiles/IMDAP.dir/drawheatmapwidget.cpp.o" \
 "CMakeFiles/IMDAP.dir/heatmapdialog.cpp.o" \
 "CMakeFiles/IMDAP.dir/pcadialog.cpp.o" \
+"CMakeFiles/IMDAP.dir/Legend3D.cpp.o" \
+"CMakeFiles/IMDAP.dir/kmeansdialog.cpp.o" \
+"CMakeFiles/IMDAP.dir/helpdialog.cpp.o" \
 "CMakeFiles/IMDAP.dir/IMDAP_autogen/EWIEGA46WW/qrc_icons.cpp.o" \
 "CMakeFiles/IMDAP.dir/IMDAP_autogen/EWIEGA46WW/qrc_data.cpp.o"
 
@@ -300,17 +349,21 @@ IMDAP.app/Contents/MacOS/IMDAP: CMakeFiles/IMDAP.dir/multiplecolumnsdialog.cpp.o
 IMDAP.app/Contents/MacOS/IMDAP: CMakeFiles/IMDAP.dir/drawheatmapwidget.cpp.o
 IMDAP.app/Contents/MacOS/IMDAP: CMakeFiles/IMDAP.dir/heatmapdialog.cpp.o
 IMDAP.app/Contents/MacOS/IMDAP: CMakeFiles/IMDAP.dir/pcadialog.cpp.o
+IMDAP.app/Contents/MacOS/IMDAP: CMakeFiles/IMDAP.dir/Legend3D.cpp.o
+IMDAP.app/Contents/MacOS/IMDAP: CMakeFiles/IMDAP.dir/kmeansdialog.cpp.o
+IMDAP.app/Contents/MacOS/IMDAP: CMakeFiles/IMDAP.dir/helpdialog.cpp.o
 IMDAP.app/Contents/MacOS/IMDAP: CMakeFiles/IMDAP.dir/IMDAP_autogen/EWIEGA46WW/qrc_icons.cpp.o
 IMDAP.app/Contents/MacOS/IMDAP: CMakeFiles/IMDAP.dir/IMDAP_autogen/EWIEGA46WW/qrc_data.cpp.o
 IMDAP.app/Contents/MacOS/IMDAP: CMakeFiles/IMDAP.dir/build.make
 IMDAP.app/Contents/MacOS/IMDAP: /opt/homebrew/lib/QtCharts.framework/Versions/A/QtCharts
+IMDAP.app/Contents/MacOS/IMDAP: /opt/homebrew/lib/QtDataVisualization.framework/Versions/A/QtDataVisualization
 IMDAP.app/Contents/MacOS/IMDAP: /opt/homebrew/lib/QtOpenGLWidgets.framework/Versions/A/QtOpenGLWidgets
 IMDAP.app/Contents/MacOS/IMDAP: /opt/homebrew/lib/QtWidgets.framework/Versions/A/QtWidgets
 IMDAP.app/Contents/MacOS/IMDAP: /opt/homebrew/lib/QtOpenGL.framework/Versions/A/QtOpenGL
 IMDAP.app/Contents/MacOS/IMDAP: /opt/homebrew/lib/QtGui.framework/Versions/A/QtGui
 IMDAP.app/Contents/MacOS/IMDAP: /opt/homebrew/lib/QtCore.framework/Versions/A/QtCore
 IMDAP.app/Contents/MacOS/IMDAP: CMakeFiles/IMDAP.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/suxingjian/Documents/GitHub/IMDAP/build-IMDAP-Qt_6_5_1-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Linking CXX executable IMDAP.app/Contents/MacOS/IMDAP"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/suxingjian/Documents/GitHub/IMDAP/build-IMDAP-Qt_6_5_1-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Linking CXX executable IMDAP.app/Contents/MacOS/IMDAP"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/IMDAP.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

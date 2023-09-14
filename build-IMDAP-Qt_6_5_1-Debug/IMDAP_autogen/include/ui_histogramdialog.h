@@ -13,7 +13,7 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QCheckBox>
 #include <QtWidgets/QDialog>
-#include <QtWidgets/QFormLayout>
+#include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QPushButton>
 
@@ -22,7 +22,7 @@ QT_BEGIN_NAMESPACE
 class Ui_HistogramDialog
 {
 public:
-    QFormLayout *formLayout;
+    QGridLayout *gridLayout;
     QHBoxLayout *horizontalLayout;
     QPushButton *exportImageButton;
     QPushButton *copyToClipboardButton;
@@ -34,8 +34,8 @@ public:
         if (HistogramDialog->objectName().isEmpty())
             HistogramDialog->setObjectName("HistogramDialog");
         HistogramDialog->resize(1280, 720);
-        formLayout = new QFormLayout(HistogramDialog);
-        formLayout->setObjectName("formLayout");
+        gridLayout = new QGridLayout(HistogramDialog);
+        gridLayout->setObjectName("gridLayout");
         horizontalLayout = new QHBoxLayout();
         horizontalLayout->setObjectName("horizontalLayout");
         exportImageButton = new QPushButton(HistogramDialog);
@@ -59,7 +59,7 @@ public:
         horizontalLayout->addWidget(SplineCheckBox);
 
 
-        formLayout->setLayout(0, QFormLayout::FieldRole, horizontalLayout);
+        gridLayout->addLayout(horizontalLayout, 0, 0, 1, 1);
 
 
         retranslateUi(HistogramDialog);

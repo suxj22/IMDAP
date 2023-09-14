@@ -33,5 +33,8 @@ int SelectTwoColumnsDialog::getSelectedColumnY() const {
 }
 
 int SelectTwoColumnsDialog::getInputDegree() const {
+    if (ui->lineEdit->text().isEmpty()) {
+        return -1;
+    }
     return ui->lineEdit->text().toInt();
 }

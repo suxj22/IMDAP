@@ -1,9 +1,9 @@
 CMakeFiles/IMDAP.dir/IMDAP_autogen/mocs_compilation.cpp.o: \
   /Users/suxingjian/Documents/GitHub/IMDAP/build-IMDAP-Qt_6_5_1-Debug/IMDAP_autogen/mocs_compilation.cpp \
-  /Users/suxingjian/Documents/GitHub/IMDAP/build-IMDAP-Qt_6_5_1-Debug/IMDAP_autogen/EWIEGA46WW/moc_averageandmeandialog.cpp \
-  /Users/suxingjian/Documents/GitHub/IMDAP/build-IMDAP-Qt_6_5_1-Debug/IMDAP_autogen/EWIEGA46WW/../../../IMDAP/averageandmeandialog.h \
-  /opt/homebrew/lib/QtWidgets.framework/Headers/QDialog \
-  /opt/homebrew/lib/QtWidgets.framework/Headers/qdialog.h \
+  /Users/suxingjian/Documents/GitHub/IMDAP/build-IMDAP-Qt_6_5_1-Debug/IMDAP_autogen/EWIEGA46WW/moc_Legend3D.cpp \
+  /Users/suxingjian/Documents/GitHub/IMDAP/build-IMDAP-Qt_6_5_1-Debug/IMDAP_autogen/EWIEGA46WW/../../../IMDAP/Legend3D.h \
+  /opt/homebrew/lib/QtWidgets.framework/Headers/QWidget \
+  /opt/homebrew/lib/QtWidgets.framework/Headers/qwidget.h \
   /opt/homebrew/include/QtWidgets/qtwidgetsglobal.h \
   /opt/homebrew/include/QtGui/qtguiglobal.h \
   /opt/homebrew/include/QtCore/qglobal.h \
@@ -526,7 +526,6 @@ CMakeFiles/IMDAP.dir/IMDAP_autogen/mocs_compilation.cpp.o: \
   /opt/homebrew/include/QtGui/qtguiexports.h \
   /opt/homebrew/include/QtWidgets/qtwidgets-config.h \
   /opt/homebrew/include/QtWidgets/qtwidgetsexports.h \
-  /opt/homebrew/include/QtWidgets/qwidget.h \
   /opt/homebrew/include/QtGui/qwindowdefs.h \
   /opt/homebrew/include/QtCore/qobjectdefs.h \
   /opt/homebrew/include/QtCore/qnamespace.h \
@@ -898,7 +897,38 @@ CMakeFiles/IMDAP.dir/IMDAP_autogen/mocs_compilation.cpp.o: \
   /opt/homebrew/include/QtWidgets/qsizepolicy.h \
   /opt/homebrew/include/QtGui/qcursor.h \
   /opt/homebrew/include/QtGui/qbitmap.h \
+  /opt/homebrew/include/QtDataVisualization/qscatter3dseries.h \
+  /opt/homebrew/include/QtDataVisualization/qabstract3dseries.h \
+  /opt/homebrew/include/QtDataVisualization/q3dtheme.h \
+  /opt/homebrew/include/QtDataVisualization/qdatavisualizationglobal.h \
+  /opt/homebrew/include/QtDataVisualization/qtdatavisualizationexports.h \
+  /opt/homebrew/include/QtCore/QObject \
+  /opt/homebrew/lib/QtCore.framework/Headers/qobject.h \
+  /opt/homebrew/include/QtGui/QLinearGradient \
+  /opt/homebrew/lib/QtGui.framework/Headers/qbrush.h \
+  /opt/homebrew/include/QtGui/QFont \
+  /opt/homebrew/lib/QtGui.framework/Headers/qfont.h \
+  /opt/homebrew/include/QtGui/QColor \
+  /opt/homebrew/lib/QtGui.framework/Headers/qcolor.h \
+  /opt/homebrew/include/QtCore/QScopedPointer \
+  /opt/homebrew/lib/QtCore.framework/Headers/qscopedpointer.h \
+  /opt/homebrew/include/QtCore/QString \
+  /opt/homebrew/lib/QtCore.framework/Headers/qstring.h \
+  /opt/homebrew/include/QtGui/QQuaternion \
+  /opt/homebrew/lib/QtGui.framework/Headers/qquaternion.h \
+  /opt/homebrew/include/QtGui/qgenericmatrix.h \
+  /opt/homebrew/include/QtGui/qvector3d.h \
+  /opt/homebrew/include/QtGui/qvectornd.h \
+  /opt/homebrew/include/QtGui/qvector4d.h \
+  /opt/homebrew/include/QtDataVisualization/qscatterdataproxy.h \
+  /opt/homebrew/include/QtDataVisualization/qabstractdataproxy.h \
+  /opt/homebrew/include/QtDataVisualization/qscatterdataitem.h \
   /opt/homebrew/include/QtCore/qtmochelpers.h \
+  /Users/suxingjian/Documents/GitHub/IMDAP/build-IMDAP-Qt_6_5_1-Debug/IMDAP_autogen/EWIEGA46WW/moc_averageandmeandialog.cpp \
+  /Users/suxingjian/Documents/GitHub/IMDAP/build-IMDAP-Qt_6_5_1-Debug/IMDAP_autogen/EWIEGA46WW/../../../IMDAP/averageandmeandialog.h \
+  /opt/homebrew/lib/QtWidgets.framework/Headers/QDialog \
+  /opt/homebrew/lib/QtWidgets.framework/Headers/qdialog.h \
+  /opt/homebrew/include/QtWidgets/qwidget.h \
   /Users/suxingjian/Documents/GitHub/IMDAP/build-IMDAP-Qt_6_5_1-Debug/IMDAP_autogen/EWIEGA46WW/moc_chartviewdialog.cpp \
   /Users/suxingjian/Documents/GitHub/IMDAP/build-IMDAP-Qt_6_5_1-Debug/IMDAP_autogen/EWIEGA46WW/../../../IMDAP/chartviewdialog.h \
   /opt/homebrew/lib/QtCharts.framework/Headers/QtCharts \
@@ -1078,8 +1108,6 @@ CMakeFiles/IMDAP.dir/IMDAP_autogen/mocs_compilation.cpp.o: \
   /opt/homebrew/lib/QtCore.framework/Headers/qfiledevice.h \
   /opt/homebrew/lib/QtCore.framework/Headers/qfileinfo.h \
   /opt/homebrew/lib/QtCore.framework/Headers/qfileselector.h \
-  /opt/homebrew/include/QtCore/QObject \
-  /opt/homebrew/lib/QtCore.framework/Headers/qobject.h \
   /opt/homebrew/include/QtCore/QStringList \
   /opt/homebrew/lib/QtCore.framework/Headers/qstringlist.h \
   /opt/homebrew/lib/QtCore.framework/Headers/qfilesystemwatcher.h \
@@ -1216,7 +1244,6 @@ CMakeFiles/IMDAP.dir/IMDAP_autogen/mocs_compilation.cpp.o: \
   /opt/homebrew/lib/QtCore.framework/Headers/qresultstore.h \
   /opt/homebrew/lib/QtCore.framework/Headers/qrunnable.h \
   /opt/homebrew/lib/QtCore.framework/Headers/qsavefile.h \
-  /opt/homebrew/lib/QtCore.framework/Headers/qscopedpointer.h \
   /opt/homebrew/lib/QtCore.framework/Headers/qscopedvaluerollback.h \
   /opt/homebrew/lib/QtCore.framework/Headers/qscopeguard.h \
   /opt/homebrew/lib/QtCore.framework/Headers/qsemaphore.h \
@@ -1237,7 +1264,6 @@ CMakeFiles/IMDAP.dir/IMDAP_autogen/mocs_compilation.cpp.o: \
   /opt/homebrew/lib/QtCore.framework/Headers/qstack.h \
   /opt/homebrew/lib/QtCore.framework/Headers/qstandardpaths.h \
   /opt/homebrew/lib/QtCore.framework/Headers/qstorageinfo.h \
-  /opt/homebrew/lib/QtCore.framework/Headers/qstring.h \
   /opt/homebrew/lib/QtCore.framework/Headers/qstringalgorithms.h \
   /opt/homebrew/lib/QtCore.framework/Headers/qstringbuilder.h \
   /opt/homebrew/lib/QtCore.framework/Headers/qstringconverter.h \
@@ -1289,7 +1315,6 @@ CMakeFiles/IMDAP.dir/IMDAP_autogen/mocs_compilation.cpp.o: \
   /opt/homebrew/lib/QtCore.framework/Headers/qvarianthash.h \
   /opt/homebrew/include/QtCore/QHash \
   /opt/homebrew/include/QtCore/QVariant \
-  /opt/homebrew/include/QtCore/QString \
   /opt/homebrew/lib/QtCore.framework/Headers/qvariantlist.h \
   /opt/homebrew/include/QtCore/QList \
   /opt/homebrew/lib/QtCore.framework/Headers/qvariantmap.h \
@@ -1313,7 +1338,6 @@ CMakeFiles/IMDAP.dir/IMDAP_autogen/mocs_compilation.cpp.o: \
   /opt/homebrew/include/QtGui/qevent.h \
   /opt/homebrew/include/QtGui/qeventpoint.h \
   /opt/homebrew/include/QtGui/qvector2d.h \
-  /opt/homebrew/include/QtGui/qvectornd.h \
   /opt/homebrew/include/QtGui/qpointingdevice.h \
   /opt/homebrew/include/QtGui/qinputdevice.h \
   /opt/homebrew/include/QtGui/qscreen.h \
@@ -1345,9 +1369,7 @@ CMakeFiles/IMDAP.dir/IMDAP_autogen/mocs_compilation.cpp.o: \
   /opt/homebrew/include/QtGui/qsurface.h \
   /opt/homebrew/include/QtGui/qsurfaceformat.h \
   /opt/homebrew/lib/QtGui.framework/Headers/qbitmap.h \
-  /opt/homebrew/lib/QtGui.framework/Headers/qbrush.h \
   /opt/homebrew/lib/QtGui.framework/Headers/qclipboard.h \
-  /opt/homebrew/lib/QtGui.framework/Headers/qcolor.h \
   /opt/homebrew/lib/QtGui.framework/Headers/qcolorspace.h \
   /opt/homebrew/include/QtGui/qcolortransform.h \
   /opt/homebrew/lib/QtGui.framework/Headers/qcolortransform.h \
@@ -1358,7 +1380,6 @@ CMakeFiles/IMDAP.dir/IMDAP_autogen/mocs_compilation.cpp.o: \
   /opt/homebrew/lib/QtGui.framework/Headers/qeventpoint.h \
   /opt/homebrew/lib/QtGui.framework/Headers/qfilesystemmodel.h \
   /opt/homebrew/include/QtCore/qdiriterator.h \
-  /opt/homebrew/lib/QtGui.framework/Headers/qfont.h \
   /opt/homebrew/lib/QtGui.framework/Headers/qfontdatabase.h \
   /opt/homebrew/lib/QtGui.framework/Headers/qfontinfo.h \
   /opt/homebrew/lib/QtGui.framework/Headers/qfontmetrics.h \
@@ -1382,10 +1403,7 @@ CMakeFiles/IMDAP.dir/IMDAP_autogen/mocs_compilation.cpp.o: \
   /opt/homebrew/lib/QtGui.framework/Headers/qinputmethod.h \
   /opt/homebrew/lib/QtGui.framework/Headers/qkeysequence.h \
   /opt/homebrew/lib/QtGui.framework/Headers/qmatrix4x4.h \
-  /opt/homebrew/include/QtGui/qvector3d.h \
-  /opt/homebrew/include/QtGui/qvector4d.h \
   /opt/homebrew/include/QtGui/qquaternion.h \
-  /opt/homebrew/include/QtGui/qgenericmatrix.h \
   /opt/homebrew/lib/QtGui.framework/Headers/qmovie.h \
   /opt/homebrew/include/QtGui/qimagereader.h \
   /opt/homebrew/lib/QtGui.framework/Headers/qoffscreensurface.h \
@@ -1437,7 +1455,6 @@ CMakeFiles/IMDAP.dir/IMDAP_autogen/mocs_compilation.cpp.o: \
   /opt/homebrew/lib/QtGui.framework/Headers/qpixmapcache.h \
   /opt/homebrew/lib/QtGui.framework/Headers/qpointingdevice.h \
   /opt/homebrew/lib/QtGui.framework/Headers/qpolygon.h \
-  /opt/homebrew/lib/QtGui.framework/Headers/qquaternion.h \
   /opt/homebrew/lib/QtGui.framework/Headers/qrasterwindow.h \
   /opt/homebrew/include/QtGui/QPaintDeviceWindow \
   /opt/homebrew/lib/QtGui.framework/Headers/qrawfont.h \
@@ -1607,7 +1624,6 @@ CMakeFiles/IMDAP.dir/IMDAP_autogen/mocs_compilation.cpp.o: \
   /opt/homebrew/include/QtCore/QPointF \
   /opt/homebrew/include/QtWidgets/QScrollerProperties \
   /opt/homebrew/lib/QtWidgets.framework/Headers/qscrollerproperties.h \
-  /opt/homebrew/include/QtCore/QScopedPointer \
   /opt/homebrew/include/QtCore/QMetaType \
   /opt/homebrew/lib/QtWidgets.framework/Headers/qshortcut.h \
   /opt/homebrew/include/QtGui/QShortcut \
@@ -1646,7 +1662,6 @@ CMakeFiles/IMDAP.dir/IMDAP_autogen/mocs_compilation.cpp.o: \
   /opt/homebrew/lib/QtWidgets.framework/Headers/qtwidgetsversion.h \
   /opt/homebrew/lib/QtWidgets.framework/Headers/qundoview.h \
   /opt/homebrew/lib/QtWidgets.framework/Headers/qwhatsthis.h \
-  /opt/homebrew/lib/QtWidgets.framework/Headers/qwidget.h \
   /opt/homebrew/lib/QtWidgets.framework/Headers/qwidgetaction.h \
   /opt/homebrew/lib/QtWidgets.framework/Headers/qwizard.h \
   /opt/homebrew/include/QtOpenGL/QtOpenGL \
@@ -1689,7 +1704,7 @@ CMakeFiles/IMDAP.dir/IMDAP_autogen/mocs_compilation.cpp.o: \
   /opt/homebrew/include/QtCharts/qtchartsexports.h \
   /opt/homebrew/lib/QtCharts.framework/Headers/qabstractaxis.h \
   /opt/homebrew/include/QtCharts/QChartGlobal \
-  /opt/homebrew/include/QtGui/QPen /opt/homebrew/include/QtGui/QFont \
+  /opt/homebrew/include/QtGui/QPen \
   /opt/homebrew/lib/QtCharts.framework/Headers/qabstractbarseries.h \
   /opt/homebrew/include/QtCharts/QAbstractSeries \
   /opt/homebrew/lib/QtCharts.framework/Headers/qabstractseries.h \
@@ -1777,13 +1792,85 @@ CMakeFiles/IMDAP.dir/IMDAP_autogen/mocs_compilation.cpp.o: \
   /opt/homebrew/include/QtCharts/qpieseries.h \
   /Users/suxingjian/Documents/GitHub/IMDAP/build-IMDAP-Qt_6_5_1-Debug/IMDAP_autogen/EWIEGA46WW/moc_drawheatmapwidget.cpp \
   /Users/suxingjian/Documents/GitHub/IMDAP/build-IMDAP-Qt_6_5_1-Debug/IMDAP_autogen/EWIEGA46WW/../../../IMDAP/drawheatmapwidget.h \
-  /opt/homebrew/lib/QtWidgets.framework/Headers/QWidget \
   /opt/homebrew/lib/QtCore.framework/Headers/QVector \
   /Users/suxingjian/Documents/GitHub/IMDAP/build-IMDAP-Qt_6_5_1-Debug/IMDAP_autogen/EWIEGA46WW/moc_heatmapdialog.cpp \
   /Users/suxingjian/Documents/GitHub/IMDAP/build-IMDAP-Qt_6_5_1-Debug/IMDAP_autogen/EWIEGA46WW/../../../IMDAP/heatmapdialog.h \
   /Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/drawheatmapwidget.h \
+  /Users/suxingjian/Documents/GitHub/IMDAP/build-IMDAP-Qt_6_5_1-Debug/IMDAP_autogen/EWIEGA46WW/moc_helpdialog.cpp \
+  /Users/suxingjian/Documents/GitHub/IMDAP/build-IMDAP-Qt_6_5_1-Debug/IMDAP_autogen/EWIEGA46WW/../../../IMDAP/helpdialog.h \
   /Users/suxingjian/Documents/GitHub/IMDAP/build-IMDAP-Qt_6_5_1-Debug/IMDAP_autogen/EWIEGA46WW/moc_histogramdialog.cpp \
   /Users/suxingjian/Documents/GitHub/IMDAP/build-IMDAP-Qt_6_5_1-Debug/IMDAP_autogen/EWIEGA46WW/../../../IMDAP/histogramdialog.h \
+  /Users/suxingjian/Documents/GitHub/IMDAP/build-IMDAP-Qt_6_5_1-Debug/IMDAP_autogen/EWIEGA46WW/moc_kmeansdialog.cpp \
+  /Users/suxingjian/Documents/GitHub/IMDAP/build-IMDAP-Qt_6_5_1-Debug/IMDAP_autogen/EWIEGA46WW/../../../IMDAP/kmeansdialog.h \
+  /opt/homebrew/include/QtDataVisualization/q3dscatter.h \
+  /opt/homebrew/include/QtDataVisualization/qabstract3dgraph.h \
+  /opt/homebrew/include/QtDataVisualization/q3dscene.h \
+  /opt/homebrew/include/QtDataVisualization/q3dcamera.h \
+  /opt/homebrew/include/QtDataVisualization/q3dobject.h \
+  /opt/homebrew/include/QtDataVisualization/q3dlight.h \
+  /opt/homebrew/include/QtDataVisualization/qabstract3dinputhandler.h \
+  /opt/homebrew/include/QtCore/QPoint \
+  /opt/homebrew/include/QtGui/QWheelEvent \
+  /opt/homebrew/include/QtGui/QMouseEvent \
+  /opt/homebrew/include/QtGui/QTouchEvent \
+  /opt/homebrew/include/QtGui/QOpenGLFunctions \
+  /opt/homebrew/include/QtCore/QLocale \
+  /opt/homebrew/include/QtDataVisualization/qvalue3daxis.h \
+  /opt/homebrew/include/QtDataVisualization/qabstract3daxis.h \
+  /opt/homebrew/include/QtDataVisualization/qvalue3daxisformatter.h \
+  /opt/homebrew/lib/QtDataVisualization.framework/Headers/QtDataVisualization \
+  /opt/homebrew/include/QtDataVisualization/QtDataVisualizationDepends \
+  /opt/homebrew/lib/QtDataVisualization.framework/Headers/qdatavisualizationglobal.h \
+  /opt/homebrew/lib/QtDataVisualization.framework/Headers/q3dbars.h \
+  /opt/homebrew/include/QtDataVisualization/qcategory3daxis.h \
+  /opt/homebrew/include/QtDataVisualization/qbar3dseries.h \
+  /opt/homebrew/include/QtDataVisualization/qbardataproxy.h \
+  /opt/homebrew/include/QtDataVisualization/qbardataitem.h \
+  /opt/homebrew/lib/QtDataVisualization.framework/Headers/q3dcamera.h \
+  /opt/homebrew/lib/QtDataVisualization.framework/Headers/q3dinputhandler.h \
+  /opt/homebrew/lib/QtDataVisualization.framework/Headers/q3dlight.h \
+  /opt/homebrew/lib/QtDataVisualization.framework/Headers/q3dobject.h \
+  /opt/homebrew/lib/QtDataVisualization.framework/Headers/q3dscatter.h \
+  /opt/homebrew/lib/QtDataVisualization.framework/Headers/q3dscene.h \
+  /opt/homebrew/lib/QtDataVisualization.framework/Headers/q3dsurface.h \
+  /opt/homebrew/include/QtDataVisualization/qsurface3dseries.h \
+  /opt/homebrew/include/QtDataVisualization/qsurfacedataproxy.h \
+  /opt/homebrew/include/QtDataVisualization/qsurfacedataitem.h \
+  /opt/homebrew/lib/QtDataVisualization.framework/Headers/q3dtheme.h \
+  /opt/homebrew/lib/QtDataVisualization.framework/Headers/qabstract3daxis.h \
+  /opt/homebrew/lib/QtDataVisualization.framework/Headers/qabstract3dgraph.h \
+  /opt/homebrew/lib/QtDataVisualization.framework/Headers/qabstract3dinputhandler.h \
+  /opt/homebrew/lib/QtDataVisualization.framework/Headers/qabstract3dseries.h \
+  /opt/homebrew/lib/QtDataVisualization.framework/Headers/qabstractdataproxy.h \
+  /opt/homebrew/lib/QtDataVisualization.framework/Headers/qbar3dseries.h \
+  /opt/homebrew/lib/QtDataVisualization.framework/Headers/qbardataitem.h \
+  /opt/homebrew/lib/QtDataVisualization.framework/Headers/qbardataproxy.h \
+  /opt/homebrew/lib/QtDataVisualization.framework/Headers/qcategory3daxis.h \
+  /opt/homebrew/lib/QtDataVisualization.framework/Headers/qcustom3ditem.h \
+  /opt/homebrew/lib/QtDataVisualization.framework/Headers/qcustom3dlabel.h \
+  /opt/homebrew/include/QtDataVisualization/QCustom3DItem \
+  /opt/homebrew/lib/QtDataVisualization.framework/Headers/qcustom3dvolume.h \
+  /opt/homebrew/lib/QtDataVisualization.framework/Headers/qheightmapsurfacedataproxy.h \
+  /opt/homebrew/lib/QtDataVisualization.framework/Headers/qitemmodelbardataproxy.h \
+  /opt/homebrew/include/QtCore/QAbstractItemModel \
+  /opt/homebrew/include/QtCore/QRegularExpression \
+  /opt/homebrew/lib/QtDataVisualization.framework/Headers/qitemmodelscatterdataproxy.h \
+  /opt/homebrew/lib/QtDataVisualization.framework/Headers/qitemmodelsurfacedataproxy.h \
+  /opt/homebrew/lib/QtDataVisualization.framework/Headers/qlogvalue3daxisformatter.h \
+  /opt/homebrew/lib/QtDataVisualization.framework/Headers/qscatter3dseries.h \
+  /opt/homebrew/lib/QtDataVisualization.framework/Headers/qscatterdataitem.h \
+  /opt/homebrew/lib/QtDataVisualization.framework/Headers/qscatterdataproxy.h \
+  /opt/homebrew/lib/QtDataVisualization.framework/Headers/qsurface3dseries.h \
+  /opt/homebrew/lib/QtDataVisualization.framework/Headers/qsurfacedataitem.h \
+  /opt/homebrew/lib/QtDataVisualization.framework/Headers/qsurfacedataproxy.h \
+  /opt/homebrew/lib/QtDataVisualization.framework/Headers/qtdatavisualizationversion.h \
+  /opt/homebrew/lib/QtDataVisualization.framework/Headers/qtouch3dinputhandler.h \
+  /opt/homebrew/include/QtDataVisualization/q3dinputhandler.h \
+  /opt/homebrew/lib/QtDataVisualization.framework/Headers/qutils.h \
+  /opt/homebrew/include/QtGui/QOffscreenSurface \
+  /opt/homebrew/include/QtCore/QCoreApplication \
+  /opt/homebrew/lib/QtDataVisualization.framework/Headers/qvalue3daxis.h \
+  /opt/homebrew/lib/QtDataVisualization.framework/Headers/qvalue3daxisformatter.h \
   /Users/suxingjian/Documents/GitHub/IMDAP/build-IMDAP-Qt_6_5_1-Debug/IMDAP_autogen/EWIEGA46WW/moc_mainwindow.cpp \
   /Users/suxingjian/Documents/GitHub/IMDAP/build-IMDAP-Qt_6_5_1-Debug/IMDAP_autogen/EWIEGA46WW/../../../IMDAP/mainwindow.h \
   /opt/homebrew/lib/QtWidgets.framework/Headers/QMainWindow \

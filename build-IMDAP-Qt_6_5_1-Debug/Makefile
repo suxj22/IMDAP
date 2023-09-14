@@ -259,6 +259,30 @@ IMDAP_autogen/mocs_compilation.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/IMDAP.dir/build.make CMakeFiles/IMDAP.dir/IMDAP_autogen/mocs_compilation.cpp.s
 .PHONY : IMDAP_autogen/mocs_compilation.cpp.s
 
+Legend3D.o: Legend3D.cpp.o
+.PHONY : Legend3D.o
+
+# target to build an object file
+Legend3D.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/IMDAP.dir/build.make CMakeFiles/IMDAP.dir/Legend3D.cpp.o
+.PHONY : Legend3D.cpp.o
+
+Legend3D.i: Legend3D.cpp.i
+.PHONY : Legend3D.i
+
+# target to preprocess a source file
+Legend3D.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/IMDAP.dir/build.make CMakeFiles/IMDAP.dir/Legend3D.cpp.i
+.PHONY : Legend3D.cpp.i
+
+Legend3D.s: Legend3D.cpp.s
+.PHONY : Legend3D.s
+
+# target to generate assembly for a file
+Legend3D.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/IMDAP.dir/build.make CMakeFiles/IMDAP.dir/Legend3D.cpp.s
+.PHONY : Legend3D.cpp.s
+
 averageandmeandialog.o: averageandmeandialog.cpp.o
 .PHONY : averageandmeandialog.o
 
@@ -355,6 +379,30 @@ heatmapdialog.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/IMDAP.dir/build.make CMakeFiles/IMDAP.dir/heatmapdialog.cpp.s
 .PHONY : heatmapdialog.cpp.s
 
+helpdialog.o: helpdialog.cpp.o
+.PHONY : helpdialog.o
+
+# target to build an object file
+helpdialog.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/IMDAP.dir/build.make CMakeFiles/IMDAP.dir/helpdialog.cpp.o
+.PHONY : helpdialog.cpp.o
+
+helpdialog.i: helpdialog.cpp.i
+.PHONY : helpdialog.i
+
+# target to preprocess a source file
+helpdialog.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/IMDAP.dir/build.make CMakeFiles/IMDAP.dir/helpdialog.cpp.i
+.PHONY : helpdialog.cpp.i
+
+helpdialog.s: helpdialog.cpp.s
+.PHONY : helpdialog.s
+
+# target to generate assembly for a file
+helpdialog.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/IMDAP.dir/build.make CMakeFiles/IMDAP.dir/helpdialog.cpp.s
+.PHONY : helpdialog.cpp.s
+
 histogramdialog.o: histogramdialog.cpp.o
 .PHONY : histogramdialog.o
 
@@ -378,6 +426,30 @@ histogramdialog.s: histogramdialog.cpp.s
 histogramdialog.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/IMDAP.dir/build.make CMakeFiles/IMDAP.dir/histogramdialog.cpp.s
 .PHONY : histogramdialog.cpp.s
+
+kmeansdialog.o: kmeansdialog.cpp.o
+.PHONY : kmeansdialog.o
+
+# target to build an object file
+kmeansdialog.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/IMDAP.dir/build.make CMakeFiles/IMDAP.dir/kmeansdialog.cpp.o
+.PHONY : kmeansdialog.cpp.o
+
+kmeansdialog.i: kmeansdialog.cpp.i
+.PHONY : kmeansdialog.i
+
+# target to preprocess a source file
+kmeansdialog.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/IMDAP.dir/build.make CMakeFiles/IMDAP.dir/kmeansdialog.cpp.i
+.PHONY : kmeansdialog.cpp.i
+
+kmeansdialog.s: kmeansdialog.cpp.s
+.PHONY : kmeansdialog.s
+
+# target to generate assembly for a file
+kmeansdialog.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/IMDAP.dir/build.make CMakeFiles/IMDAP.dir/kmeansdialog.cpp.s
+.PHONY : kmeansdialog.cpp.s
 
 main.o: main.cpp.o
 .PHONY : main.o
@@ -522,6 +594,9 @@ help:
 	@echo "... IMDAP_autogen/mocs_compilation.o"
 	@echo "... IMDAP_autogen/mocs_compilation.i"
 	@echo "... IMDAP_autogen/mocs_compilation.s"
+	@echo "... Legend3D.o"
+	@echo "... Legend3D.i"
+	@echo "... Legend3D.s"
 	@echo "... averageandmeandialog.o"
 	@echo "... averageandmeandialog.i"
 	@echo "... averageandmeandialog.s"
@@ -534,9 +609,15 @@ help:
 	@echo "... heatmapdialog.o"
 	@echo "... heatmapdialog.i"
 	@echo "... heatmapdialog.s"
+	@echo "... helpdialog.o"
+	@echo "... helpdialog.i"
+	@echo "... helpdialog.s"
 	@echo "... histogramdialog.o"
 	@echo "... histogramdialog.i"
 	@echo "... histogramdialog.s"
+	@echo "... kmeansdialog.o"
+	@echo "... kmeansdialog.i"
+	@echo "... kmeansdialog.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

@@ -39,6 +39,9 @@ public:
     QAction *ScatterAction;
     QAction *Matrixaction;
     QAction *PCAAction;
+    QAction *actionKMeans;
+    QAction *ShowColoraction;
+    QAction *Helpaction;
     QWidget *centralwidget;
     QGridLayout *gridLayout;
     QVBoxLayout *verticalLayout;
@@ -53,14 +56,8 @@ public:
     QTextBrowser *textBrowser;
     QHBoxLayout *horizontalLayout;
     QSpacerItem *horizontalSpacer;
-    QPushButton *pushButton_2;
-    QPushButton *pushButton;
-    QVBoxLayout *verticalLayout_3;
-    QHBoxLayout *horizontalLayout_2;
-    QSpacerItem *horizontalSpacer_2;
-    QPushButton *pushButton_4;
-    QPushButton *pushButton_3;
-    QSpacerItem *verticalSpacer;
+    QPushButton *copyButton;
+    QPushButton *clearButton;
 
     void setupUi(QMainWindow *MainWindow)
     {
@@ -99,6 +96,22 @@ public:
         QIcon icon5;
         icon5.addFile(QString::fromUtf8(":/icons/icons/pca.png"), QSize(), QIcon::Normal, QIcon::Off);
         PCAAction->setIcon(icon5);
+        actionKMeans = new QAction(MainWindow);
+        actionKMeans->setObjectName("actionKMeans");
+        QIcon icon6;
+        icon6.addFile(QString::fromUtf8(":/icons/icons/KMeans.png"), QSize(), QIcon::Normal, QIcon::Off);
+        actionKMeans->setIcon(icon6);
+        ShowColoraction = new QAction(MainWindow);
+        ShowColoraction->setObjectName("ShowColoraction");
+        ShowColoraction->setCheckable(true);
+        QIcon icon7;
+        icon7.addFile(QString::fromUtf8(":/icons/icons/setiaozuoyou.png"), QSize(), QIcon::Normal, QIcon::Off);
+        ShowColoraction->setIcon(icon7);
+        Helpaction = new QAction(MainWindow);
+        Helpaction->setObjectName("Helpaction");
+        QIcon icon8;
+        icon8.addFile(QString::fromUtf8(":/icons/icons/bangzhu.png"), QSize(), QIcon::Normal, QIcon::Off);
+        Helpaction->setIcon(icon8);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
         gridLayout = new QGridLayout(centralwidget);
@@ -150,49 +163,21 @@ public:
 
         horizontalLayout->addItem(horizontalSpacer);
 
-        pushButton_2 = new QPushButton(dockWidgetContents);
-        pushButton_2->setObjectName("pushButton_2");
+        copyButton = new QPushButton(dockWidgetContents);
+        copyButton->setObjectName("copyButton");
 
-        horizontalLayout->addWidget(pushButton_2);
+        horizontalLayout->addWidget(copyButton);
 
-        pushButton = new QPushButton(dockWidgetContents);
-        pushButton->setObjectName("pushButton");
+        clearButton = new QPushButton(dockWidgetContents);
+        clearButton->setObjectName("clearButton");
 
-        horizontalLayout->addWidget(pushButton);
+        horizontalLayout->addWidget(clearButton);
 
 
         verticalLayout_2->addLayout(horizontalLayout);
 
 
-        formLayout->setLayout(2, QFormLayout::LabelRole, verticalLayout_2);
-
-        verticalLayout_3 = new QVBoxLayout();
-        verticalLayout_3->setObjectName("verticalLayout_3");
-        horizontalLayout_2 = new QHBoxLayout();
-        horizontalLayout_2->setObjectName("horizontalLayout_2");
-        horizontalSpacer_2 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        horizontalLayout_2->addItem(horizontalSpacer_2);
-
-        pushButton_4 = new QPushButton(dockWidgetContents);
-        pushButton_4->setObjectName("pushButton_4");
-
-        horizontalLayout_2->addWidget(pushButton_4);
-
-        pushButton_3 = new QPushButton(dockWidgetContents);
-        pushButton_3->setObjectName("pushButton_3");
-
-        horizontalLayout_2->addWidget(pushButton_3);
-
-
-        verticalLayout_3->addLayout(horizontalLayout_2);
-
-
-        formLayout->setLayout(0, QFormLayout::LabelRole, verticalLayout_3);
-
-        verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
-
-        formLayout->setItem(1, QFormLayout::LabelRole, verticalSpacer);
+        formLayout->setLayout(0, QFormLayout::LabelRole, verticalLayout_2);
 
         dockWidget->setWidget(dockWidgetContents);
         MainWindow->addDockWidget(Qt::RightDockWidgetArea, dockWidget);
@@ -204,6 +189,10 @@ public:
         toolBar->addAction(ScatterAction);
         toolBar->addAction(Matrixaction);
         toolBar->addAction(PCAAction);
+        toolBar->addAction(actionKMeans);
+        toolBar->addAction(ShowColoraction);
+        toolBar->addSeparator();
+        toolBar->addAction(Helpaction);
 
         retranslateUi(MainWindow);
 
@@ -234,11 +223,21 @@ public:
 #if QT_CONFIG(tooltip)
         PCAAction->setToolTip(QCoreApplication::translate("MainWindow", "PCA\351\231\215\347\273\264", nullptr));
 #endif // QT_CONFIG(tooltip)
+        actionKMeans->setText(QCoreApplication::translate("MainWindow", "KMeans\350\201\232\347\261\273\345\210\206\346\236\220", nullptr));
+#if QT_CONFIG(tooltip)
+        actionKMeans->setToolTip(QCoreApplication::translate("MainWindow", "KMeans\350\201\232\347\261\273\345\210\206\346\236\220", nullptr));
+#endif // QT_CONFIG(tooltip)
+        ShowColoraction->setText(QCoreApplication::translate("MainWindow", "\350\241\250\346\240\274\346\230\276\347\244\272\350\201\232\347\261\273\351\242\234\350\211\262", nullptr));
+#if QT_CONFIG(tooltip)
+        ShowColoraction->setToolTip(QCoreApplication::translate("MainWindow", "\350\241\250\346\240\274\346\230\276\347\244\272\350\201\232\347\261\273\351\242\234\350\211\262", nullptr));
+#endif // QT_CONFIG(tooltip)
+        Helpaction->setText(QCoreApplication::translate("MainWindow", "\345\270\256\345\212\251\346\226\207\346\241\243", nullptr));
+#if QT_CONFIG(tooltip)
+        Helpaction->setToolTip(QCoreApplication::translate("MainWindow", "\345\270\256\345\212\251\346\226\207\346\241\243", nullptr));
+#endif // QT_CONFIG(tooltip)
         toolBar->setWindowTitle(QCoreApplication::translate("MainWindow", "toolBar", nullptr));
-        pushButton_2->setText(QCoreApplication::translate("MainWindow", "PushButton", nullptr));
-        pushButton->setText(QCoreApplication::translate("MainWindow", "PushButton", nullptr));
-        pushButton_4->setText(QCoreApplication::translate("MainWindow", "PushButton", nullptr));
-        pushButton_3->setText(QCoreApplication::translate("MainWindow", "PushButton", nullptr));
+        copyButton->setText(QCoreApplication::translate("MainWindow", "\345\244\215\345\210\266", nullptr));
+        clearButton->setText(QCoreApplication::translate("MainWindow", "\346\270\205\351\231\244", nullptr));
     } // retranslateUi
 
 };

@@ -3,8 +3,11 @@
 #include "Eigen/Dense"
 #include "covariance.hpp"
 #include "heatmapdialog.h"
+#include "helpdialog.h"
 #include "histogramdialog.h"
 #include "chartviewdialog.h"
+#include "kmeans.hpp"
+#include "kmeansdialog.h"
 #include "leastsquare.hpp"
 #include "multiplecolumnsdialog.h"
 #include "pca.hpp"
@@ -14,12 +17,18 @@
 #include "selecttwocolumnsdialog.h"
 #include <vector>
 #include <iostream>
+#include <limits>
 #include <QtCharts>
 #include <QFile>
 #include <QTextStream>
 #include <QStringList>
 #include <QMessageBox>
 #include <cmath>
+#include <QtDataVisualization/Q3DScatter>
+#include <QtDataVisualization/QScatter3DSeries>
+#include <QtDataVisualization/QScatterDataProxy>
+#include <Legend3D.h>
+#include <QGraphicsTextItem>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -27,26 +36,30 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
     connect(ui->action, &QAction::triggered, this, &MainWindow::loadCSVFileToTableWidget);
-    ui->textBrowser->setStyleSheet("QTextBrowser {"
-                                 "background-color: white;"
-                                 "border: 1px solid grey;"
-                                 "}");
-    /*ui->label->setStyleSheet("QLabel {"
-                               "background-color: white;"
-                               "border: 1px solid grey;"
-                               "}");*/
-
-
+    connect(ui->tableWidget, &QTableWidget::itemSelectionChanged, this, &MainWindow::displaySelectedCellInfo);
+    ui->ShowColoraction->setVisible(false); // 初始时不显示表格显示聚类颜色按钮
 }
 
 void MainWindow::loadCSVFileToTableWidget() {
-    QString filePath = ":/data/data/breast-cancer.csv";
-    if (filePath == lastImportedFilePath) {
-        QMessageBox::information(this, "提示", "请勿重复导入！");
+    // 设置默认的资源文件路径
+    QString defaultPath = QCoreApplication::applicationDirPath();
+    // 使用 QFileDialog 从系统中选择 CSV 文件，并设置默认路径
+    QString filePath = QFileDialog::getOpenFileName(this, tr("Open CSV File"),
+                                                    defaultPath, tr("CSV Files (*.csv)"));
+    // 如果用户没有选择文件，直接返回
+    if (filePath.isEmpty()) {
         return;
     }
     QFile file(filePath);
     if (file.open(QIODevice::ReadOnly)) {
+        // 清空已经存储的内容
+        ui->tableWidget->setRowCount(0);
+        ui->tableWidget->setColumnCount(0);
+        discreteValueMap.clear();
+        reverseValueMap.clear();
+        indexOfText.clear();
+        // 设置表格显示聚类颜色按钮不可见
+        ui->ShowColoraction->setVisible(false);
         QTextStream in(&file);
         while (!in.atEnd()) {
             QString line = in.readLine();
@@ -140,7 +153,8 @@ void MainWindow::on_AverageAndMeanAction_triggered()
         auto avgVar = getAvgVar(x);
         float avg = std::get<0>(avgVar);
         float mean = std::get<1>(avgVar);
-        QString result = QString("平均值：%1\n方差：%2").arg(avg).arg(mean);
+        QString result = QString("列名：" + ui->tableWidget->item(0, column)->text() + "\n");
+        result.append(QString("平均值：%1\n方差：%2").arg(avg).arg(mean));
         if(column == 1) {
             for (auto x : indexOfText) {
                 result.append("\n" + x); // 添加映射说明
@@ -150,7 +164,11 @@ void MainWindow::on_AverageAndMeanAction_triggered()
     }
 }
 
-
+float MainWindow::normalFit(float stddev, float avg, float x) {
+    float z = (x - avg) / stddev;
+    float result = 0.5 * (1 + std::erf(z / sqrt(2)));
+    return result;
+}
 void MainWindow::on_HistogramAction_triggered()
 {
     if (tableWidgetIsEmpty()) {
@@ -231,10 +249,14 @@ void MainWindow::on_HistogramAction_triggered()
             }
         }
 
-        // 创建QBarSeries实例对象并赋值
+        // 创建QBarSeries和QSplineSeries实例对象并赋值
         QBarSeries *series = new QBarSeries;
         QSplineSeries *splineSeries = new QSplineSeries;
         splineSeries->setName("正态分布曲线");
+        auto avgVar = getAvgVar(x);
+        float avg = std::get<0>(avgVar); // 均值
+        float stddev = sqrt(std::get<1>(avgVar)); // 标准差
+
         auto set = new QBarSet(ui->tableWidget->item(0, column)->text());
         QStringList categories;
         int intervalsSize = intervals.size();
@@ -253,7 +275,13 @@ void MainWindow::on_HistogramAction_triggered()
             }
             *set << interval.count;
             series->append(set);
-            splineSeries->append(QPoint(i, interval.count));
+        }
+        // 每个区间添加多个点来绘制正态分布曲线
+        for (int j = 0; j < categories.size(); j++) {
+            float Down = min + j * intervalWidth;
+            float Up = min + (j + 1) * intervalWidth;
+            float y = normalFit(stddev, avg, Up) - normalFit(stddev, avg, Down);
+            splineSeries->append(QPointF(j, y * (count - 1)));
         }
 
         // 创建QChart对象并添加series
@@ -314,8 +342,15 @@ void MainWindow::on_ScatterAction_triggered()
     }
     SelectTwoColumnsDialog dialog(this);
     QStringList names = GetColumnNames();
+
     dialog.setColumnNames(names);
     if (dialog.exec() == QDialog::Accepted) {
+
+        int inputDegree = dialog.getInputDegree();
+        if (inputDegree == -1) {
+            QMessageBox::warning(this, "警告", "未选择拟合次数");
+            return;
+        }
         int columnX = dialog.getSelectedColumnX() + 1;
 
         int columnY = dialog.getSelectedColumnY() + 1;
@@ -339,11 +374,15 @@ void MainWindow::on_ScatterAction_triggered()
                 y[j - 1] = discreteValueMap[textY];
             }
         }
+        float minX = *std::min_element(x.begin(), x.end()); // 计算x最小值
+        float maxX = *std::max_element(x.begin(), x.end()); // 计算x最大值
+        float minY = *std::min_element(y.begin(), y.end()); // 计算y最小值
+        float maxY = *std::max_element(y.begin(), y.end()); // 计算y最大值
         QList<QPointF> points;
         auto series = new QScatterSeries;
         series->setName("散点图");
         series->setMarkerShape(QScatterSeries::MarkerShapeCircle);
-        series->setMarkerSize(15.0);
+        series->setMarkerSize(10.0);
         int numOfDuplicatePoints = 0;
         for (int i = 0; i < count - 1; i++) {
             auto newPoint = QPointF(x[i], y[i]);
@@ -356,29 +395,18 @@ void MainWindow::on_ScatterAction_triggered()
             points.append(newPoint);
             series->append(newPoint);
         }
-        auto chart = new QChart;
-        chart->addSeries(series);
-        chart->setTitle("散点图");
-        chart->createDefaultAxes();
-        chart->setAnimationOptions(QChart::SeriesAnimations);
-        QString TextOfX = ui->tableWidget->item(0, columnX)->text();
-        QString TextOfY = ui->tableWidget->item(0, columnY)->text();
-        chart->axisX()->setTitleText(TextOfX);
-        chart->axisY()->setTitleText(TextOfY);
-        chart->setDropShadowEnabled(false);
 
         // 添加曲线拟合
         auto splineSeries = new QSplineSeries;
         splineSeries->setName("曲线拟合");
-        int inputDegree = dialog.getInputDegree();
+
         int totalPoint = 30; // 设置拟合曲线总点数
-        float min = *std::min_element(x.begin(), x.end()); // 计算最小值
-        float max = *std::max_element(x.begin(), x.end()); // 计算最大值
-        float intervalWidth = (max - min) / totalPoint; // 区间宽度
+
+        float intervalWidth = (maxX - minX) / totalPoint; // 区间宽度
         auto result = fitLeastSquareAndPR(x, y, inputDegree);
         auto coefficients = std::get<0>(result);
 
-        float xPoint = min;
+        float xPoint = minX;
         for (int j = 0; j <= totalPoint; j++, xPoint += intervalWidth) {
             float yPoint = 0.0;
             for (int i = 0; i < coefficients.size(); i++) {
@@ -387,13 +415,39 @@ void MainWindow::on_ScatterAction_triggered()
 
             splineSeries->append(xPoint, yPoint);
         }
+        auto chart = new QChart;
+        chart->addSeries(series);
+        chart->setTitle("散点图");
+        chart->setAnimationOptions(QChart::SeriesAnimations);
+        chart->setDropShadowEnabled(false);
         chart->addSeries(splineSeries);
-        splineSeries->attachAxis(chart->axisX());
-        splineSeries->attachAxis(chart->axisY());
+        auto axisX = new QValueAxis;
+        auto axisY = new QValueAxis;
+        QString TextOfX = ui->tableWidget->item(0, columnX)->text();
+        QString TextOfY = ui->tableWidget->item(0, columnY)->text();
+        axisX->setTitleText(TextOfX);
+        axisY->setTitleText(TextOfY);
+        axisX->setRange(minX * 0.8, maxX * 1.1);
+        axisY->setRange(minY * 0.8, maxY * 1.1);
+        chart->addAxis(axisY, Qt::AlignLeft);
+        chart->addAxis(axisX, Qt::AlignBottom);
+        series->attachAxis(axisX);
+        series->attachAxis(axisY);
+        splineSeries->attachAxis(axisX);
+        splineSeries->attachAxis(axisY);
+
         // 显示图像
         chartView = new QChartView(chart);
         chartView->setRenderHint(QPainter::Antialiasing); // 抗锯齿渲染
         ChartViewDialog viewDialog(this, chartView);
+        connect(series, &QScatterSeries::hovered, [&viewDialog](const QPointF &point, bool state){
+            if (state) { // 如果鼠标悬停在点上
+                QToolTip::showText(QCursor::pos(),
+                                   QString("X: %1\nY: %2").arg(point.x()).arg(point.y()));
+            } else { // 如果鼠标移开点
+                QToolTip::hideText();
+            }
+        });
 //        viewDialog.setViewChart(chartView);
         // 显示值
         float pValue = std::get<1>(result);
@@ -432,6 +486,7 @@ void MainWindow::on_Matrixaction_triggered()
         QStringList Selectednames;
         // 导入数据至inputVector
         for (auto column : items) {
+            column += 1;
             std::vector<float> x(count -1);
             Selectednames.append(ui->tableWidget->item(0, column)->text());
             for (int j = 1; j < count; j++) {
@@ -495,7 +550,11 @@ void MainWindow::on_PCAAction_triggered()
         // 获取选择的列
         auto items = dialog.getItems();
         if (items.empty()) {
-            QMessageBox::warning(&dialog,"警告", "未选择数据！");
+            QMessageBox::warning(&dialog, "警告", "未选择数据！");
+            return;
+        }
+        if (items.size() < 2) {
+            QMessageBox::warning(&dialog, "警告", "选择的列数过少！");
             return;
         }
         // 获取总行数
@@ -505,14 +564,14 @@ void MainWindow::on_PCAAction_triggered()
         for (int j = 0; j < count - 1; j++) {
 
             std::vector<float> x(items.size());
-            for (auto column : items) {
+            for (int k = 0; k < items.size(); k++) {
+                int column = items[k] + 1;
                 QString text = ui->tableWidget->item(j, column)->text();
-                int index = column - items[0];
                 if (column != 1) {
-                    x[index] = text.toFloat();
+                    x[k] = text.toFloat();
                 }
                 else {
-                    x[index] = discreteValueMap[text];
+                    x[k] = discreteValueMap[text];
                 }
             }
             inputVector.push_back(x);
@@ -538,12 +597,19 @@ void MainWindow::on_PCAAction_triggered()
 
         if (powerDialog.exec() == QDialog::Accepted) {
             int power = comboBox.currentText().toInt();
-            auto result = pca(inputVector, power);
+            if (items.size() == 2 && power == 3) {
+                QMessageBox::warning(&dialog, "警告", "选择的列数过少！");
+                return;
+            }
+            // 定义一个颜色列表，给不同类别的点赋不同颜色
+            QList<QColor> colors = {Qt::red, Qt::blue, Qt::green, Qt::yellow, Qt::cyan, Qt::magenta, Qt::gray};
             switch (power) {
             case 2:{
-                QList<QScatterSeries*> seriesList(indexOfText.size(), new QScatterSeries);
-                // 定义一个颜色列表，给不同类别的点赋不同颜色
-                int resultSize = result.rows();
+                QList<QScatterSeries*> seriesList(indexOfText.size());
+                for (int i = 0; i < seriesList.size(); i++) {
+                    seriesList[i] = new QScatterSeries();
+                }
+                auto result = pca(inputVector, power);
                 float minValueX = result(0, 0);
                 float maxValueX = result(0, 0);
                 float minValueY = result(0, 0);
@@ -568,14 +634,14 @@ void MainWindow::on_PCAAction_triggered()
                        minValueY = y;
                     }
                     auto newPoint = QPointF(x, y);
-                    seriesList[kind]->append(newPoint);
+                    seriesList.at(kind)->append(newPoint);
                 }
-                QList<QColor> colors = {Qt::red, Qt::blue, Qt::green, Qt::yellow, Qt::cyan, Qt::magenta, Qt::gray};
+
                 for (int i = 0; i < seriesList.size(); i++) {
                     QScatterSeries *series = seriesList.at(i);
                     series->setColor(colors.at(i % colors.size()));// 使用颜色列表的颜色，如果series数量大于颜色列表的长度则会循环使用颜色
                     series->setMarkerShape(QScatterSeries::MarkerShapeCircle);
-                    series->setMarkerSize(15.0);
+                    series->setMarkerSize(10.0);
                 }
                 auto chart = new QChart;
                 for (auto series : seriesList) {
@@ -618,20 +684,94 @@ void MainWindow::on_PCAAction_triggered()
                 axisY->setRange(minValueY, maxValueY);
                 chart->addAxis(axisX, Qt::AlignBottom);
                 chart->addAxis(axisY, Qt::AlignLeft);
-                for (auto series : seriesList) {
-                    series->attachAxis(axisX);
-                    series->attachAxis(axisY);
-                }
-
                 chart->setAnimationOptions(QChart::SeriesAnimations);
                 chart->setDropShadowEnabled(false);
                 auto chartView = new QChartView(chart);
                 PCADialog viewDialog(this, chartView);
+                for (auto series : seriesList) {
+                    series->attachAxis(axisX);
+                    series->attachAxis(axisY);
+                    connect(series, &QScatterSeries::hovered, [&viewDialog](const QPointF &point, bool state){
+                        if (state) { // 如果鼠标悬停在点上
+                            QToolTip::showText(QCursor::pos(),
+                                               QString("X: %1\nY: %2").arg(point.x()).arg(point.y()));
+                        } else { // 如果鼠标移开点
+                            QToolTip::hideText();
+                        }
+                    });
+                }
                 viewDialog.exec();
                 break;
             }
             case 3:{
+                auto result = pca(inputVector, power);
+                auto scatter3D = new Q3DScatter();
+                QList<QScatter3DSeries*> seriesList(indexOfText.size());
+                for (int i = 0; i < seriesList.size(); i++) {
+                    seriesList[i] = new QScatter3DSeries();
+                }
+                for (int i = 0; i < count - 1; i++) {
+                    QString text = ui->tableWidget->item(i + 1, 1)->text();
+                    int kind = discreteValueMap[text];
+                    seriesList[kind]->setName(text);
+                    float x = result(i, 0);
+                    float y = result(i, 1);
+                    float z = result(i, 2);
+                    auto newPoint = QVector3D(x, y, z);
+                    seriesList.at(kind)->dataProxy()->addItem(newPoint);
+                }
+                for (int i = 0; i < seriesList.size(); i++) {
+                    QScatter3DSeries *series = seriesList.at(i);
+                    series->setBaseColor(colors[i % colors.size()]);
+                    scatter3D->addSeries(series);
+                    series->setItemSize(0.1f);
+                }
+                float min_x = std::numeric_limits<float>::max();
+                float max_x = std::numeric_limits<float>::min();
+                float min_y = std::numeric_limits<float>::max();
+                float max_y = std::numeric_limits<float>::min();
+                float min_z = std::numeric_limits<float>::max();
+                float max_z = std::numeric_limits<float>::min();
 
+                for (int i = 0; i < result.rows(); ++i) {
+                    min_x = std::min(min_x, result(i, 0));
+                    max_x = std::max(max_x, result(i, 0));
+                    min_y = std::min(min_y, result(i, 1));
+                    max_y = std::max(max_y, result(i, 1));
+                    min_z = std::min(min_z, result(i, 2));
+                    max_z = std::max(max_z, result(i, 2));
+                }
+
+                float scaleFactor = 1.3f;
+                float offset_x = (max_x - min_x) * (scaleFactor - 1.0);
+                float offset_y = (max_y - min_y) * (scaleFactor - 1.0);
+                float offset_z = (max_z - min_z) * (scaleFactor - 1.0);
+
+                min_x -= offset_x / 2.0;
+                max_x += offset_x / 2.0;
+                min_y -= offset_y / 2.0;
+                max_y += offset_y / 2.0;
+                min_z -= offset_z / 2.0;
+                max_z += offset_z / 2.0;
+                auto axisX = new QValue3DAxis();
+                axisX->setRange(min_x, max_x);
+                auto axisY = new QValue3DAxis();
+                axisY->setRange(min_y, max_y);
+                auto axisZ = new QValue3DAxis();
+                axisZ->setRange(min_z, max_z);
+                scatter3D->setAxisX(axisX);
+                scatter3D->setAxisY(axisY);
+                scatter3D->setAxisZ(axisZ);
+                scatter3D->setHorizontalAspectRatio(true);
+                scatter3D->setAspectRatio(true);
+                QList<QScatter3DSeries*> list;
+                for (auto series : seriesList) {
+                    list.push_back(series);
+                }
+
+                QWidget * container = createWindowContainer(scatter3D);
+                PCADialog viewDialog(this, container, list);
+                viewDialog.exec();
                 break;
             }
             default:
@@ -639,5 +779,353 @@ void MainWindow::on_PCAAction_triggered()
             }
         }
     }
+}
+
+
+void MainWindow::on_actionKMeans_triggered()
+{
+    if (tableWidgetIsEmpty()) {
+        tableEmptyWarning();
+        return;
+    }
+    QStringList names;
+    for (int i = 1; i < ui->tableWidget->columnCount(); i++) {
+        QTableWidgetItem *item = ui->tableWidget->item(0, i);
+        if(item != nullptr && item->text().isEmpty() == false) {
+            names << item->text();
+        }
+    } // 有待打包
+    MultipleColumnsDialog dialog(this, names);
+    if (dialog.exec() == QDialog::Accepted) {
+        // 获取选择的列
+        auto items = dialog.getItems();
+        if (items.empty()) {
+            QMessageBox::warning(&dialog,"警告", "未选择数据！");
+            return;
+        }
+        else if (items.size() < 2) {
+            QMessageBox::warning(&dialog,"警告", "选择的列数过少！");
+            return;
+        }
+        // 获取总行数
+        int count = ui->tableWidget->rowCount();
+        std::vector<std::vector<float>> inputVector;
+        // 导入数据至inputVector
+        for (int j = 0; j < count - 1; j++) {
+
+            std::vector<float> x(items.size());
+            for (int k = 0; k < items.size(); k++) {
+                int column = items[k] + 1;
+                QString text = ui->tableWidget->item(j, column)->text();
+                if (column != 1) {
+                    x[k] = text.toFloat();
+                }
+                else {
+                    x[k] = discreteValueMap[text];
+                }
+            }
+            inputVector.push_back(x);
+        }
+        int totalcolor = 10;
+
+        // 绘制二维聚类图
+        auto KMeansResult = clusterKMeans(inputVector, totalcolor, 100);
+        auto Labels = std::get<1>(KMeansResult);
+        int newColumnIndex = ui->tableWidget->columnCount(); // 获取当前的列数
+        ui->tableWidget->insertColumn(newColumnIndex); // 在最后插入一个新列
+
+        // 如果重复生成聚类则删除之前的列
+        int rowCount = ui->tableWidget->rowCount();
+        if (ui->tableWidget->item(rowCount - 1, 0)->text() == "KMeans") {
+            ui->tableWidget->removeColumn(rowCount - 1);
+        }
+        // 设置新列的标题
+        QTableWidgetItem *header = new QTableWidgetItem(QString::number(ui->tableWidget->columnCount()));
+        ui->tableWidget->setHorizontalHeaderItem(newColumnIndex, header);
+        QTableWidgetItem *newItem = new QTableWidgetItem(QString("KMeans"));
+        ui->tableWidget->setItem(0, newColumnIndex, newItem);
+        // 设置新列的值
+        for (int row = 0; row < Labels.size(); row++) {
+            QTableWidgetItem *newItem = new QTableWidgetItem(QString::number(Labels[row]));
+            ui->tableWidget->setItem(row + 1, newColumnIndex, newItem);
+        }
+        QList<QScatterSeries*> seriesList(totalcolor);
+        for (int i = 0; i < seriesList.size(); i++) {
+            seriesList[i] = new QScatterSeries();
+        }
+
+        auto result = pca(inputVector, 2);
+        float minValueX = result(0, 0);
+        float maxValueX = result(0, 0);
+        float minValueY = result(0, 0);
+        float maxValueY = result(0, 0);
+        for (int i = 0; i < count - 1; i++) {
+            int kind = Labels[i];
+            float x = result(i, 0);
+            float y = result(i, 1);
+            if (x > maxValueX) {
+                maxValueX = x;
+            }
+            if (x < minValueX) {
+                minValueX = x;
+            }
+            if (y > maxValueY) {
+                maxValueY = y;
+            }
+            if (y < minValueY) {
+                minValueY = y;
+            }
+            auto newPoint = QPointF(x, y);
+            seriesList.at(kind)->append(newPoint);
+        }
+        for (int i = 0; i < seriesList.size(); i++) {
+            QScatterSeries *series = seriesList.at(i);
+            series->setColor(colors.at(i % colors.size()));// 使用颜色列表的颜色，如果series数量大于颜色列表的长度则会循环使用颜色
+            series->setMarkerShape(QScatterSeries::MarkerShapeCircle);
+            series->setMarkerSize(10.0);
+        }
+        auto chart = new QChart;
+        for (auto series : seriesList) {
+            chart->addSeries(series);
+        }
+        auto axisX = new QValueAxis;
+        auto axisY = new QValueAxis;
+        float factor = 1.1;
+        if (minValueX > 0) {
+            minValueX /= factor;
+        }
+        else {
+            minValueX *= factor;
+        }
+        if (maxValueX > 0) {
+            maxValueX *= factor;
+        }
+        else {
+            maxValueX /= factor;
+        }
+        if (minValueY > 0) {
+            minValueY /= factor;
+        }
+        else {
+            minValueY *= factor;
+        }
+        if (maxValueY > 0) {
+            maxValueY *= factor;
+        }
+        else {
+            maxValueY /= factor;
+        }
+        axisX->setRange(minValueX, maxValueX);
+        axisY->setRange(minValueY, maxValueY);
+        chart->addAxis(axisX, Qt::AlignBottom);
+        chart->addAxis(axisY, Qt::AlignLeft);
+        for (auto series : seriesList) {
+            series->attachAxis(axisX);
+            series->attachAxis(axisY);
+        }
+        chart->setAnimationOptions(QChart::SeriesAnimations);
+        chart->setDropShadowEnabled(false);
+        chart->legend()->hide();
+        auto chartView = new QChartView(chart);
+        KMeansDialog viewDialog(this);
+        chartView->setMinimumSize(600, 600);
+        viewDialog.addChart(chart);
+        viewDialog.addChartView(chartView);
+        for (auto series : seriesList) {
+            series->attachAxis(axisX);
+            series->attachAxis(axisY);
+            connect(series, &QScatterSeries::hovered, [&viewDialog](const QPointF &point, bool state){
+                if (state) { // 如果鼠标悬停在点上
+                    QToolTip::showText(QCursor::pos(),
+                                       QString("X: %1\nY: %2").arg(point.x()).arg(point.y()));
+                } else { // 如果鼠标移开点
+                    QToolTip::hideText();
+                }
+            });
+        }
+
+        if (items.size() >= 3) {
+            auto result = pca(inputVector, 3);
+            auto scatter3D = new Q3DScatter();
+            QList<QScatter3DSeries*> seriesList(totalcolor);
+            for (int i = 0; i < seriesList.size(); i++) {
+                seriesList[i] = new QScatter3DSeries();
+            }
+            for (int i = 0; i < count - 1; i++) {
+                int kind = Labels[i];
+                float x = result(i, 0);
+                float y = result(i, 1);
+                float z = result(i, 2);
+                auto newPoint = QVector3D(x, y, z);
+                seriesList.at(kind)->dataProxy()->addItem(newPoint);
+            }
+            for (int i = 0; i < seriesList.size(); i++) {
+                QScatter3DSeries *series = seriesList.at(i);
+                series->setBaseColor(colors[i % colors.size()]);
+                scatter3D->addSeries(series);
+                series->setItemSize(0.1f);
+            }
+            float min_x = std::numeric_limits<float>::max();
+            float max_x = std::numeric_limits<float>::min();
+            float min_y = std::numeric_limits<float>::max();
+            float max_y = std::numeric_limits<float>::min();
+            float min_z = std::numeric_limits<float>::max();
+            float max_z = std::numeric_limits<float>::min();
+
+            for (int i = 0; i < result.rows(); ++i) {
+                min_x = std::min(min_x, result(i, 0));
+                max_x = std::max(max_x, result(i, 0));
+                min_y = std::min(min_y, result(i, 1));
+                max_y = std::max(max_y, result(i, 1));
+                min_z = std::min(min_z, result(i, 2));
+                max_z = std::max(max_z, result(i, 2));
+            }
+
+            float scaleFactor = 1.3f;
+            float offset_x = (max_x - min_x) * (scaleFactor - 1.0);
+            float offset_y = (max_y - min_y) * (scaleFactor - 1.0);
+            float offset_z = (max_z - min_z) * (scaleFactor - 1.0);
+
+            min_x -= offset_x / 2.0;
+            max_x += offset_x / 2.0;
+            min_y -= offset_y / 2.0;
+            max_y += offset_y / 2.0;
+            min_z -= offset_z / 2.0;
+            max_z += offset_z / 2.0;
+            auto axisX = new QValue3DAxis();
+            axisX->setRange(min_x, max_x);
+            auto axisY = new QValue3DAxis();
+            axisY->setRange(min_y, max_y);
+            auto axisZ = new QValue3DAxis();
+            axisZ->setRange(min_z, max_z);
+            scatter3D->setAxisX(axisX);
+            scatter3D->setAxisY(axisY);
+            scatter3D->setAxisZ(axisZ);
+            scatter3D->setHorizontalAspectRatio(true);
+            scatter3D->setAspectRatio(true);
+            QWidget * container = createWindowContainer(scatter3D);
+            container->setMinimumSize(600, 600);
+            viewDialog.addChartView(container);
+        }
+        viewDialog.exec();
+        // 显示表格按照聚类结果显示按钮
+        ui->ShowColoraction->setVisible(true);
+
+    }
+}
+
+
+
+void MainWindow::on_ShowColoraction_triggered(bool checked)
+{
+    if (checked) {
+        for (int row = 1; row < ui->tableWidget->rowCount(); row++) {
+            QTableWidgetItem *item = ui->tableWidget->item(row, ui->tableWidget->columnCount() - 1); // 获取最后一列的项
+            if (item) {
+                int index = item->text().toInt(); // 转换为整数索引
+                if (index >= 0 && index < colors.size()) {
+                    QColor color = colors[index]; // 获取对应的颜色
+                    for (int column = 0; column < ui->tableWidget->columnCount(); column++) {
+                       ui->tableWidget->item(row, column)->setBackground(color); // 设置该行的背景颜色
+                    }
+                }
+            }
+        }
+    }
+    else {
+        for (int row = 0; row < ui->tableWidget->rowCount(); ++row) {
+            for (int col = 0; col < ui->tableWidget->columnCount(); ++col) {
+                QTableWidgetItem *item = ui->tableWidget->item(row, col);
+                if (item) {
+                    item->setBackground(Qt::transparent); // 设置透明背景
+                }
+            }
+        }
+    }
+}
+
+void MainWindow::displaySelectedCellInfo() {
+    // 获取所有选中的范围
+    QList<QTableWidgetSelectionRange> ranges = ui->tableWidget->selectedRanges();
+
+    int count = 0;  // 所有选中的单元格总数
+    float sum = 0;  // 可计算单元格的总和
+    int validFloatCount = 0;  // 可计算的单元格数量
+    std::vector<float> validFloats; // 可计算的浮点数集合
+
+    for (const QTableWidgetSelectionRange &range : ranges) {
+        for (int row = range.topRow(); row <= range.bottomRow(); ++row) {
+            for (int col = range.leftColumn(); col <= range.rightColumn(); ++col) {
+                QTableWidgetItem *item = ui->tableWidget->item(row, col);
+                if (item) {
+                    count ++;
+                    bool ok;
+                    float value = item->text().toFloat(&ok);
+                    if (ok) {  // 如果这个值是一个有效的浮点数
+                       sum += value;
+                       validFloats.push_back(value);
+                       validFloatCount++;
+                    }
+                }
+            }
+        }
+    }
+    if (validFloats.empty()) {
+        QString info = QString("选择的单元格总数：%1").arg(count);
+        ui->textBrowser->setText(info);
+    }
+    else {
+        auto result = getAvgVar(validFloats);
+        // 计算平均数和方差
+        float avg = std::get<0>(result);
+        float variance = std::get<1>(result);
+        // 计算中位数
+        std::sort(validFloats.begin(), validFloats.end());
+        float median = 0;
+        if (validFloatCount % 2 == 1) {
+            median = validFloats[validFloatCount / 2];
+        } else {
+            median = (validFloats[(validFloatCount - 1) / 2] + validFloats[validFloatCount / 2]) / 2.0;
+        }
+        // 计算众数
+        QMap<float, int> frequencyMap;
+        for (float value : validFloats) {
+            frequencyMap[value]++;
+        }
+        float mode = validFloats[0];
+        int maxCount = 0;
+
+        for (auto item = frequencyMap.constBegin(); item != frequencyMap.constEnd(); ++item) {
+            if (item.value() > maxCount) {
+                maxCount = item.value();
+                mode = item.key();
+            }
+        }
+        QString info = QString("选择的单元格总数：%1\n总和：%2\n平均值：%3\n方差：%4\n中位数：%5\n众数：%6")
+                           .arg(count).arg(sum).arg(avg).arg(variance).arg(median).arg(mode);
+        ui->textBrowser->setText(info);
+    }
+}
+
+
+
+void MainWindow::on_clearButton_clicked()
+{
+    ui->textBrowser->clear();
+}
+
+
+void MainWindow::on_copyButton_clicked()
+{
+    QString content = ui->textBrowser->toPlainText(); // 获取QTextBrowser的文本
+    QClipboard *clipboard = QApplication::clipboard(); // 获取应用程序的剪贴板
+    clipboard->setText(content); // 将文本设置到剪贴板
+}
+
+
+void MainWindow::on_Helpaction_triggered()
+{
+    auto dialog = new HelpDialog;
+    dialog->exec();
 }
 

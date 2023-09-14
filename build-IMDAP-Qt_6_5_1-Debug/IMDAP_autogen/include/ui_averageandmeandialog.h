@@ -25,7 +25,7 @@ class Ui_AverageAndMeanDialog
 {
 public:
     QDialogButtonBox *buttonBox;
-    QWidget *widget;
+    QWidget *layoutWidget;
     QVBoxLayout *verticalLayout;
     QLabel *label;
     QComboBox *comboBox;
@@ -40,18 +40,18 @@ public:
         buttonBox->setGeometry(QRect(30, 240, 341, 32));
         buttonBox->setOrientation(Qt::Horizontal);
         buttonBox->setStandardButtons(QDialogButtonBox::Cancel|QDialogButtonBox::Ok);
-        widget = new QWidget(AverageAndMeanDialog);
-        widget->setObjectName("widget");
-        widget->setGeometry(QRect(110, 110, 165, 55));
-        verticalLayout = new QVBoxLayout(widget);
+        layoutWidget = new QWidget(AverageAndMeanDialog);
+        layoutWidget->setObjectName("layoutWidget");
+        layoutWidget->setGeometry(QRect(110, 110, 165, 55));
+        verticalLayout = new QVBoxLayout(layoutWidget);
         verticalLayout->setObjectName("verticalLayout");
         verticalLayout->setContentsMargins(0, 0, 0, 0);
-        label = new QLabel(widget);
+        label = new QLabel(layoutWidget);
         label->setObjectName("label");
 
         verticalLayout->addWidget(label);
 
-        comboBox = new QComboBox(widget);
+        comboBox = new QComboBox(layoutWidget);
         comboBox->setObjectName("comboBox");
 
         verticalLayout->addWidget(comboBox);
@@ -67,7 +67,7 @@ public:
     void retranslateUi(QDialog *AverageAndMeanDialog)
     {
         AverageAndMeanDialog->setWindowTitle(QCoreApplication::translate("AverageAndMeanDialog", "Dialog", nullptr));
-        label->setText(QCoreApplication::translate("AverageAndMeanDialog", "\350\257\267\351\200\211\346\213\251\344\270\200\345\210\227\357\274\210\347\254\254\344\270\200\345\210\227\351\231\244\345\244\226\357\274\211", nullptr));
+        label->setText(QCoreApplication::translate("AverageAndMeanDialog", "\350\257\267\351\200\211\346\213\251\344\270\200\345\210\227\357\274\210id\345\210\227\344\270\215\345\217\257\351\200\211\357\274\211", nullptr));
     } // retranslateUi
 
 };

@@ -1,5 +1,6 @@
 #define QT_CHARTS_LIB 1
 #define QT_CORE_LIB 1
+#define QT_DATAVISUALIZATION_LIB 1
 #define QT_GUI_LIB 1
 #define QT_OPENGLWIDGETS_LIB 1
 #define QT_OPENGL_LIB 1

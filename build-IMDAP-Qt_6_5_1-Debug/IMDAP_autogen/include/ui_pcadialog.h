@@ -12,19 +12,24 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QDialog>
-#include <QtWidgets/QFormLayout>
+#include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QVBoxLayout>
+#include "Legend3D.h"
 
 QT_BEGIN_NAMESPACE
 
 class Ui_PCADialog
 {
 public:
-    QFormLayout *formLayout;
+    QGridLayout *gridLayout;
+    QVBoxLayout *verticalLayout;
     QHBoxLayout *horizontalLayout;
-    QPushButton *pushButton_2;
-    QPushButton *pushButton;
+    QPushButton *exportButton;
+    QPushButton *copyButton;
+    QHBoxLayout *horizontalLayout_4;
+    Legend3D *widget;
 
     void setupUi(QDialog *PCADialog)
     {
@@ -36,22 +41,38 @@ public:
         sizePolicy.setVerticalStretch(0);
         sizePolicy.setHeightForWidth(PCADialog->sizePolicy().hasHeightForWidth());
         PCADialog->setSizePolicy(sizePolicy);
-        formLayout = new QFormLayout(PCADialog);
-        formLayout->setObjectName("formLayout");
+        gridLayout = new QGridLayout(PCADialog);
+        gridLayout->setObjectName("gridLayout");
+        verticalLayout = new QVBoxLayout();
+        verticalLayout->setObjectName("verticalLayout");
         horizontalLayout = new QHBoxLayout();
         horizontalLayout->setObjectName("horizontalLayout");
-        pushButton_2 = new QPushButton(PCADialog);
-        pushButton_2->setObjectName("pushButton_2");
+        exportButton = new QPushButton(PCADialog);
+        exportButton->setObjectName("exportButton");
 
-        horizontalLayout->addWidget(pushButton_2);
+        horizontalLayout->addWidget(exportButton);
 
-        pushButton = new QPushButton(PCADialog);
-        pushButton->setObjectName("pushButton");
+        copyButton = new QPushButton(PCADialog);
+        copyButton->setObjectName("copyButton");
 
-        horizontalLayout->addWidget(pushButton);
+        horizontalLayout->addWidget(copyButton);
 
 
-        formLayout->setLayout(0, QFormLayout::LabelRole, horizontalLayout);
+        verticalLayout->addLayout(horizontalLayout);
+
+        horizontalLayout_4 = new QHBoxLayout();
+        horizontalLayout_4->setObjectName("horizontalLayout_4");
+        widget = new Legend3D(PCADialog);
+        widget->setObjectName("widget");
+        widget->setMinimumSize(QSize(50, 600));
+
+        horizontalLayout_4->addWidget(widget);
+
+
+        verticalLayout->addLayout(horizontalLayout_4);
+
+
+        gridLayout->addLayout(verticalLayout, 1, 1, 1, 1);
 
 
         retranslateUi(PCADialog);
@@ -62,8 +83,8 @@ public:
     void retranslateUi(QDialog *PCADialog)
     {
         PCADialog->setWindowTitle(QCoreApplication::translate("PCADialog", "Dialog", nullptr));
-        pushButton_2->setText(QCoreApplication::translate("PCADialog", "PushButton", nullptr));
-        pushButton->setText(QCoreApplication::translate("PCADialog", "PushButton", nullptr));
+        exportButton->setText(QCoreApplication::translate("PCADialog", "\345\257\274\345\207\272\351\231\215\347\273\264\345\233\276\357\274\210\344\273\205\345\257\271\344\272\214\347\273\264\345\233\276\346\234\211\346\225\210\357\274\211", nullptr));
+        copyButton->setText(QCoreApplication::translate("PCADialog", "\345\244\215\345\210\266\351\231\215\347\273\264\345\233\276\357\274\210\344\273\205\345\257\271\344\272\214\347\273\264\345\233\276\346\234\211\346\225\210\357\274\211", nullptr));
     } // retranslateUi
 
 };

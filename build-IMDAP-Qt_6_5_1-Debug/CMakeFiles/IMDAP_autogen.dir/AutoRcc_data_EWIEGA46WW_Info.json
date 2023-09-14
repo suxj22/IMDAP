@@ -7,7 +7,8 @@
 	"INCLUDE_DIR" : "/Users/suxingjian/Documents/GitHub/IMDAP/build-IMDAP-Qt_6_5_1-Debug/IMDAP_autogen/include",
 	"INPUTS" : 
 	[
-		"/Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/data/breast-cancer.csv"
+		"/Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/data/breast-cancer.csv",
+		"/Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/data/help.html"
 	],
 	"LOCK_FILE" : "/Users/suxingjian/Documents/GitHub/IMDAP/build-IMDAP-Qt_6_5_1-Debug/CMakeFiles/IMDAP_autogen.dir/AutoRcc_data_EWIEGA46WW_Lock.lock",
 	"MULTI_CONFIG" : false,

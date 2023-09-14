@@ -6,5 +6,8 @@
         <file>icons/sandiantu.png</file>
         <file>icons/xiangguanxingjuzhentu.png</file>
         <file>icons/pca.png</file>
+        <file>icons/KMeans.png</file>
+        <file>icons/setiaozuoyou.png</file>
+        <file>icons/bangzhu.png</file>
     </qresource>
 </RCC>

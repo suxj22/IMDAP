@@ -13,7 +13,7 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QCheckBox>
 #include <QtWidgets/QDialog>
-#include <QtWidgets/QFormLayout>
+#include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QPushButton>
@@ -23,7 +23,7 @@ QT_BEGIN_NAMESPACE
 class Ui_ChartViewDialog
 {
 public:
-    QFormLayout *formLayout;
+    QGridLayout *gridLayout;
     QHBoxLayout *horizontalLayout;
     QPushButton *exportImageButton;
     QPushButton *copyToClipboardButton;
@@ -39,8 +39,8 @@ public:
         if (ChartViewDialog->objectName().isEmpty())
             ChartViewDialog->setObjectName("ChartViewDialog");
         ChartViewDialog->resize(1280, 720);
-        formLayout = new QFormLayout(ChartViewDialog);
-        formLayout->setObjectName("formLayout");
+        gridLayout = new QGridLayout(ChartViewDialog);
+        gridLayout->setObjectName("gridLayout");
         horizontalLayout = new QHBoxLayout();
         horizontalLayout->setObjectName("horizontalLayout");
         exportImageButton = new QPushButton(ChartViewDialog);
@@ -85,7 +85,7 @@ public:
         horizontalLayout->addWidget(DataLabel);
 
 
-        formLayout->setLayout(0, QFormLayout::FieldRole, horizontalLayout);
+        gridLayout->addLayout(horizontalLayout, 0, 0, 1, 1);
 
 
         retranslateUi(ChartViewDialog);

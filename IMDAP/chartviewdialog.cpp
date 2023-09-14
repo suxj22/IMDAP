@@ -16,26 +16,7 @@ ChartViewDialog::ChartViewDialog(QWidget *parent, QChartView *chartview) :
     ui->SplineCheckBox->setChecked(true);
     ui->ScatterCheckBox->blockSignals(false);
     ui->SplineCheckBox->blockSignals(false);
-    ui->formLayout->addWidget(chartView);
-    auto chart = chartView->chart();
-    chartView->setMouseTracking(true);
-    chartView->installEventFilter(this);
-    QObject::connect(chartView, &QObject::eventFilter, [chart](QObject *obj, QEvent *event) -> bool {
-        if (event->type() == QEvent::MouseMove) {
-            QMouseEvent *message = static_cast<QMouseEvent*>(event);
-            QPointF chartPos = chart->mapToValue(message->pos());
-            QScatterSeries *s = static_cast<QScatterSeries *>(chart->series().at(0));
-            for (const QPointF &point : s->points()) {
-                if (qAbs(point.x() - chartPos.x()) < 5 && qAbs(point.y() - chartPos.y()) < 5) {
-                    QToolTip::showText(QCursor::pos(),
-                                       QString("X: %1\nY: %2").arg(point.x()).arg(point.y()));
-                    return true; // 事件已被处理
-                }
-            }
-            QToolTip::hideText(); // 如果不在任何点附近, 则隐藏工具提示
-        }
-        return false; // 继续其他事件处理
-    });
+    ui->gridLayout->addWidget(chartView);
 }
 
 ChartViewDialog::~ChartViewDialog()
@@ -48,26 +29,13 @@ void ChartViewDialog::setViewChart(QChartView *chartview) {
     chartView->setMinimumWidth(1248);
     chartView->setMinimumHeight(702);
     chartView->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding); // 设置策略以填充父级控件
-    ui->formLayout->addWidget(chartView);
-    auto chart = chartView->chart();
-    chartView->setMouseTracking(true);
-    chartView->installEventFilter(this);
-    QObject::connect(chartView, &QObject::eventFilter, [chart](QObject *obj, QEvent *event) -> bool {
-        if (event->type() == QEvent::MouseMove) {
-            QMouseEvent *message = static_cast<QMouseEvent*>(event);
-            QPointF chartPos = chart->mapToValue(message->pos());
-            QScatterSeries *s = static_cast<QScatterSeries *>(chart->series().at(0));
-            for (const QPointF &point : s->points()) {
-                if (qAbs(point.x() - chartPos.x()) < 5 && qAbs(point.y() - chartPos.y()) < 5) {
-                    QToolTip::showText(QCursor::pos(),
-                                       QString("X: %1\nY: %2").arg(point.x()).arg(point.y()));
-                    return true; // 事件已被处理
-                }
-            }
-            QToolTip::hideText(); // 如果不在任何点附近, 则隐藏工具提示
+    ui->gridLayout->addWidget(chartView);
+    for (auto *series : chartView->chart()->series()) {
+        if (auto *scatterSeries = dynamic_cast<QScatterSeries*>(series)) {
+            connect(scatterSeries, &QScatterSeries::hovered,
+                    this, &ChartViewDialog::handlePointHovered);
         }
-        return false; // 继续其他事件处理
-    });
+    }
 }
 
 
@@ -141,6 +109,14 @@ void ChartViewDialog::on_SplineCheckBox_stateChanged(int arg1)
         default:
             break;
         }
+    }
+}
+void ChartViewDialog::handlePointHovered(const QPointF &point, bool state)
+{
+    if (state) {
+        QToolTip::showText(QCursor::pos(), QString("X: %1\nY: %2").arg(point.x()).arg(point.y()));
+    } else {
+        QToolTip::hideText();
     }
 }
 

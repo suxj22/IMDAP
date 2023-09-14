@@ -1,5 +1,6 @@
 <RCC>
     <qresource prefix="/data">
         <file>data/breast-cancer.csv</file>
+        <file>data/help.html</file>
     </qresource>
 </RCC>

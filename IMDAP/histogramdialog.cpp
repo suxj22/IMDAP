@@ -25,7 +25,7 @@ void HistogramDialog::setViewChart(QChartView *chartview) {
     chartView->setMinimumWidth(1248);
     chartView->setMinimumHeight(702);
     chartView->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding); // 设置策略以填充父级控件
-    ui->formLayout->addWidget(chartView);
+    ui->gridLayout->addWidget(chartView);
 }
 
 void HistogramDialog::on_exportImageButton_clicked()

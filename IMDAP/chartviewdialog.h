@@ -24,10 +24,11 @@ private slots:
 
     void on_copyToClipboardButton_clicked(); // 复制图像到剪贴板
 
-
     void on_ScatterCheckBox_stateChanged(int arg1);
 
     void on_SplineCheckBox_stateChanged(int arg1);
+
+    void handlePointHovered(const QPointF &point, bool state);
 
 private:
     Ui::ChartViewDialog *ui;

@@ -19,6 +19,8 @@ public:
     bool tableWidgetIsEmpty();
     void tableEmptyWarning();
     QStringList GetColumnNames();
+    float normalFit(float stddev, float avg, float x);
+    void displaySelectedCellInfo(); // 实现简单的信息显示
 
 public slots:
     void loadCSVFileToTableWidget();
@@ -34,6 +36,16 @@ private slots:
 
     void on_PCAAction_triggered();
 
+    void on_actionKMeans_triggered();
+
+    void on_ShowColoraction_triggered(bool checked);
+
+    void on_clearButton_clicked();
+
+    void on_copyButton_clicked();
+
+    void on_Helpaction_triggered();
+
 private:
     Ui::MainWindow *ui;
     QString lastImportedFilePath; // 避免重复导入相同文件
@@ -41,5 +53,6 @@ private:
     QHash<float, QString> reverseValueMap;
     QList<QString> indexOfText; // 存储文本映射的对应关系
     QChartView *chartView; // 存储汇出的图像
+    QList<QColor> colors = {Qt::red, Qt::blue, Qt::green, Qt::yellow, Qt::cyan, Qt::magenta, Qt::gray, Qt::darkBlue, Qt::darkGreen, Qt::darkCyan}; // 存储聚类的颜色
 };
 #endif // MAINWINDOW_H
