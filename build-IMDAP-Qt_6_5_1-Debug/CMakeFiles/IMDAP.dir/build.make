@@ -73,6 +73,7 @@ IMDAP_autogen/EWIEGA46WW/qrc_icons.cpp: /Users/suxingjian/Documents/GitHub/IMDAP
 IMDAP_autogen/EWIEGA46WW/qrc_icons.cpp: CMakeFiles/IMDAP_autogen.dir/AutoRcc_icons_EWIEGA46WW_Info.json
 IMDAP_autogen/EWIEGA46WW/qrc_icons.cpp: /Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/icons/pca.png
 IMDAP_autogen/EWIEGA46WW/qrc_icons.cpp: /Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/icons/setiaozuoyou.png
+IMDAP_autogen/EWIEGA46WW/qrc_icons.cpp: /Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/icons/startup.jpg
 IMDAP_autogen/EWIEGA46WW/qrc_icons.cpp: /Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/icons/bangzhu.png
 IMDAP_autogen/EWIEGA46WW/qrc_icons.cpp: /Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/icons/KMeans.png
 IMDAP_autogen/EWIEGA46WW/qrc_icons.cpp: /Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/icons/pingjunzhi.png

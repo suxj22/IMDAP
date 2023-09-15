@@ -5,6 +5,7 @@ ChartViewDialog::ChartViewDialog(QWidget *parent, QChartView *chartview) :
     QDialog(parent),
     ui(new Ui::ChartViewDialog)
 {
+    this->setWindowTitle("散点图和曲线拟合");
     chartView = chartview;
     chartView->setMinimumWidth(1248);
     chartView->setMinimumHeight(702);

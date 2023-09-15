@@ -1884,7 +1884,6 @@ CMakeFiles/IMDAP.dir/IMDAP_autogen/mocs_compilation.cpp.o: IMDAP_autogen/mocs_co
   /opt/homebrew/lib/QtCore.framework/Headers/QHash \
   IMDAP_autogen/EWIEGA46WW/moc_multiplecolumnsdialog.cpp \
   /Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/multiplecolumnsdialog.h \
-  /opt/homebrew/include/QtWidgets/qlistwidget.h \
   IMDAP_autogen/EWIEGA46WW/moc_pcadialog.cpp \
   /Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/pcadialog.h \
   IMDAP_autogen/EWIEGA46WW/moc_selecttwocolumnsdialog.cpp \
@@ -13879,7 +13878,9 @@ CMakeFiles/IMDAP.dir/main.cpp.o: /Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/
   /opt/homebrew/lib/QtCharts.framework/Headers/qvpiemodelmapper.h \
   /opt/homebrew/lib/QtCharts.framework/Headers/qvxymodelmapper.h \
   /opt/homebrew/lib/QtCharts.framework/Headers/qxylegendmarker.h \
-  /opt/homebrew/lib/QtWidgets.framework/Headers/QApplication
+  /opt/homebrew/lib/QtWidgets.framework/Headers/QApplication \
+  /opt/homebrew/lib/QtWidgets.framework/Headers/QSplashScreen \
+  /opt/homebrew/lib/QtCore.framework/Headers/QTimer
 
 CMakeFiles/IMDAP.dir/mainwindow.cpp.o: /Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/mainwindow.cpp \
   /Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/mainwindow.h \
@@ -15955,7 +15956,6 @@ CMakeFiles/IMDAP.dir/mainwindow.cpp.o: /Users/suxingjian/Documents/GitHub/IMDAP/
   /opt/homebrew/lib/QtDataVisualization.framework/Headers/qvalue3daxisformatter.h \
   /Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/leastsquare.hpp \
   /Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/multiplecolumnsdialog.h \
-  /opt/homebrew/include/QtWidgets/qlistwidget.h \
   /Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/pca.hpp \
   /Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/pcadialog.h \
   /Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/averageandmeandialog.h \
@@ -15972,8 +15972,8 @@ CMakeFiles/IMDAP.dir/mainwindow.cpp.o: /Users/suxingjian/Documents/GitHub/IMDAP/
 
 CMakeFiles/IMDAP.dir/multiplecolumnsdialog.cpp.o: /Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/multiplecolumnsdialog.cpp \
   /Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/multiplecolumnsdialog.h \
-  /opt/homebrew/include/QtWidgets/qlistwidget.h \
-  /opt/homebrew/include/QtWidgets/qlistview.h \
+  /opt/homebrew/lib/QtWidgets.framework/Headers/QDialog \
+  /opt/homebrew/lib/QtWidgets.framework/Headers/qdialog.h \
   /opt/homebrew/include/QtWidgets/qtwidgetsglobal.h \
   /opt/homebrew/include/QtGui/qtguiglobal.h \
   /opt/homebrew/include/QtCore/qglobal.h \
@@ -16496,9 +16496,6 @@ CMakeFiles/IMDAP.dir/multiplecolumnsdialog.cpp.o: /Users/suxingjian/Documents/Gi
   /opt/homebrew/include/QtGui/qtguiexports.h \
   /opt/homebrew/include/QtWidgets/qtwidgets-config.h \
   /opt/homebrew/include/QtWidgets/qtwidgetsexports.h \
-  /opt/homebrew/include/QtWidgets/qabstractitemview.h \
-  /opt/homebrew/include/QtWidgets/qabstractscrollarea.h \
-  /opt/homebrew/include/QtWidgets/qframe.h \
   /opt/homebrew/include/QtWidgets/qwidget.h \
   /opt/homebrew/include/QtGui/qwindowdefs.h \
   /opt/homebrew/include/QtCore/qobjectdefs.h \
@@ -16871,22 +16868,6 @@ CMakeFiles/IMDAP.dir/multiplecolumnsdialog.cpp.o: /Users/suxingjian/Documents/Gi
   /opt/homebrew/include/QtWidgets/qsizepolicy.h \
   /opt/homebrew/include/QtGui/qcursor.h \
   /opt/homebrew/include/QtGui/qbitmap.h \
-  /opt/homebrew/include/QtCore/qabstractitemmodel.h \
-  /opt/homebrew/include/QtCore/qitemselectionmodel.h \
-  /opt/homebrew/include/QtWidgets/qabstractitemdelegate.h \
-  /opt/homebrew/include/QtWidgets/qstyleoption.h \
-  /opt/homebrew/include/QtCore/qlocale.h \
-  /opt/homebrew/include/QtWidgets/qabstractspinbox.h \
-  /opt/homebrew/include/QtGui/qvalidator.h \
-  /opt/homebrew/include/QtCore/qregularexpression.h \
-  /opt/homebrew/include/QtWidgets/qslider.h \
-  /opt/homebrew/include/QtWidgets/qabstractslider.h \
-  /opt/homebrew/include/QtWidgets/qstyle.h \
-  /opt/homebrew/include/QtWidgets/qtabbar.h \
-  /opt/homebrew/include/QtWidgets/qtabwidget.h \
-  /opt/homebrew/include/QtWidgets/qrubberband.h \
-  /opt/homebrew/lib/QtWidgets.framework/Headers/QDialog \
-  /opt/homebrew/lib/QtWidgets.framework/Headers/qdialog.h \
   IMDAP_autogen/include/ui_multiplecolumnsdialog.h \
   /opt/homebrew/include/QtCore/QVariant \
   /opt/homebrew/lib/QtCore.framework/Headers/qvariant.h \
@@ -16901,18 +16882,36 @@ CMakeFiles/IMDAP.dir/multiplecolumnsdialog.cpp.o: /Users/suxingjian/Documents/Gi
   /opt/homebrew/include/QtCore/qcoreapplication_platform.h \
   /opt/homebrew/include/QtGui/qguiapplication.h \
   /opt/homebrew/include/QtGui/qinputmethod.h \
+  /opt/homebrew/include/QtCore/qlocale.h \
   /opt/homebrew/include/QtGui/qguiapplication_platform.h \
   /opt/homebrew/include/QtWidgets/QDialog \
   /opt/homebrew/include/QtWidgets/QDialogButtonBox \
   /opt/homebrew/lib/QtWidgets.framework/Headers/qdialogbuttonbox.h \
   /opt/homebrew/include/QtWidgets/QLabel \
   /opt/homebrew/lib/QtWidgets.framework/Headers/qlabel.h \
+  /opt/homebrew/include/QtWidgets/qframe.h \
   /opt/homebrew/include/QtGui/qpicture.h \
   /opt/homebrew/include/QtCore/qiodevice.h \
   /opt/homebrew/include/QtGui/qtextdocument.h \
   /opt/homebrew/include/QtCore/qurl.h \
   /opt/homebrew/include/QtWidgets/QListWidget \
   /opt/homebrew/lib/QtWidgets.framework/Headers/qlistwidget.h \
+  /opt/homebrew/include/QtWidgets/qlistview.h \
+  /opt/homebrew/include/QtWidgets/qabstractitemview.h \
+  /opt/homebrew/include/QtWidgets/qabstractscrollarea.h \
+  /opt/homebrew/include/QtCore/qabstractitemmodel.h \
+  /opt/homebrew/include/QtCore/qitemselectionmodel.h \
+  /opt/homebrew/include/QtWidgets/qabstractitemdelegate.h \
+  /opt/homebrew/include/QtWidgets/qstyleoption.h \
+  /opt/homebrew/include/QtWidgets/qabstractspinbox.h \
+  /opt/homebrew/include/QtGui/qvalidator.h \
+  /opt/homebrew/include/QtCore/qregularexpression.h \
+  /opt/homebrew/include/QtWidgets/qslider.h \
+  /opt/homebrew/include/QtWidgets/qabstractslider.h \
+  /opt/homebrew/include/QtWidgets/qstyle.h \
+  /opt/homebrew/include/QtWidgets/qtabbar.h \
+  /opt/homebrew/include/QtWidgets/qtabwidget.h \
+  /opt/homebrew/include/QtWidgets/qrubberband.h \
   /opt/homebrew/include/QtWidgets/QVBoxLayout \
   /opt/homebrew/lib/QtWidgets.framework/Headers/qboxlayout.h \
   /opt/homebrew/include/QtWidgets/qlayout.h \
@@ -19698,6 +19697,10 @@ IMDAP_autogen/include/ui_multiplecolumnsdialog.h:
 
 /Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/mainwindow.cpp:
 
+/opt/homebrew/lib/QtCore.framework/Headers/QTimer:
+
+/opt/homebrew/lib/QtWidgets.framework/Headers/QSplashScreen:
+
 /Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/main.cpp:
 
 IMDAP_autogen/include/ui_kmeansdialog.h:
@@ -19745,8 +19748,6 @@ IMDAP_autogen/include/ui_averageandmeandialog.h:
 /Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/selecttwocolumnsdialog.h:
 
 /Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/pcadialog.h:
-
-/opt/homebrew/include/QtWidgets/qlistwidget.h:
 
 /Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/multiplecolumnsdialog.h:
 

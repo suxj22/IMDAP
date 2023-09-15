@@ -14,8 +14,8 @@ class AverageAndMeanDialog : public QDialog
 public:
     explicit AverageAndMeanDialog(QWidget *parent = nullptr);
     ~AverageAndMeanDialog();
-    void setColumnNames(const QStringList &name);
-    int getSelectedColumn() const;
+    void setColumnNames(const QStringList &name); // 将列添加给comboBox
+    int getSelectedColumn() const; // 获取选择的列
 
 private slots:
     void on_buttonBox_accepted();

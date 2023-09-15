@@ -41,7 +41,7 @@ void DrawHeatmapWidget::paintEvent(QPaintEvent* event) {
 
     QPainter painter(this);
 
-    // Define colorbar dimensions and spacing
+    // 定义热图、标签、刻度尺的大小
     int margin = 30; // 预留30像素的空间来绘制标签
     int colorBarWidth = width() * 0.05;
     int colorBarTextWidth = width() * 0.10;
@@ -52,11 +52,12 @@ void DrawHeatmapWidget::paintEvent(QPaintEvent* event) {
     int colorBarHeight = dataCov.size() * cellHeight;
 
     QFont font = painter.font();
-    font.setPointSize(15); // Adjust the font size as needed
+    font.setPointSize(15); // 选择合适的字体大小
     painter.setFont(font);
-    painter.setPen(Qt::black);
+
 
     if (isDataCov) {
+        painter.setPen(Qt::black);
         for (int i = 0; i < dataCov.size(); i++) {
             for (int j = 0; j < dataCov[i].size(); j++) {
                 double value = dataCov[i][j];
@@ -65,7 +66,7 @@ void DrawHeatmapWidget::paintEvent(QPaintEvent* event) {
                 auto startY = i * cellHeight;
                 painter.fillRect(startX, startY, cellWidth, cellHeight, cellColor);
 
-                // Drawing value on each heatmap cell
+                // 绘制热图的每个区块
                 QString cellValueStrint = QString::number(value, 'f', 2); // 2个小数位
                 painter.drawText(startX,
                                  startY,
@@ -77,6 +78,7 @@ void DrawHeatmapWidget::paintEvent(QPaintEvent* event) {
         }
     }
     else {
+        painter.setPen(Qt::white);
         for (int i = 0; i < dataCov.size(); i++) {
             for (int j = 0; j < dataPer[i].size(); j++) {
                 double value = dataPer[i][j];
@@ -85,7 +87,7 @@ void DrawHeatmapWidget::paintEvent(QPaintEvent* event) {
                 auto startY = i * cellHeight;
                 painter.fillRect(startX, startY, cellWidth, cellHeight, cellColor);
 
-                // Drawing value on each heatmap cell
+                // 绘制热图的每个区块
                 QString cellValueStrint = QString::number(value, 'f', 2); // 2个小数位
                 painter.drawText(startX,
                                  startY,
@@ -97,11 +99,11 @@ void DrawHeatmapWidget::paintEvent(QPaintEvent* event) {
         }
     }
 
-    // Draw colorbar
-    if (isDataCov) {
-        int segments = 100;
-        float segmentHeight = static_cast<double>(colorBarHeight) / segments;
+    // 绘制刻度尺
+    int segments = 100; // 颜色区块总数
+    float segmentHeight = static_cast<double>(colorBarHeight) / segments;
 
+    if (isDataCov) {
         for (int i = 0; i < segments; i++) {
             float value = maxValue - static_cast<float>(i) * interval;
             QColor segmentColor = getColorForValue(value);
@@ -111,10 +113,7 @@ void DrawHeatmapWidget::paintEvent(QPaintEvent* event) {
         }
     }
     else {
-        int segments = 30;
-        float segmentHeight = static_cast<double>(colorBarHeight) / segments;
         float interval = 2.0 / segments;  // 因为范围是[-1, 1]
-
         for (int i = 0; i < segments; i++) {
             float value = 1 - static_cast<float>(i) * interval;  // 从1到-1
             QColor segmentColor = getColorForValue(value);
@@ -124,8 +123,9 @@ void DrawHeatmapWidget::paintEvent(QPaintEvent* event) {
         }
     }
 
-    // Add detailed labels for colorbar
-    int numberOfLabels = 5;
+    // 绘制刻度说明
+    painter.setPen(Qt::black); // 设置字体颜色为黑色
+    int numberOfLabels = 10;
     float labelValueStep, labelValueStart;
     if (isDataCov) {
         labelValueStart = maxValue;
@@ -142,9 +142,9 @@ void DrawHeatmapWidget::paintEvent(QPaintEvent* event) {
 
         int textY;
         if (i == 0) {
-            textY = painter.fontMetrics().height(); // For top-most label, move it down by its height
+            textY = painter.fontMetrics().height(); // 最上方的文字稍微下移，以显示完全
         } else if (i == numberOfLabels) {
-            textY = colorBarHeight - painter.fontMetrics().descent(); // For bottom-most label, adjust by descent
+            textY = colorBarHeight - painter.fontMetrics().descent(); // 最下方的文字稍微上移，已显示完全
         } else {
             textY = i * (colorBarHeight / numberOfLabels);
         }
@@ -154,30 +154,29 @@ void DrawHeatmapWidget::paintEvent(QPaintEvent* event) {
                          labelText);
     }
     QFontMetrics fm(painter.font());
-
     QStringList yLabels = xLabels;
 
         // 绘制x轴的标签
         for (int i = 0; i < xLabels.size(); i++) {
             int textWidth = fm.horizontalAdvance(xLabels[i]);
             int x = i * cellWidth + (cellWidth - textWidth) / 2;
-            int y = height() - margin + 20;  // Adjusted to bottom
-            painter.drawText(x + margin, y, xLabels[i]);  // Offset by margin
+            int y = height() - margin + 20;
+            painter.drawText(x + margin, y, xLabels[i]);
         }
 
         // 绘制y轴的标签
         for (int i = 0; i < yLabels.size(); i++) {
             int temp = i;
             int textHeight = fm.height();
-            int x = margin - textHeight;  // Adjusted to left of heatmap
+            int x = margin - textHeight;
             int textWidth = fm.horizontalAdvance(yLabels[temp]);
             int y = i * cellHeight + (cellHeight + textWidth) / 2;
 
-            painter.save();  // Save the current state of painter
-            painter.translate(x, y);  // Move painter to the start point of text
-            painter.rotate(-90);  // Rotate the painter
-            painter.drawText(0, 0, yLabels[temp]);  // Draw text at the rotated position
-            painter.restore();  // Restore the painter's state to what it was before translation and rotation
+            painter.save();  // 保存painter当前的状态
+            painter.translate(x, y);  // 将painter移动到文本的起始点
+            painter.rotate(-90);  // 旋转painter
+            painter.drawText(0, 0, yLabels[temp]);  // 在旋转后的位置绘制文本
+            painter.restore();  // 恢复painter到平移和旋转之前的状态
         }
 }
 
@@ -187,12 +186,10 @@ QColor DrawHeatmapWidget::getColorForValue(float value) const {
         return QColor(255, 255 * resultValue, 255 * resultValue);
     }
     else {
-        float mappedValue = (value + 1) / 2.0; // This will convert -1 to 0 and 1 to 1
-
-        // Now, use mappedValue to interpolate between blue and red
+        float mappedValue = (value + 1) / 2.0; // 建立[-1, 1]到[0, 1]的映射
+        // 从蓝色渐变为红色
         int redComponent = static_cast<int>(255 * mappedValue);
         int blueComponent = 255 - redComponent;
-
         return QColor(redComponent, 0, blueComponent);
     }
 }

@@ -34,7 +34,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         icons.qrc
         data.qrc
         averageandmeandialog.h averageandmeandialog.cpp averageandmeandialog.ui
-        common.h xgboost_example.h kmeans.hpp leastsquare.hpp covariance.hpp pca.hpp rowfeature.hpp
+        common.h  kmeans.hpp leastsquare.hpp covariance.hpp pca.hpp rowfeature.hpp
         chartviewdialog.h chartviewdialog.cpp chartviewdialog.ui
         selecttwocolumnsdialog.h selecttwocolumnsdialog.cpp selecttwocolumnsdialog.ui
         histogramdialog.h histogramdialog.cpp histogramdialog.ui

@@ -1766,4 +1766,6 @@ CMakeFiles/IMDAP.dir/main.cpp.o: \
   /opt/homebrew/lib/QtCharts.framework/Headers/qvpiemodelmapper.h \
   /opt/homebrew/lib/QtCharts.framework/Headers/qvxymodelmapper.h \
   /opt/homebrew/lib/QtCharts.framework/Headers/qxylegendmarker.h \
-  /opt/homebrew/lib/QtWidgets.framework/Headers/QApplication
+  /opt/homebrew/lib/QtWidgets.framework/Headers/QApplication \
+  /opt/homebrew/lib/QtWidgets.framework/Headers/QSplashScreen \
+  /opt/homebrew/lib/QtCore.framework/Headers/QTimer

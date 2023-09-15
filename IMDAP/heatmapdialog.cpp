@@ -7,6 +7,7 @@ HeatmapDialog::HeatmapDialog(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::HeatmapDialog)
 {
+    this->setWindowTitle("热图");
     ui->setupUi(this);
     ui->radioButton->blockSignals(true);
     ui->radioButton->setChecked(true);

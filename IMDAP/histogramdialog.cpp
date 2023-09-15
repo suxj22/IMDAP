@@ -6,6 +6,7 @@ HistogramDialog::HistogramDialog(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::HistogramDialog)
 {
+
     ui->setupUi(this);
     ui->HistogramCheckBox->blockSignals(true);
     ui->SplineCheckBox->blockSignals(true); // 防止chartView未初始化进入槽函数导致错误

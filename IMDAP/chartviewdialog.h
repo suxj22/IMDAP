@@ -24,11 +24,11 @@ private slots:
 
     void on_copyToClipboardButton_clicked(); // 复制图像到剪贴板
 
-    void on_ScatterCheckBox_stateChanged(int arg1);
+    void on_ScatterCheckBox_stateChanged(int arg1); // 是否显示散点图
 
-    void on_SplineCheckBox_stateChanged(int arg1);
+    void on_SplineCheckBox_stateChanged(int arg1); // 是否显示曲线拟合
 
-    void handlePointHovered(const QPointF &point, bool state);
+    void handlePointHovered(const QPointF &point, bool state); // 鼠标悬停显示点坐标
 
 private:
     Ui::ChartViewDialog *ui;

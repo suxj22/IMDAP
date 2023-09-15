@@ -35,9 +35,10 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    connect(ui->action, &QAction::triggered, this, &MainWindow::loadCSVFileToTableWidget);
-    connect(ui->tableWidget, &QTableWidget::itemSelectionChanged, this, &MainWindow::displaySelectedCellInfo);
+    connect(ui->action, &QAction::triggered, this, &MainWindow::loadCSVFileToTableWidget); // 导入文件按钮触发
+    connect(ui->tableWidget, &QTableWidget::itemSelectionChanged, this, &MainWindow::displaySelectedCellInfo); // 图表选择项目变化，计算常用统计数据
     ui->ShowColoraction->setVisible(false); // 初始时不显示表格显示聚类颜色按钮
+    this->setWindowTitle("医学数据平台"); // 设置主窗口标题
 }
 
 void MainWindow::loadCSVFileToTableWidget() {
@@ -86,8 +87,8 @@ void MainWindow::loadCSVFileToTableWidget() {
                     reverseValueMap[currentValue] = text; // 存储反向映射
                     QString pre = "文本中";
                     QString middle = "代表";
-                    QString res = pre + text + middle + QString::number(static_cast<int>(currentValue)); // 存储映射关系
-                    indexOfText.push_back(res);
+                    QString res = pre + text + middle + QString::number(static_cast<int>(currentValue));
+                    indexOfText.push_back(res); // 存储映射的文本
                     currentValue++;
                 }
             }
@@ -106,7 +107,7 @@ MainWindow::~MainWindow()
 }
 bool MainWindow::tableWidgetIsEmpty() {
     if (ui->tableWidget->rowCount() == 0 || ui->tableWidget->columnCount() == 0) {
-        return true;
+        return true; // 选择的数据为空
     }
     else {
         return false;
@@ -171,6 +172,7 @@ float MainWindow::normalFit(float stddev, float avg, float x) {
 }
 void MainWindow::on_HistogramAction_triggered()
 {
+    // 判断是否选择数据
     if (tableWidgetIsEmpty()) {
         tableEmptyWarning();
         return;
@@ -183,7 +185,7 @@ void MainWindow::on_HistogramAction_triggered()
             names << item->text();
         }
     }
-    dialog.setColumnNames(names); // 有待打包
+    dialog.setColumnNames(names);
     if (dialog.exec() == QDialog::Accepted) {
         int column = dialog.getSelectedColumn() + 1;
         int count = ui->tableWidget->rowCount();
@@ -328,6 +330,7 @@ void MainWindow::on_HistogramAction_triggered()
         chartView->setRenderHint(QPainter::Antialiasing); // 抗锯齿渲染
 
         HistogramDialog viewDialog(this);
+        viewDialog.setWindowTitle("直方图和正态拟合");
         viewDialog.setViewChart(chartView);
         viewDialog.exec();
     }
@@ -440,6 +443,7 @@ void MainWindow::on_ScatterAction_triggered()
         chartView = new QChartView(chart);
         chartView->setRenderHint(QPainter::Antialiasing); // 抗锯齿渲染
         ChartViewDialog viewDialog(this, chartView);
+        viewDialog.setWindowTitle("散点图和曲线拟合");
         connect(series, &QScatterSeries::hovered, [&viewDialog](const QPointF &point, bool state){
             if (state) { // 如果鼠标悬停在点上
                 QToolTip::showText(QCursor::pos(),
@@ -523,7 +527,7 @@ void MainWindow::on_Matrixaction_triggered()
         }
 
         HeatmapDialog viewDialog(this);
-
+        viewDialog.setWindowTitle("热图");
         viewDialog.setDataCov(dataCov);
         viewDialog.setDataPer(dataPer);
         viewDialog.setLabels(Selectednames);
@@ -566,7 +570,7 @@ void MainWindow::on_PCAAction_triggered()
             std::vector<float> x(items.size());
             for (int k = 0; k < items.size(); k++) {
                 int column = items[k] + 1;
-                QString text = ui->tableWidget->item(j, column)->text();
+                QString text = ui->tableWidget->item(j + 1, column)->text();
                 if (column != 1) {
                     x[k] = text.toFloat();
                 }
@@ -610,29 +614,24 @@ void MainWindow::on_PCAAction_triggered()
                     seriesList[i] = new QScatterSeries();
                 }
                 auto result = pca(inputVector, power);
-                float minValueX = result(0, 0);
-                float maxValueX = result(0, 0);
-                float minValueY = result(0, 0);
-                float maxValueY = result(0, 0);
+                // 获取横纵坐标的最值
+                float min_x = std::numeric_limits<float>::max();
+                float max_x = std::numeric_limits<float>::min();
+                float min_y = std::numeric_limits<float>::max();
+                float max_y = std::numeric_limits<float>::min();
                 for (int i = 0; i < count - 1; i++) {
                     QString text = ui->tableWidget->item(i + 1, 1)->text();
+                    // 根据哈希表获取对应种类的映射值
                     int kind = discreteValueMap[text];
+                    // 根据映射值设置图例
                     seriesList[kind]->setName(text);
 
                     float x = result(i, 0);
                     float y = result(i, 1);
-                    if (x > maxValueX) {
-                       maxValueX = x;
-                    }
-                    if (x < minValueX) {
-                       minValueX = x;
-                    }
-                    if (y > maxValueY) {
-                       maxValueY = y;
-                    }
-                    if (y < minValueY) {
-                       minValueY = y;
-                    }
+                    min_x = std::min(min_x, x);
+                    max_x = std::max(max_x, x);
+                    min_y = std::min(min_y, y);
+                    max_y = std::max(max_y, y);
                     auto newPoint = QPointF(x, y);
                     seriesList.at(kind)->append(newPoint);
                 }
@@ -645,57 +644,37 @@ void MainWindow::on_PCAAction_triggered()
                 }
                 auto chart = new QChart;
                 for (auto series : seriesList) {
-                    qDebug() << "Series Name:" << series->name();
                     for (int i = 0; i < series->count(); i++) {
-                       QPointF point = series->at(i);
-                       qDebug() << "Point:" << point.x() << "," << point.y();
+                       QPointF point = series->at(1);
                     }
                     chart->addSeries(series);
                 }
                 chart->setTitle("二维降维图");
                 auto axisX = new QValueAxis;
                 auto axisY = new QValueAxis;
-                float factor = 1.1;
-                if (minValueX > 0) {
-                    minValueX /= factor;
-                }
-                else {
-                    minValueX *= factor;
-                }
-                if (maxValueX > 0) {
-                    maxValueX *= factor;
-                }
-                else {
-                    maxValueX /= factor;
-                }
-                if (minValueY > 0) {
-                    minValueY /= factor;
-                }
-                else {
-                    minValueY *= factor;
-                }
-                if (maxValueY > 0) {
-                    maxValueY *= factor;
-                }
-                else {
-                    maxValueY /= factor;
-                }
-                axisX->setRange(minValueX, maxValueX);
-                axisY->setRange(minValueY, maxValueY);
+                float factor = 1.1f;
+                if (min_x > 0) min_x /= factor; else min_x *= factor;
+                if (max_x > 0) max_x *= factor; else max_x /= factor;
+                if (min_y > 0) min_y /= factor; else min_y *= factor;
+                if (max_y > 0) max_y *= factor; else max_y /= factor;
+                axisX->setRange(min_x, max_x);
+                axisY->setRange(min_y, max_y);
                 chart->addAxis(axisX, Qt::AlignBottom);
                 chart->addAxis(axisY, Qt::AlignLeft);
                 chart->setAnimationOptions(QChart::SeriesAnimations);
                 chart->setDropShadowEnabled(false);
                 auto chartView = new QChartView(chart);
                 PCADialog viewDialog(this, chartView);
+                viewDialog.setWindowTitle("PCA降维图");
+
                 for (auto series : seriesList) {
                     series->attachAxis(axisX);
                     series->attachAxis(axisY);
                     connect(series, &QScatterSeries::hovered, [&viewDialog](const QPointF &point, bool state){
-                        if (state) { // 如果鼠标悬停在点上
+                        if (state) { // 如果鼠标悬停在点上，显示坐标
                             QToolTip::showText(QCursor::pos(),
                                                QString("X: %1\nY: %2").arg(point.x()).arg(point.y()));
-                        } else { // 如果鼠标移开点
+                        } else { // 如果鼠标移开点，隐藏坐标
                             QToolTip::hideText();
                         }
                     });
@@ -771,6 +750,7 @@ void MainWindow::on_PCAAction_triggered()
 
                 QWidget * container = createWindowContainer(scatter3D);
                 PCADialog viewDialog(this, container, list);
+                viewDialog.setWindowTitle("PCA降维图");
                 viewDialog.exec();
                 break;
             }
@@ -794,7 +774,7 @@ void MainWindow::on_actionKMeans_triggered()
         if(item != nullptr && item->text().isEmpty() == false) {
             names << item->text();
         }
-    } // 有待打包
+    }
     MultipleColumnsDialog dialog(this, names);
     if (dialog.exec() == QDialog::Accepted) {
         // 获取选择的列
@@ -816,7 +796,7 @@ void MainWindow::on_actionKMeans_triggered()
             std::vector<float> x(items.size());
             for (int k = 0; k < items.size(); k++) {
                 int column = items[k] + 1;
-                QString text = ui->tableWidget->item(j, column)->text();
+                QString text = ui->tableWidget->item(j + 1, column)->text();
                 if (column != 1) {
                     x[k] = text.toFloat();
                 }
@@ -855,26 +835,18 @@ void MainWindow::on_actionKMeans_triggered()
         }
 
         auto result = pca(inputVector, 2);
-        float minValueX = result(0, 0);
-        float maxValueX = result(0, 0);
-        float minValueY = result(0, 0);
-        float maxValueY = result(0, 0);
+        float min_x = std::numeric_limits<float>::max();
+        float max_x = std::numeric_limits<float>::min();
+        float min_y = std::numeric_limits<float>::max();
+        float max_y = std::numeric_limits<float>::min();
         for (int i = 0; i < count - 1; i++) {
             int kind = Labels[i];
             float x = result(i, 0);
             float y = result(i, 1);
-            if (x > maxValueX) {
-                maxValueX = x;
-            }
-            if (x < minValueX) {
-                minValueX = x;
-            }
-            if (y > maxValueY) {
-                maxValueY = y;
-            }
-            if (y < minValueY) {
-                minValueY = y;
-            }
+            min_x = std::min(min_x, x);
+            max_x = std::max(max_x, x);
+            min_y = std::min(min_y, y);
+            max_y = std::max(max_y, y);
             auto newPoint = QPointF(x, y);
             seriesList.at(kind)->append(newPoint);
         }
@@ -890,33 +862,15 @@ void MainWindow::on_actionKMeans_triggered()
         }
         auto axisX = new QValueAxis;
         auto axisY = new QValueAxis;
-        float factor = 1.1;
-        if (minValueX > 0) {
-            minValueX /= factor;
-        }
-        else {
-            minValueX *= factor;
-        }
-        if (maxValueX > 0) {
-            maxValueX *= factor;
-        }
-        else {
-            maxValueX /= factor;
-        }
-        if (minValueY > 0) {
-            minValueY /= factor;
-        }
-        else {
-            minValueY *= factor;
-        }
-        if (maxValueY > 0) {
-            maxValueY *= factor;
-        }
-        else {
-            maxValueY /= factor;
-        }
-        axisX->setRange(minValueX, maxValueX);
-        axisY->setRange(minValueY, maxValueY);
+        float scaleFactor = 1.1f;
+        float offset_x = (max_x - min_x) * (scaleFactor - 1.0);
+        float offset_y = (max_y - min_y) * (scaleFactor - 1.0);
+        min_x -= offset_x / 2.0;
+        max_x += offset_x / 2.0;
+        min_y -= offset_y / 2.0;
+        max_y += offset_y / 2.0;
+        axisX->setRange(min_x, max_x);
+        axisY->setRange(min_y, max_y);
         chart->addAxis(axisX, Qt::AlignBottom);
         chart->addAxis(axisY, Qt::AlignLeft);
         for (auto series : seriesList) {
@@ -928,8 +882,8 @@ void MainWindow::on_actionKMeans_triggered()
         chart->legend()->hide();
         auto chartView = new QChartView(chart);
         KMeansDialog viewDialog(this);
+        viewDialog.setWindowTitle("KMeans聚类图");
         chartView->setMinimumSize(600, 600);
-        viewDialog.addChart(chart);
         viewDialog.addChartView(chartView);
         for (auto series : seriesList) {
             series->attachAxis(axisX);
@@ -1070,6 +1024,7 @@ void MainWindow::displaySelectedCellInfo() {
             }
         }
     }
+    // 判断可计算项目总数是否为0，是则只显示选择的单元格总数
     if (validFloats.empty()) {
         QString info = QString("选择的单元格总数：%1").arg(count);
         ui->textBrowser->setText(info);

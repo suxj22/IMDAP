@@ -2378,12 +2378,6 @@
 			"MU",
 			"EWIEGA46WW/moc_selecttwocolumnsdialog.cpp",
 			null
-		],
-		[
-			"/Users/suxingjian/Documents/GitHub/IMDAP/IMDAP/xgboost_example.h",
-			"MU",
-			"EWIEGA46WW/moc_xgboost_example.cpp",
-			null
 		]
 	],
 	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],

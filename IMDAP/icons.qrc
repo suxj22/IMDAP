@@ -9,5 +9,6 @@
         <file>icons/KMeans.png</file>
         <file>icons/setiaozuoyou.png</file>
         <file>icons/bangzhu.png</file>
+        <file>icons/startup.jpg</file>
     </qresource>
 </RCC>

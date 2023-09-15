@@ -16,6 +16,7 @@ HelpDialog::HelpDialog(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::HelpDialog)
 {
+    this->setWindowTitle("帮助文档");
     ui->setupUi(this);
     ui->textBrowser->setOpenExternalLinks(true); // 帮助文档中的外部链接可以打开
     QString Content = readHtmlFile(":/data/data/help.html");

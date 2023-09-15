@@ -25,8 +25,8 @@ private:
     float maxValue; // data最大值
     float interval; // 间隔值
     int numIntervals = 100; // 间隔数量
-    QStringList xLabels;
-    bool isDataCov = true;
+    QStringList xLabels; // x坐标标签
+    bool isDataCov = true; // 当前绘制的图像
 };
 
 #endif // DRAWHEATMAPWIDGET_H

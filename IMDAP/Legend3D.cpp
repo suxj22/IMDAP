@@ -12,6 +12,7 @@ void Legend3D::paintEvent(QPaintEvent* event) {
     Q_UNUSED(event)
     QPainter painter(this);
 
+    // 绘制图例
     int y = 10;
     for (auto series : List) {
         painter.setBrush(series->baseColor());

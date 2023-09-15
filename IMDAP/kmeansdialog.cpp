@@ -9,6 +9,7 @@ KMeansDialog::KMeansDialog(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::KMeansDialog)
 {
+    this->setWindowTitle("KMeans聚类图");
     ui->setupUi(this);
 }
 
@@ -21,17 +22,9 @@ void KMeansDialog::addChartView(QWidget * view) {
     ui->horizontalLayout_2->addWidget(view);
 }
 
-
-void KMeansDialog::addChart(QChart * chart) {
-    Chart2D = chart;
-}
-
-void KMeansDialog::addChart(Q3DScatter * chart) {
-    Chart3D = chart;
-}
 void KMeansDialog::on_export2DButton_clicked()
 {
-    QLayout *layout = ui->horizontalLayout_2; // 您的布局对象
+    QLayout *layout = ui->horizontalLayout_2; // 布局对象
     auto widget = layout->itemAt(0)->widget();
     QPixmap pixmap = widget->grab();
     QString defaultFilename = "exported_image.png";

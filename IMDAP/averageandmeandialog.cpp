@@ -6,7 +6,7 @@ AverageAndMeanDialog::AverageAndMeanDialog(QWidget *parent) :
     ui(new Ui::AverageAndMeanDialog)
 {
     ui->setupUi(this);
-
+    this->setWindowTitle("选择列");
 }
 
 AverageAndMeanDialog::~AverageAndMeanDialog()

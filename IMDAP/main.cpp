@@ -1,6 +1,8 @@
 #include "mainwindow.h"
 
 #include <QApplication>
+#include <QSplashScreen>
+#include <QTimer>
 
 int main(int argc, char *argv[])
 {
