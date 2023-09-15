@@ -42,7 +42,7 @@ void DrawHeatmapWidget::paintEvent(QPaintEvent* event) {
     QPainter painter(this);
 
     // 定义热图、标签、刻度尺的大小
-    int margin = 30; // 预留30像素的空间来绘制标签
+    int margin = 50; // 预留30像素的空间来绘制标签
     int colorBarWidth = width() * 0.05;
     int colorBarTextWidth = width() * 0.10;
     int colorBarSpacing = width() * 0.05;
@@ -52,7 +52,7 @@ void DrawHeatmapWidget::paintEvent(QPaintEvent* event) {
     int colorBarHeight = dataCov.size() * cellHeight;
 
     QFont font = painter.font();
-    font.setPointSize(15); // 选择合适的字体大小
+    font.setPointSize(12); // 选择合适的字体大小
     painter.setFont(font);
 
 
